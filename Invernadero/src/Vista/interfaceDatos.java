@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package invernadero;
+package Vista;
 
 import javax.swing.JOptionPane;
 
@@ -62,7 +62,7 @@ public class interfaceDatos extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/invernadero/usuario.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/usuario.png"))); // NOI18N
         jButton1.setMaximumSize(new java.awt.Dimension(257, 500));
 
         jLabel1.setBackground(new java.awt.Color(51, 0, 255));

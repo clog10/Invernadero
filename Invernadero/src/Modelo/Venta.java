@@ -12,10 +12,10 @@ public class Venta {
     private int precio;
     private int cantidad;
     private int subtotal;
-
+    private Producto productos;
     private Cliente cliente;
     
-    public Venta(int id,String nombre, String unidad, int precio, int cantidad, int subtotal,Cliente cliente) {
+    public Venta(int id,String nombre, String unidad, int precio, int cantidad, int subtotal,Cliente cliente,Producto ... productos) {
         this.id=id;
         this.nombre = nombre;
         this.unidad = unidad;
@@ -92,6 +92,7 @@ public class Venta {
     
     
 }
+
 
 
 

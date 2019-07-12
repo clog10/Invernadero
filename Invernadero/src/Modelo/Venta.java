@@ -2,10 +2,11 @@
 package Modelo;
 
 /**
- *
+ * El gran valle, Invernadero
  * @author Clog_10
  */
 public class Venta {
+    private int id;
     private String nombre;
     private String unidad;
     private int precio;
@@ -14,7 +15,8 @@ public class Venta {
 
     private Cliente cliente;
     
-    public Venta(String nombre, String unidad, int precio, int cantidad, int subtotal,Cliente cliente) {
+    public Venta(int id,String nombre, String unidad, int precio, int cantidad, int subtotal,Cliente cliente) {
+        this.id=id;
         this.nombre = nombre;
         this.unidad = unidad;
         this.precio = precio;
@@ -23,6 +25,14 @@ public class Venta {
         this.cliente=cliente;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -70,9 +80,22 @@ public class Venta {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    @Override
+    public String toString() {
+        String datos= "Nombre: "+nombre+" Unidad: "+unidad+" Precio: "+precio+" Cantidad: "+cantidad+" subtotal:"+subtotal+"\n";
+        datos+="Cliente: " + cliente.toString();
+        
+        return datos;
+    }
+    
     
     
 }
+
+
+
+
 
 
 

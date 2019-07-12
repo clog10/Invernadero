@@ -2,17 +2,19 @@
 package Modelo;
 
 /**
- *
+ * El gran valle, Invernadero
  * @author Clog_10
  */
 public class Cliente {
+    private int id;
     private String nombre,aPaterno,aMaterno;
     private String calle,colonia,municipio,estado;
     private int numero;
     private String celular,telefono,email,RFC;
 
-    public Cliente(String nombre, String aPaterno, String aMaterno, String calle, String colonia, String municipio, 
+    public Cliente(int id,String nombre, String aPaterno, String aMaterno, String calle, String colonia, String municipio, 
                                 String estado, int numero, String celular, String telefono, String email, String RFC) {
+        this.id=id;
         this.nombre = nombre;
         this.aPaterno = aPaterno;
         this.aMaterno = aMaterno;
@@ -122,16 +124,27 @@ public class Cliente {
     public void setRFC(String RFC) {
         this.RFC = RFC;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     public String regresaDatos(){
-        String datos=" "+nombre+" "+aPaterno+ " "+aMaterno+"\n";
-        datos+=" "+calle+" "+numero+" "+colonia+" "+municipio+" "+estado;
-        datos+="Telefono: "+telefono+"\tCellular: "+celular+"\tEmail: "+email;
+        String datos="Id: "+id+" "+nombre+" "+aPaterno+ " "+aMaterno+"\n";
+        datos+=" "+calle+" "+numero+" "+colonia+" "+municipio+" "+estado+"\n";
+        datos+="Telefono: "+telefono+"\tCelular: "+celular+"\tEmail: "+email+"\n";
         datos+="RFC: "+RFC;
         return datos;
     }
     
 }
+
+
+
 
 
 

@@ -5,7 +5,7 @@ package Modelo;
  *
  * @author Clog_10
  */
-public class Proveedor {
+public class Empleado {
     
 }
 

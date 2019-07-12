@@ -12,7 +12,7 @@ public class Venta {
     private int precio;
     private int cantidad;
     private int subtotal;
-    private Producto productos;
+    private Producto [] productos;
     private Cliente cliente;
     
     public Venta(int id,String nombre, String unidad, int precio, int cantidad, int subtotal,Cliente cliente,Producto ... productos) {
@@ -22,7 +22,9 @@ public class Venta {
         this.precio = precio;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
+        this.productos=productos;
         this.cliente=cliente;
+        this.productos=productos;
     }
 
     public int getId() {
@@ -81,6 +83,10 @@ public class Venta {
         this.cliente = cliente;
     }
 
+    public void Totales(){
+        //para obtener los totales de los productos y sumarlos
+    }
+    
     @Override
     public String toString() {
         String datos= "Nombre: "+nombre+" Unidad: "+unidad+" Precio: "+precio+" Cantidad: "+cantidad+" subtotal:"+subtotal+"\n";
@@ -92,6 +98,10 @@ public class Venta {
     
     
 }
+
+
+
+
 
 
 

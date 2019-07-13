@@ -8,10 +8,14 @@ package Modelo;
 public class Producto {
     public int id;
     public String nombre;
+    private int precio;
+    private String unidad;
 
-    public Producto(int id, String nombre) {
+    public Producto(int id, String nombre,int precio,String unidad) {
         this.id = id;
         this.nombre = nombre;
+        this.unidad=unidad;
+        this.precio=precio;
     }
 
     public int getId() {
@@ -29,11 +33,23 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public String getUnidad() {
+        return unidad;
+    }
+
+    public void setUnidad(String unidad) {
+        this.unidad = unidad;
+    }
     
     
 }
-
-
-
-
 

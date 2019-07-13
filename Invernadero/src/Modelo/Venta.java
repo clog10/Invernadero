@@ -7,24 +7,17 @@ package Modelo;
  */
 public class Venta {
     private int id;
-    private String nombre;
-    private String unidad;
-    private int precio;
     private int cantidad;
     private int subtotal;
     private Producto [] productos;
     private Cliente cliente;
     
-    public Venta(int id,String nombre, String unidad, int precio, int cantidad, int subtotal,Cliente cliente,Producto ... productos) {
+    public Venta(int id, int cantidad, int subtotal,Cliente cliente,Producto ... productos) {
         this.id=id;
-        this.nombre = nombre;
-        this.unidad = unidad;
-        this.precio = precio;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
         this.productos=productos;
         this.cliente=cliente;
-        this.productos=productos;
     }
 
     public int getId() {
@@ -33,30 +26,6 @@ public class Venta {
 
     public void setId(int id) {
         this.id = id;
-    }
-    
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getUnidad() {
-        return unidad;
-    }
-
-    public void setUnidad(String unidad) {
-        this.unidad = unidad;
-    }
-
-    public int getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
     }
 
     public int getCantidad() {
@@ -83,31 +52,23 @@ public class Venta {
         this.cliente = cliente;
     }
 
-    public void Totales(){
+    public int Totales(){
         //para obtener los totales de los productos y sumarlos
+        int total=0;
+        for(Producto p:productos){
+            total+=p.getPrecio();
+        }
+        return total;
     }
     
     @Override
     public String toString() {
-        String datos= "Nombre: "+nombre+" Unidad: "+unidad+" Precio: "+precio+" Cantidad: "+cantidad+" subtotal:"+subtotal+"\n";
+        String datos= "  Cantidad: "+cantidad+" subtotal:"+subtotal+"\n";
         datos+="Cliente: " + cliente.toString();
         
         return datos;
     }
     
-    
-    
 }
-
-
-
-
-
-
-
-
-
-
-
 
 

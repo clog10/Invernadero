@@ -49,7 +49,15 @@ public class Producto {
     public void setUnidad(String unidad) {
         this.unidad = unidad;
     }
+
+    @Override
+    public String toString() {
+        String datos= "Producto " + "id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", unidad=" + unidad  ;
+        return datos;
+    }
+    
     
     
 }
+
 

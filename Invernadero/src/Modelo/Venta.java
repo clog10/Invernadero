@@ -8,6 +8,7 @@ package Modelo;
 public class Venta {
     private int id;
     private int cantidad;
+    private int precio;
     private int subtotal;
     private Producto [] productos;
     private Cliente cliente;
@@ -70,5 +71,6 @@ public class Venta {
     }
     
 }
+
 
 

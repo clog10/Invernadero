@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author AMAURY
@@ -16,6 +19,13 @@ public class interfaceMenu extends javax.swing.JFrame {
      */
     public interfaceMenu() {
         initComponents();
+
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        int w = getSize().width;
+        int h = getSize().height;
+        int x = (dim.width - w) / 2;
+        int y = (dim.height - h) / 2;
+        setLocation(x, y);
     }
 
     /**
@@ -69,8 +79,10 @@ public class interfaceMenu extends javax.swing.JFrame {
         jMenuBar1.setForeground(new java.awt.Color(240, 236, 232));
 
         jMenu2.setText("Ventas");
+        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jMenuItem1.setText("Punto de Venta");
+        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -79,28 +91,36 @@ public class interfaceMenu extends javax.swing.JFrame {
         jMenu2.add(jMenuItem1);
 
         jMenuItem2.setText("Ventas");
+        jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.add(jMenuItem2);
 
         jMenuItem3.setText("Almacen");
+        jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setText("Pedidos");
+        jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.add(jMenuItem4);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Administracion");
+        jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jMenuItem7.setText("Empleados");
+        jMenuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu3.add(jMenuItem7);
 
         jMenuItem8.setText("Vehiculos");
+        jMenuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu3.add(jMenuItem8);
 
         jMenuItem9.setText("Proovedores");
+        jMenuItem9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu3.add(jMenuItem9);
 
         jMenuItem10.setText("Estadisticas");
+        jMenuItem10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu3.add(jMenuItem10);
 
         jMenuBar1.add(jMenu3);

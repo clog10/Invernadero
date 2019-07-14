@@ -6,6 +6,8 @@
 package Vista;
 
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 
 /*
  * To change this template, choose Tools | Templates

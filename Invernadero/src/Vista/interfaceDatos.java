@@ -63,7 +63,7 @@ public class interfaceDatos extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Inicio de sesion");
+        setTitle("Inicio de sesión");
 
         jPanel1.setBackground(new java.awt.Color(240, 239, 232));
         jPanel1.setForeground(new java.awt.Color(240, 239, 232));

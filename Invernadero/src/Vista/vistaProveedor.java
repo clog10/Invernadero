@@ -27,7 +27,6 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        vistaProveedor1 = new Vista.VistaProveedor();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
@@ -216,6 +215,5 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private Vista.VistaProveedor vistaProveedor1;
     // End of variables declaration//GEN-END:variables
 }

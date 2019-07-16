@@ -72,7 +72,7 @@ public class Vehiculo {
     public String toString() {
         String datos=" Vehiculo " + "\tMatricula: "+matricula+"\n";
                datos+=" Marca: " + marca + " Modelo: " + modelo + " Numero de Serie: " + numSerie + " Año: " + anio;
-               datos+=" Operador: " + operador.toString() ;
+               datos+=" Operador: " + operador.getNombre()+" "+operador.getaPaterno()+" "+operador.getaMaterno() ;
                
         return datos;
     }
@@ -80,6 +80,7 @@ public class Vehiculo {
     
     
 }
+
 
 
 

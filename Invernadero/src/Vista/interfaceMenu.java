@@ -207,7 +207,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         vistaPrincipal.removeAll();
         vistaPrincipal.updateUI();           
-        this.setSize(700,480);
+        this.setSize(720,500);
         vistaVehiculos vehiculos = new vistaVehiculos();
         BasicInternalFrameUI bi = (BasicInternalFrameUI)vehiculos.getUI();
         bi.setNorthPane(null);
@@ -220,15 +220,15 @@ public class interfaceMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         vistaPrincipal.removeAll();
         vistaPrincipal.updateUI();           
-        this.setSize(920,510);
+        this.setSize(980,580);
         vistaProveedor proveedor = new vistaProveedor();
         BasicInternalFrameUI bi = (BasicInternalFrameUI)proveedor.getUI();
         bi.setNorthPane(null);
         proveedor.setBorder(null);
         vistaPrincipal.add(proveedor);
         proveedor.setVisible(true);
-        proveedor.setSize(920,510);
-        this.setSize(920, 510);
+        proveedor.setSize(950,500);
+        this.setSize(980,580);
         this.repaint();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 

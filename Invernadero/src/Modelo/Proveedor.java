@@ -7,13 +7,15 @@ package Modelo;
  */
 public class Proveedor {
     
+    private int id;
     private String razonSocial,rfc;
     private String calle,colonia,municipio,estado;
     private int numero;
     private String telefono,celular,email;
 
-    public Proveedor(String razonSocial, String rfc, String calle, String colonia, String municipio, String estado, 
+    public Proveedor(int id,String razonSocial, String rfc, String calle, String colonia, String municipio, String estado, 
                                 int numero, String telefono, String celular, String email) {
+        this.id=id;
         this.razonSocial = razonSocial;
         this.rfc = rfc;
         this.calle = calle;
@@ -26,6 +28,14 @@ public class Proveedor {
         this.email = email;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getRazonSocial() {
         return razonSocial;
     }
@@ -118,5 +128,7 @@ public class Proveedor {
     
     
 }
+
+
 
 

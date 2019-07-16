@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Invernadero">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="Modelo" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="calle" type="String" visibility="private"/>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="celular" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="aPaterno"/>
+          <Argument type="String" name="aMaterno"/>
+          <Argument type="String" name="calle"/>
+          <Argument type="String" name="colonia"/>
+          <Argument type="String" name="municipio"/>
+          <Argument type="String" name="estado"/>
+          <Argument type="int" name="numero"/>
+          <Argument type="String" name="celular"/>
+          <Argument type="String" name="telefono"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="RFC"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getaPaterno" returnType="String" visibility="public"/>
+        <Method name="setaPaterno" returnType="void" visibility="public">
+          <Argument type="String" name="aPaterno"/>
+        </Method>
+        <Method name="getaMaterno" returnType="String" visibility="public"/>
+        <Method name="setaMaterno" returnType="void" visibility="public">
+          <Argument type="String" name="aMaterno"/>
+        </Method>
+        <Method name="getCalle" returnType="String" visibility="public"/>
+        <Method name="setCalle" returnType="void" visibility="public">
+          <Argument type="String" name="calle"/>
+        </Method>
+        <Method name="getColonia" returnType="String" visibility="public"/>
+        <Method name="setColonia" returnType="void" visibility="public">
+          <Argument type="String" name="colonia"/>
+        </Method>
+        <Method name="getMunicipio" returnType="String" visibility="public"/>
+        <Method name="setMunicipio" returnType="void" visibility="public">
+          <Argument type="String" name="municipio"/>
+        </Method>
+        <Method name="getEstado" returnType="String" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="getNumero" returnType="int" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="int" name="numero"/>
+        </Method>
+        <Method name="getCelular" returnType="String" visibility="public"/>
+        <Method name="setCelular" returnType="void" visibility="public">
+          <Argument type="String" name="celular"/>
+        </Method>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getRFC" returnType="String" visibility="public"/>
+        <Method name="setRFC" returnType="void" visibility="public">
+          <Argument type="String" name="RFC"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="regresaDatos" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Conectiondb" package="Modelo" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="usuario" type="String" visibility="private"/>
+        <Field name="clave" type="String" visibility="private"/>
+        <Field name="servidor" type="String" visibility="private"/>
+        <Field name="baseDatos" type="String" visibility="private"/>
+        <Field name="conexion" type="Connection" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="baseDatos"/>
+          <Argument type="String" name="host"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="ConexionBd" returnType="void" visibility="protected"/>
+        <Method name="getConexion" returnType="Connection" visibility="public"/>
+        <Method name="closeConexion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleado" package="Modelo" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="numTel" type="String" visibility="private"/>
+        <Field name="calle" type="String" visibility="private"/>
+        <Field name="numero" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="aPaterno"/>
+          <Argument type="String" name="aMaterno"/>
+          <Argument type="String" name="numTel"/>
+          <Argument type="String" name="calle"/>
+          <Argument type="String" name="colonia"/>
+          <Argument type="String" name="municipio"/>
+          <Argument type="String" name="estado"/>
+          <Argument type="int" name="numero"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getaPaterno" returnType="String" visibility="public"/>
+        <Method name="setaPaterno" returnType="void" visibility="public">
+          <Argument type="String" name="aPaterno"/>
+        </Method>
+        <Method name="getaMaterno" returnType="String" visibility="public"/>
+        <Method name="setaMaterno" returnType="void" visibility="public">
+          <Argument type="String" name="aMaterno"/>
+        </Method>
+        <Method name="getNumTel" returnType="String" visibility="public"/>
+        <Method name="setNumTel" returnType="void" visibility="public">
+          <Argument type="String" name="numTel"/>
+        </Method>
+        <Method name="getCalle" returnType="String" visibility="public"/>
+        <Method name="setCalle" returnType="void" visibility="public">
+          <Argument type="String" name="calle"/>
+        </Method>
+        <Method name="getColonia" returnType="String" visibility="public"/>
+        <Method name="setColonia" returnType="void" visibility="public">
+          <Argument type="String" name="colonia"/>
+        </Method>
+        <Method name="getMunicipio" returnType="String" visibility="public"/>
+        <Method name="setMunicipio" returnType="void" visibility="public">
+          <Argument type="String" name="municipio"/>
+        </Method>
+        <Method name="getEstado" returnType="String" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="getNumero" returnType="int" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="int" name="numero"/>
+        </Method>
+        <Method name="regresaDatos" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Producto" package="Modelo" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="int" visibility="public"/>
+        <Field name="nombre" type="String" visibility="public"/>
+        <Field name="precio" type="int" visibility="private"/>
+        <Field name="unidad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="precio"/>
+          <Argument type="String" name="unidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getPrecio" returnType="int" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="int" name="precio"/>
+        </Method>
+        <Method name="getUnidad" returnType="String" visibility="public"/>
+        <Method name="setUnidad" returnType="void" visibility="public">
+          <Argument type="String" name="unidad"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Proveedor" package="Modelo" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="razonSocial" type="String" visibility="private"/>
+        <Field name="calle" type="String" visibility="private"/>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="razonSocial"/>
+          <Argument type="String" name="rfc"/>
+          <Argument type="String" name="calle"/>
+          <Argument type="String" name="colonia"/>
+          <Argument type="String" name="municipio"/>
+          <Argument type="String" name="estado"/>
+          <Argument type="int" name="numero"/>
+          <Argument type="String" name="telefono"/>
+          <Argument type="String" name="celular"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getRazonSocial" returnType="String" visibility="public"/>
+        <Method name="setRazonSocial" returnType="void" visibility="public">
+          <Argument type="String" name="razonSocial"/>
+        </Method>
+        <Method name="getRfc" returnType="String" visibility="public"/>
+        <Method name="setRfc" returnType="void" visibility="public">
+          <Argument type="String" name="rfc"/>
+        </Method>
+        <Method name="getCalle" returnType="String" visibility="public"/>
+        <Method name="setCalle" returnType="void" visibility="public">
+          <Argument type="String" name="calle"/>
+        </Method>
+        <Method name="getColonia" returnType="String" visibility="public"/>
+        <Method name="setColonia" returnType="void" visibility="public">
+          <Argument type="String" name="colonia"/>
+        </Method>
+        <Method name="getMunicipio" returnType="String" visibility="public"/>
+        <Method name="setMunicipio" returnType="void" visibility="public">
+          <Argument type="String" name="municipio"/>
+        </Method>
+        <Method name="getEstado" returnType="String" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="getNumero" returnType="int" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="int" name="numero"/>
+        </Method>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="getCelular" returnType="String" visibility="public"/>
+        <Method name="setCelular" returnType="void" visibility="public">
+          <Argument type="String" name="celular"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="Modelo" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="empleado" type="Empleado" visibility="private"/>
+        <Field name="user" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Empleado" name="empleado"/>
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getEmpleado" returnType="Empleado" visibility="public"/>
+        <Method name="setEmpleado" returnType="void" visibility="public">
+          <Argument type="Empleado" name="empleado"/>
+        </Method>
+        <Method name="getUser" returnType="String" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="regresaDatos" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="Modelo" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="private"/>
+        <Field name="numSerie" type="int" visibility="private"/>
+        <Field name="operador" type="Empleado" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="int" name="numSerie"/>
+          <Argument type="int" name="anio"/>
+          <Argument type="Empleado" name="operador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMatricula" returnType="String" visibility="public"/>
+        <Method name="setMatricula" returnType="void" visibility="public">
+          <Argument type="String" name="matricula"/>
+        </Method>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getNumSerie" returnType="int" visibility="public"/>
+        <Method name="setNumSerie" returnType="void" visibility="public">
+          <Argument type="int" name="numSerie"/>
+        </Method>
+        <Method name="getAnio" returnType="int" visibility="public"/>
+        <Method name="setAnio" returnType="void" visibility="public">
+          <Argument type="int" name="anio"/>
+        </Method>
+        <Method name="getOperador" returnType="Empleado" visibility="public"/>
+        <Method name="setOperador" returnType="void" visibility="public">
+          <Argument type="Empleado" name="operador"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Venta" package="Modelo" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="cantidad" type="int" visibility="private"/>
+        <Field name="precio" type="int" visibility="private"/>
+        <Field name="subtotal" type="int" visibility="private"/>
+        <Field name="productos" type="Producto[]" visibility="private"/>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="int" name="cantidad"/>
+          <Argument type="int" name="subtotal"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Producto" name="productos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getCantidad" returnType="int" visibility="public"/>
+        <Method name="setCantidad" returnType="void" visibility="public">
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="getSubtotal" returnType="int" visibility="public"/>
+        <Method name="setSubtotal" returnType="void" visibility="public">
+          <Argument type="int" name="subtotal"/>
+        </Method>
+        <Method name="getCliente" returnType="Cliente" visibility="public"/>
+        <Method name="setCliente" returnType="void" visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="Totales" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="interfaceDatos" package="Vista" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="iconoEscalado" type="Icon" visibility="private"/>
+        <Field name="icon" type="ImageIcon" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPasswordField1" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jPanel1AncestorAdded" returnType="void" visibility="private">
+          <Argument type="javax.swing.event.AncestorEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTextField1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="interfaceLogin" package="Vista" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="interfaceMenu" package="Vista" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jMenu1" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu2" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu3" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="jMenuItem1" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem10" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem2" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem3" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem4" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem5" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem7" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem8" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem9" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jMenuItem1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="login" package="Vista" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPasswordField1" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Modelo.Venta" target="Modelo.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="operador" source="Modelo.Vehiculo" target="Modelo.Empleado" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Modelo.Vehiculo" target="Modelo.Empleado" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="Modelo.Venta" target="Modelo.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Modelo.Usuario" target="Modelo.Empleado" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="empleado" source="Modelo.Usuario" target="Modelo.Empleado" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -7,6 +7,7 @@ package Vista;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -65,6 +66,7 @@ public class interfaceMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 236, 232));
+        setIconImage(new ImageIcon(getClass().getResource("/resources/icon.png")).getImage());
 
         jPanel2.setBackground(new java.awt.Color(240, 236, 232));
 

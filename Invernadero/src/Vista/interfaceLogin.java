@@ -6,7 +6,10 @@
 package Vista;
 
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -17,9 +20,17 @@ public class interfaceLogin extends javax.swing.JFrame {
     /**
      * Creates new form interfaceLogin
      */
+    private Icon iconoEscalado;
     public interfaceLogin() {
         this.setUndecorated(true);
         initComponents();
+        
+        ImageIcon imgIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/logo.png")));
+        Image img = imgIcon.getImage();
+        Image img2 = img.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
+        iconoEscalado = new ImageIcon(img2);
+        jLabel1.setIcon(iconoEscalado);
+        
         
         setResizable(false);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -41,21 +52,18 @@ public class interfaceLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(new ImageIcon(getClass().getResource("/resources/icon.png")).getImage());
+        setSize(new java.awt.Dimension(400, 400));
 
         jPanel1.setBackground(new java.awt.Color(240, 236, 232));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setForeground(new java.awt.Color(255, 255, 51));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(104, 186, 138));
-        jLabel1.setText("Invernadero");
+        jPanel1.setPreferredSize(new java.awt.Dimension(400, 400));
 
         jButton1.setBackground(new java.awt.Color(240, 236, 232));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -69,11 +77,6 @@ public class interfaceLogin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(104, 186, 138));
-        jLabel2.setText("  \"El Gran Valle\"");
 
         jButton2.setBackground(new java.awt.Color(240, 236, 232));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/salir.png"))); // NOI18N
@@ -90,49 +93,38 @@ public class interfaceLogin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(124, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(60, 60, 60)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(60, 60, 60)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(110, 110, 110)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(jButton1)
                 .addGap(35, 35, 35)
                 .addComponent(jButton2)
                 .addGap(25, 25, 25))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(34, 34, 34)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, Short.MAX_VALUE)
-                    .addGap(200, 200, 200)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, Short.MAX_VALUE)
         );
 
         pack();
@@ -189,7 +181,6 @@ public class interfaceLogin extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

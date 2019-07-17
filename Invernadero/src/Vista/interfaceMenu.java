@@ -53,7 +53,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         int y = (dim.height - h) / 2;
         setLocation(x, y);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.setResizable(false);
+        this.setResizable(true);
     }
 
         

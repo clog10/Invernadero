@@ -1,24 +1,27 @@
-
 package Modelo;
 
 /**
  * El gran valle, Invernadero
+ *
  * @author Clog_10
  */
 public class Venta {
+
     private int id;
     private int cantidad;
     private int precio;
     private int subtotal;
-    private Producto [] productos;
+    private Producto[] productos;
     private Cliente cliente;
-    
-    public Venta(int id, int cantidad, int subtotal,Cliente cliente,Producto ... productos) {
-        this.id=id;
+    private Usuario user;
+
+    public Venta(int id, int cantidad, int subtotal, Cliente cliente,Usuario user, Producto... productos) {
+        this.id = id;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
-        this.productos=productos;
-        this.cliente=cliente;
+        this.productos = productos;
+        this.cliente = cliente;
+        this.user=user;
     }
 
     public int getId() {
@@ -53,23 +56,51 @@ public class Venta {
         this.cliente = cliente;
     }
 
-    public int Totales(){
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public Producto[] getProductos() {
+        return productos;
+    }
+
+    public void setProductos(Producto[] productos) {
+        this.productos = productos;
+    }
+
+    public Usuario getUser() {
+        return user;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
+    }
+
+    public int Totales() {
         //para obtener los totales de los productos y sumarlos
-        int total=0;
-        for(Producto p:productos){
-            total+=p.getPrecio();
+        int total = 0;
+        for (Producto p : productos) {
+            total += p.getPrecio();
         }
         return total;
     }
-    
+
     @Override
     public String toString() {
-        String datos= "  Cantidad: "+cantidad+" subtotal:"+subtotal+"\n";
-        datos+="Cliente: " + cliente.toString();
+        String datos = "Cliente: " + cliente.toString();
+        datos+="Vendió: "+user.getEmpleado().getNombre()+" "+user.getEmpleado().getaPaterno()+" "+user.getEmpleado().getaMaterno();
+       // datos = " Cantidad: " + cantidad + " subtotal:" + subtotal + " total: " + precio + "\n";
+        for(Producto p:productos){
+            datos +=""+p;
+        }
+        datos+=" subtotal:" + subtotal + " total: " + precio + "\n";;
         
         return datos;
     }
-    
 }
 
 

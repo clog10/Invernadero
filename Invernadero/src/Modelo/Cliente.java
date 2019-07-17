@@ -5,6 +5,7 @@ package Modelo;
  * El gran valle, Invernadero
  * @author Clog_10
  */
+
 public class Cliente {
     private int id;
     private String nombre,aPaterno,aMaterno;
@@ -142,4 +143,5 @@ public class Cliente {
     }
     
 }
+
 

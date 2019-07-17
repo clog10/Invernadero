@@ -12,7 +12,8 @@ public class Empleado {
     private String calle,colonia,municipio,estado;
     private int numero;
 
-    public Empleado(int id, String nombre, String aPaterno, String aMaterno, String numTel, String calle, String colonia, String municipio, String estado, int numero) {
+    public Empleado(int id, String nombre, String aPaterno, String aMaterno, String numTel, 
+                            String calle, String colonia, String municipio, String estado, int numero) {
         this.id = id;
         this.nombre = nombre;
         this.aPaterno = aPaterno;
@@ -115,4 +116,5 @@ public class Empleado {
     
     
 }
+
 

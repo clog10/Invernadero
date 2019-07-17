@@ -56,6 +56,7 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
         jTextField5 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
 
+        setTitle("Proovedores");
         setPreferredSize(new java.awt.Dimension(900, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 174, 71, -1));

@@ -107,7 +107,6 @@ public class interfaceMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(this.HIDE_ON_CLOSE);
         setBackground(new java.awt.Color(240, 236, 232));
         setIconImage(new ImageIcon(getClass().getResource("/resources/icon.png")).getImage());
-        setPreferredSize(new java.awt.Dimension(710, 470));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 formComponentResized(evt);
@@ -151,6 +150,11 @@ public class interfaceMenu extends javax.swing.JFrame {
 
         jMenuItem2.setText("Ventas");
         jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuItem3.setText("Almacen");
@@ -168,6 +172,11 @@ public class interfaceMenu extends javax.swing.JFrame {
 
         jMenuItem7.setText("Empleados");
         jMenuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem7);
 
         jMenuItem8.setText("Vehiculos");
@@ -287,6 +296,17 @@ public class interfaceMenu extends javax.swing.JFrame {
         closeCurrentWindow.setVisible(true);//Open the new window
         
     }//GEN-LAST:event_formWindowClosing
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+    //    vistaEmpleado empleado = new vistaEmpleado();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        vistaVenta ventas = new vistaVenta();
+        centrarVista(ventas);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
     
     //Metodo para reiniciar la vista de la ventana principal y no se encimen los jinternaframes
     public void reiniciarVista(){

@@ -19,7 +19,7 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 /**
  *
- * @author AMAURY
+ * @author 
  */
 public class interfaceMenu extends javax.swing.JFrame {
 
@@ -92,6 +92,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -178,6 +179,14 @@ public class interfaceMenu extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem7);
+
+        jMenuItem6.setText("Cliente");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem6);
 
         jMenuItem8.setText("Vehiculos");
         jMenuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -299,7 +308,8 @@ public class interfaceMenu extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-    //    vistaEmpleado empleado = new vistaEmpleado();
+        vistaEmpleado empleado = new vistaEmpleado();
+        centrarVista(empleado);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -307,6 +317,12 @@ public class interfaceMenu extends javax.swing.JFrame {
         vistaVenta ventas = new vistaVenta();
         centrarVista(ventas);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        vistaCliente cliente=new vistaCliente();
+        centrarVista(cliente);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
     
     //Metodo para reiniciar la vista de la ventana principal y no se encimen los jinternaframes
     public void reiniciarVista(){
@@ -361,6 +377,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;

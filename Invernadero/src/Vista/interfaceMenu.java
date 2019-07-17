@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import java.awt.Graphics;
+import javax.swing.JFrame;
 /**
  *
  * @author AMAURY
@@ -51,7 +52,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         int x = (dim.width - w) / 2;
         int y = (dim.height - h) / 2;
         setLocation(x, y);
-        this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setResizable(false);
     }
 

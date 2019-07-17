@@ -8,8 +8,12 @@ package Vista;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -27,6 +31,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     public interfaceMenu() {
         initComponents();
 
+        /*
         ImageIcon imgIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/logo.png")));
         Image img = imgIcon.getImage();
         Image img2 = img.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
@@ -38,7 +43,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         Image imgA = imgIconA.getImage();
         Image img2A = imgA.getScaledInstance(jLabel5.getWidth(), jLabel5.getHeight(), Image.SCALE_SMOOTH);
         anu = new ImageIcon(img2A);
-        jLabel5.setIcon(anu);
+        jLabel5.setIcon(anu); */
         
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         int w = getSize().width;
@@ -46,6 +51,8 @@ public class interfaceMenu extends javax.swing.JFrame {
         int x = (dim.width - w) / 2;
         int y = (dim.height - h) / 2;
         setLocation(x, y);
+        this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+        this.setResizable(false);
     }
 
         
@@ -62,9 +69,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jLabel2 = new javax.swing.JLabel();
-        vistaPrincipal = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        vistaPrincipal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -89,31 +94,21 @@ public class interfaceMenu extends javax.swing.JFrame {
         setBackground(new java.awt.Color(240, 236, 232));
         setIconImage(new ImageIcon(getClass().getResource("/resources/icon.png")).getImage());
         setPreferredSize(new java.awt.Dimension(710, 470));
-
-        vistaPrincipal.setBackground(new java.awt.Color(240, 236, 232));
-        vistaPrincipal.setPreferredSize(new java.awt.Dimension(650, 470));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
 
         javax.swing.GroupLayout vistaPrincipalLayout = new javax.swing.GroupLayout(vistaPrincipal);
         vistaPrincipal.setLayout(vistaPrincipalLayout);
         vistaPrincipalLayout.setHorizontalGroup(
             vistaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vistaPrincipalLayout.createSequentialGroup()
-                .addContainerGap(186, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(169, 169, 169))
-            .addGroup(vistaPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 622, Short.MAX_VALUE)
         );
         vistaPrincipalLayout.setVerticalGroup(
             vistaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(vistaPrincipalLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 382, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
@@ -183,17 +178,11 @@ public class interfaceMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(vistaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(vistaPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(vistaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(vistaPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -205,20 +194,35 @@ public class interfaceMenu extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        vistaPrincipal.removeAll();
-        vistaPrincipal.updateUI();           
-        this.setSize(720,500);
+        //vistaPrincipal.removeAll();
+        //vistaPrincipal.updateUI();           
+
         vistaVehiculos vehiculos = new vistaVehiculos();
-        BasicInternalFrameUI bi = (BasicInternalFrameUI)vehiculos.getUI();
-        bi.setNorthPane(null);
-        vehiculos.setBorder(null);
-        vistaPrincipal.add(vehiculos);
-        vehiculos.setVisible(true);
+        //BasicInternalFrameUI bi = (BasicInternalFrameUI)vehiculos.getUI();
+        //bi.setNorthPane(null);
+        //vehiculos.setBorder(null);
+        centrarVista(vehiculos);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    //Metodo para centrar los JInternalFrame dentro  del desktop frame
+    public void centrarVista(JInternalFrame fr){
+        try {
+            reiniciarVista();
+            vistaPrincipal.add(fr);
+            Dimension dim = vistaPrincipal.getSize();
+            Dimension dimForm = fr.getSize();
+            fr.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
+            fr.setMaximum(true);
+            fr.setUI(null);
+            fr.show();
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(interfaceMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
-        vistaPrincipal.removeAll();
+       /* vistaPrincipal.removeAll();
         vistaPrincipal.updateUI();           
         this.setSize(980,580);
         vistaProveedor proveedor = new vistaProveedor();
@@ -229,9 +233,25 @@ public class interfaceMenu extends javax.swing.JFrame {
         proveedor.setVisible(true);
         proveedor.setSize(950,500);
         this.setSize(980,580);
-        this.repaint();
+        this.repaint(); */
+       reiniciarVista();
+       vistaProveedor proveedor = new vistaProveedor();
+       centrarVista(proveedor);
+       
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        // TODO add your handling code here:
+        Dimension d = this.getContentPane().getSize();
+            // code to save frame size or calculate internal frame sizes
+        this.validate();
+    }//GEN-LAST:event_formComponentResized
+    
+    //Metodo para reiniciar la vista de la ventana principal y no se encimen los jinternaframes
+    public void reiniciarVista(){
+        vistaPrincipal.removeAll();
+        vistaPrincipal.updateUI();
+    }
     /**
      * @param args the command line arguments
      */
@@ -258,7 +278,7 @@ public class interfaceMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(interfaceMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -269,9 +289,7 @@ public class interfaceMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -285,6 +303,6 @@ public class interfaceMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JPanel vistaPrincipal;
+    private javax.swing.JDesktopPane vistaPrincipal;
     // End of variables declaration//GEN-END:variables
 }

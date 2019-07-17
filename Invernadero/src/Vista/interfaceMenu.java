@@ -14,8 +14,8 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
-import javax.swing.plaf.basic.BasicInternalFrameUI;
-
+import javax.swing.JOptionPane;
+import java.awt.Graphics;
 /**
  *
  * @author AMAURY
@@ -69,7 +69,16 @@ public class interfaceMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jLabel2 = new javax.swing.JLabel();
-        vistaPrincipal = new javax.swing.JDesktopPane();
+        ImageIcon icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/fondo.png")));
+        Image img = icon.getImage();
+        vistaPrincipal = new javax.swing.JDesktopPane(){
+
+            public void paintComponent(Graphics g){
+                g.drawImage(img,0,0,getWidth(),getHeight(),this);
+
+            }
+
+        };
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -90,7 +99,7 @@ public class interfaceMenu extends javax.swing.JFrame {
 
         jLabel2.setText("jLabel2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(this.HIDE_ON_CLOSE);
         setBackground(new java.awt.Color(240, 236, 232));
         setIconImage(new ImageIcon(getClass().getResource("/resources/icon.png")).getImage());
         setPreferredSize(new java.awt.Dimension(710, 470));
@@ -99,16 +108,24 @@ public class interfaceMenu extends javax.swing.JFrame {
                 formComponentResized(evt);
             }
         });
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         javax.swing.GroupLayout vistaPrincipalLayout = new javax.swing.GroupLayout(vistaPrincipal);
         vistaPrincipal.setLayout(vistaPrincipalLayout);
         vistaPrincipalLayout.setHorizontalGroup(
             vistaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 622, Short.MAX_VALUE)
+            .addGap(0, 710, Short.MAX_VALUE)
         );
         vistaPrincipalLayout.setVerticalGroup(
             vistaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
@@ -239,6 +256,7 @@ public class interfaceMenu extends javax.swing.JFrame {
        centrarVista(proveedor);
        
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+    
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
         // TODO add your handling code here:
@@ -246,6 +264,24 @@ public class interfaceMenu extends javax.swing.JFrame {
             // code to save frame size or calculate internal frame sizes
         this.validate();
     }//GEN-LAST:event_formComponentResized
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
+    
+     private void cerrar(){
+        if (JOptionPane.showConfirmDialog(rootPane, "¿Esta seguro que desea salir?, su sesión será cerrada.",
+                "Cerrar Sesión", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
+    }  
+     
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        cerrar();
+        this.dispose();
+        interfaceLogin closeCurrentWindow = new interfaceLogin();
+        closeCurrentWindow.setVisible(true);//Open the new window
+        
+    }//GEN-LAST:event_formWindowClosing
     
     //Metodo para reiniciar la vista de la ventana principal y no se encimen los jinternaframes
     public void reiniciarVista(){

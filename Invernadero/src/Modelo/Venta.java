@@ -2,26 +2,27 @@ package Modelo;
 
 /**
  * El gran valle, Invernadero
- *
  * @author Clog_10
  */
+
 public class Venta {
 
     private int id;
     private int cantidad;
-    private int precio;
+    private int total;
     private int subtotal;
     private Producto[] productos;
     private Cliente cliente;
     private Usuario user;
 
-    public Venta(int id, int cantidad, int subtotal, Cliente cliente,Usuario user, Producto... productos) {
+    public Venta(int id, int cantidad, int subtotal,int total, Cliente cliente,Usuario user, Producto... productos) {
         this.id = id;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
         this.productos = productos;
         this.cliente = cliente;
         this.user=user;
+        this.total=total;
     }
 
     public int getId() {
@@ -56,12 +57,12 @@ public class Venta {
         this.cliente = cliente;
     }
 
-    public int getPrecio() {
-        return precio;
+    public int getTotal() {
+        return total;
     }
 
-    public void setPrecio(int precio) {
-        this.precio = precio;
+    public void setTotal(int total) {
+        this.total = total;
     }
 
     public Producto[] getProductos() {
@@ -82,7 +83,7 @@ public class Venta {
 
     public int Totales() {
         //para obtener los totales de los productos y sumarlos
-        int total = 0;
+        //int total = 0;
         for (Producto p : productos) {
             total += p.getPrecio();
         }
@@ -97,11 +98,17 @@ public class Venta {
         for(Producto p:productos){
             datos +=""+p;
         }
-        datos+=" subtotal:" + subtotal + " total: " + precio + "\n";;
+       datos+=" subtotal:" + subtotal + " total: " + total + "\n";
         
         return datos;
     }
 }
+
+
+
+
+
+
 
 
 

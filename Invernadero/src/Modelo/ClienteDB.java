@@ -47,7 +47,7 @@ public class ClienteDB {
             ps.executeUpdate();
             return true;
         } catch (SQLException exception) {
-            System.err.println("Error en al añadir (Cliente)" + exception);
+            System.err.println("Error en al añadir (Cliente) " + exception);
             return false;
         }
     }
@@ -106,6 +106,7 @@ public class ClienteDB {
         return clientes;
     }
 }
+
 
 
 

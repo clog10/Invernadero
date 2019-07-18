@@ -19,12 +19,13 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
     private ClienteDB c;
     private DBTabla tabla;
-    
+    private  Cliente cliente;
     /**
      * Creates new form vistaCliente
      */
     public vistaCliente() {
         initComponents();
+        c=new ClienteDB();
        // cargarTabla();
     }
 
@@ -306,7 +307,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Cliente cliente;
+       //Cliente cliente;
         
         cliente=new Cliente(Integer.parseInt(jTextField1.getText()),jTextField12.getText(),jTextField3.getText(),
                                jTextField4.getText(),jTextField5.getText(),jTextField6.getText(),jTextField10.getText(),

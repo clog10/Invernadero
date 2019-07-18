@@ -315,6 +315,8 @@ public class vistaCliente extends javax.swing.JInternalFrame {
                             jTextField11.getText(),jTextField12.getText(),jTextField13.getText());
         c.insertCliente(cliente);
         cargarTabla();
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  * Invernadero Gran Valle
@@ -14,14 +15,14 @@ import java.util.List;
 public class ClienteDB {
     
      private Conectiondb conectiondb;
-    private String db = "dbInvernadero";
+   // private String db = "dbInvernadero";
     private Vista.vistaCliente vista;
     private List<Cliente> clientes;
     
     private static ClienteDB c;
     
     public ClienteDB(){
-        conectiondb = new Conectiondb(db, "127.0.0.1");
+        //conectiondb = new Conectiondb(db, "127.0.0.1");
         this.vista = vista;
     }
     
@@ -45,6 +46,7 @@ public class ClienteDB {
             ps.setString(13, c.getRFC());
 
             ps.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Cliente añadido");
             return true;
         } catch (SQLException exception) {
             System.err.println("Error en al añadir (Cliente) " + exception);
@@ -71,9 +73,11 @@ public class ClienteDB {
                 public List<Cliente> listCliente() {
         PreparedStatement ps;
         ResultSet rs;
-        String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
-                                + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
+        //String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
+          //                      + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
 
+          String consultaSQL = "select * from invernadero_gran_valle.cliente;"; 
+          
         clientes = new ArrayList<Cliente>();
         try {
             ps = conectiondb.getConexion().prepareStatement(consultaSQL);
@@ -106,6 +110,9 @@ public class ClienteDB {
         return clientes;
     }
 }
+
+
+
 
 
 

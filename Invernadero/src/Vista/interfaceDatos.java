@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.Conectiondb;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -16,13 +17,17 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author AMAURY
+ * @author
  */
 public class interfaceDatos extends javax.swing.JFrame {
 
     /**
      * Creates new form interfaceDatos
      */
+    
+     private Conectiondb conectiondb;
+    private String db = "dbInvernadero";
+    
     private Icon iconoEscalado;
     private ImageIcon icon;
     private Icon iconoLetras;
@@ -226,6 +231,7 @@ public class interfaceDatos extends javax.swing.JFrame {
                 JOptionPane.showConfirmDialog(null,"Su usuario o contraseña es incorrecto");
             }
         }
+        conectiondb = new Conectiondb(db, "127.0.0.1");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

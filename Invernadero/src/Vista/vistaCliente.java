@@ -10,6 +10,7 @@ import Modelo.ClienteDB;
 import Modelo.DBTabla;
 import java.util.List;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 
 /**
  * Invernadero Gran Valle
@@ -77,6 +78,27 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -314,13 +336,21 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
        //Cliente cliente;
         
-        cliente=new Cliente(Integer.parseInt(jTextField1.getText()),jTextField12.getText(),jTextField3.getText(),
+       if(jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() || jTextField4.getText().isEmpty()
+          || jTextField5.getText().isEmpty() || jTextField6.getText().isEmpty() || jTextField7.getText().isEmpty() || jTextField8.getText().isEmpty()
+          || jTextField9.getText().isEmpty() || jTextField10.getText().isEmpty() || jTextField11.getText().isEmpty() || jTextField12.getText().isEmpty()
+               || jTextField13.getText().isEmpty()){
+       
+        JOptionPane.showMessageDialog(null, "Campos Vacios, Verificar", "Error", JOptionPane.ERROR_MESSAGE);
+       }else{
+            cliente=new Cliente(Integer.parseInt(jTextField1.getText()),jTextField12.getText(),jTextField3.getText(),
                                jTextField4.getText(),jTextField5.getText(),jTextField6.getText(),jTextField10.getText(),
                             jTextField8.getText(),jTextField9.getText(),Integer.parseInt(jTextField7.getText()),
                             jTextField11.getText(),jTextField12.getText(),jTextField13.getText());
         c.insertCliente(cliente);
         cargarTabla();
         vaciarCampos();
+       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

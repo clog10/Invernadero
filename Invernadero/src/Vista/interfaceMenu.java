@@ -19,14 +19,14 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 /**
  *
- * @author 
+ * @author
  */
 public class interfaceMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form interfaceMenu
      */
-    
+
     private Icon iconoEscalado;
     private Icon anu;
     public interfaceMenu() {
@@ -38,29 +38,29 @@ public class interfaceMenu extends javax.swing.JFrame {
         Image img2 = img.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
         iconoEscalado = new ImageIcon(img2);
         jLabel1.setIcon(iconoEscalado);
-        
+
         //icono anu
         ImageIcon imgIconA = new ImageIcon(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/anu.png")));
         Image imgA = imgIconA.getImage();
         Image img2A = imgA.getScaledInstance(jLabel5.getWidth(), jLabel5.getHeight(), Image.SCALE_SMOOTH);
         anu = new ImageIcon(img2A);
         jLabel5.setIcon(anu); */
-        
+
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         int w = getSize().width;
         int h = getSize().height;
         int x = (dim.width - w) / 2;
         int y = (dim.height - h) / 2;
         setLocation(0, 0);
-        
+
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setSize(screenSize);
         this.setResizable(false); // THEN  resizable = false
-                
+
     }
 
-        
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -235,7 +235,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
         //vistaPrincipal.removeAll();
-        //vistaPrincipal.updateUI();           
+        //vistaPrincipal.updateUI();
 
         vistaVehiculos vehiculos = new vistaVehiculos();
         //BasicInternalFrameUI bi = (BasicInternalFrameUI)vehiculos.getUI();
@@ -259,11 +259,11 @@ public class interfaceMenu extends javax.swing.JFrame {
             Logger.getLogger(interfaceMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
        /* vistaPrincipal.removeAll();
-        vistaPrincipal.updateUI();           
+        vistaPrincipal.updateUI();
         this.setSize(980,580);
         vistaProveedor proveedor = new vistaProveedor();
         BasicInternalFrameUI bi = (BasicInternalFrameUI)proveedor.getUI();
@@ -277,9 +277,9 @@ public class interfaceMenu extends javax.swing.JFrame {
        reiniciarVista();
        vistaProveedor proveedor = new vistaProveedor();
        centrarVista(proveedor);
-       
+
     }//GEN-LAST:event_jMenuItem9ActionPerformed
-    
+
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
         // TODO add your handling code here:
@@ -291,19 +291,22 @@ public class interfaceMenu extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosed
-    
+
      private void cerrar(){
         if (JOptionPane.showConfirmDialog(rootPane, "¿Esta seguro que desea salir?, su sesión será cerrada.",
-                "Cerrar Sesión", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
-    }  
-     
+                "Cerrar Sesión", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+                    this.dispose();
+                    interfaceLogin closeCurrentWindow = new interfaceLogin();
+                    closeCurrentWindow.setVisible(true);//Open the new window
+        }else{
+          //cambios
+            this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        }
+    }
+
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         cerrar();
-        this.dispose();
-        interfaceLogin closeCurrentWindow = new interfaceLogin();
-        closeCurrentWindow.setVisible(true);//Open the new window
-        
     }//GEN-LAST:event_formWindowClosing
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
@@ -323,7 +326,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         vistaCliente cliente=new vistaCliente();
         centrarVista(cliente);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
-    
+
     //Metodo para reiniciar la vista de la ventana principal y no se encimen los jinternaframes
     public void reiniciarVista(){
         vistaPrincipal.removeAll();
@@ -336,7 +339,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -355,7 +358,7 @@ public class interfaceMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(interfaceMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

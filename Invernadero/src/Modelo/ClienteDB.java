@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class ClienteDB {
 
     // private Conectiondb conectiondb;
-    //private String db = "dbInvernadero";
+    //private String db = "Invernadero";
     private Vista.vistaCliente vista;
     //public List<Cliente> clientes;
 
@@ -97,7 +97,7 @@ public class ClienteDB {
                 c.setTelefono(rs.getString("telefono"));
                 c.setCelular(rs.getString("celular"));
                 c.setEmail(rs.getString("e_mail"));
-                c.setRFC(rs.getString("rfc"));
+                c.setRFC(rs.getString("rfc_cliente"));
 
                 clientes.add(c);
 

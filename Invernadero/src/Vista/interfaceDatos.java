@@ -26,7 +26,7 @@ public class interfaceDatos extends javax.swing.JFrame {
      */
     
      public static  Conectiondb conectiondb;
-    public String db = "dbInvernadero";
+    public String db = "Invernadero";
     
     private Icon iconoEscalado;
     private ImageIcon icon;

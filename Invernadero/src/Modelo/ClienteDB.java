@@ -1,6 +1,6 @@
-
 package Modelo;
 
+import Vista.interfaceDatos;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,27 +10,27 @@ import javax.swing.JOptionPane;
 
 /**
  * Invernadero Gran Valle
+ *
  * @author Clog_10
  */
 public class ClienteDB {
-    
-     private Conectiondb conectiondb;
-   // private String db = "dbInvernadero";
+
+    // private Conectiondb conectiondb;
+    //private String db = "dbInvernadero";
     private Vista.vistaCliente vista;
-    private List<Cliente> clientes;
-    
-    private static ClienteDB c;
-    
-    public ClienteDB(){
-        //conectiondb = new Conectiondb(db, "127.0.0.1");
+    //public List<Cliente> clientes;
+
+    // private static ClienteDB c;
+    public ClienteDB() {
+        // conectiondb = new Conectiondb(db, "127.0.0.1");
         this.vista = vista;
     }
-    
-        public boolean insertCliente(Cliente c) {
+
+    public boolean insertCliente(Cliente c) {
         PreparedStatement ps;
         String sqlInsertCliente = "insert into invernadero_gran_valle.cliente values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
         try {
-            ps = conectiondb.getConexion().prepareStatement(sqlInsertCliente);
+            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
             ps.setInt(1, c.getId());
             ps.setString(2, c.getNombre());
             ps.setString(3, c.getaPaterno());
@@ -46,20 +46,20 @@ public class ClienteDB {
             ps.setString(13, c.getRFC());
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Cliente añadido");
+            JOptionPane.showMessageDialog(null, "Cliente añadido");
             return true;
         } catch (SQLException exception) {
             System.err.println("Error en al añadir (Cliente) " + exception);
             return false;
         }
     }
-        
-            public boolean deleteCliente(Cliente c) {
+
+    public boolean deleteCliente(Cliente c) {
         PreparedStatement ps;
         String sqlDeleteCliente = "delete from invernadero_gran_valle.cliente where id_cliente  = ?;";
 
         try {
-            ps = conectiondb.getConexion().prepareStatement(sqlDeleteCliente);
+            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlDeleteCliente);
             ps.setInt(1, c.getId());
 
             ps.executeUpdate();
@@ -69,18 +69,19 @@ public class ClienteDB {
             return false;
         }
     }
-    
-                public List<Cliente> listCliente() {
+
+    public List<Cliente> listCliente() {
         PreparedStatement ps;
         ResultSet rs;
         //String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
-          //                      + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
+        //                      + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
 
-          String consultaSQL = "select * from invernadero_gran_valle.cliente;"; 
-          
-        clientes = new ArrayList<Cliente>();
+        String consultaSQL = "select * from invernadero_gran_valle.cliente;";
+
+        List<Cliente> clientes = new ArrayList<Cliente>();
+        System.out.println("Hola");
         try {
-            ps = conectiondb.getConexion().prepareStatement(consultaSQL);
+            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(consultaSQL);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Cliente c = new Cliente();
@@ -97,11 +98,11 @@ public class ClienteDB {
                 c.setCelular(rs.getString("celular"));
                 c.setEmail(rs.getString("e_mail"));
                 c.setRFC(rs.getString("rfc"));
-                
+
                 clientes.add(c);
 
-                for(Cliente q:clientes){
-                    System.out.println(q.getId());
+                for (Cliente q : clientes) {
+                    System.out.println(q.regresaDatos());
                 }
             }
         } catch (SQLException exception) {
@@ -110,14 +111,6 @@ public class ClienteDB {
         return clientes;
     }
 }
-
-
-
-
-
-
-
-
 
 
 

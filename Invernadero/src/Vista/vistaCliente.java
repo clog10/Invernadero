@@ -12,13 +12,13 @@ import java.util.List;
 import java.util.Vector;
 
 /**
- *
+ * Invernadero Gran Valle
  * @author Clog_10
  */
 public class vistaCliente extends javax.swing.JInternalFrame {
 
     private ClienteDB c;
-    private DBTabla tabla;
+   // private DBTabla tabla;
     private  Cliente cliente;
     /**
      * Creates new form vistaCliente
@@ -26,7 +26,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
     public vistaCliente() {
         initComponents();
         c=new ClienteDB();
-       // cargarTabla();
+        cargarTabla();
     }
 
     /**
@@ -129,6 +129,11 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eliminar.png"))); // NOI18N
         jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/salir.png"))); // NOI18N
         jButton5.setBorder(null);
@@ -315,8 +320,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
                             jTextField11.getText(),jTextField12.getText(),jTextField13.getText());
         c.insertCliente(cliente);
         cargarTabla();
-        
-        
+        vaciarCampos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -328,18 +332,37 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    public void vaciarCampos(){
+        jTextField1.setText(" ");
+        jTextField2.setText(" ");
+        jTextField3.setText(" ");
+        jTextField4.setText(" ");
+        jTextField5.setText(" ");
+        jTextField6.setText(" ");
+        jTextField7.setText(" ");
+        jTextField8.setText(" ");
+        jTextField9.setText(" ");
+        jTextField10.setText(" ");
+        jTextField11.setText(" ");
+        jTextField12.setText(" ");
+        jTextField13.setText(" ");
+    }
+    
     
         protected void cargarTabla() {
         Vector<Object> fila;
-
-       // for (int i = jTable2.getRowCount(); i > 0; i--) {
-         //   jTable2.remove(-1);
-        //}
-
         List<Cliente> clientes = c.listCliente();
-
+        int i=0;
         for (Cliente client : clientes) {
-            fila = new Vector<Object>();
+            
+            
+           
+            
+           /* fila = new Vector<Object>();
             fila.add(client.getId());
             fila.add(client.getRFC());
             fila.add(client.getNombre());
@@ -352,13 +375,29 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             fila.add(client.getEstado());
             fila.add(client.getTelefono());
             fila.add(client.getCelular());
-            fila.add(client.getEmail());
-            
-            getTabla().tableModel.addRow(fila);
+            fila.add(client.getEmail());*/
+           
+            jTable2.setValueAt(client.getId(),i ,0);
+            jTable2.setValueAt(client.getRFC(), i, 1);
+            jTable2.setValueAt(client.getNombre(),i,2);
+            jTable2.setValueAt(client.getaPaterno(), i,3);
+            jTable2.setValueAt(client.getaMaterno(), i, 4);
+            jTable2.setValueAt(client.getCalle(),i,5);
+            jTable2.setValueAt(client.getNumero(),i,6);
+            jTable2.setValueAt(client.getColonia(),i,7);
+            jTable2.setValueAt(client.getMunicipio(),i,8);
+            jTable2.setValueAt(client.getEstado(),i,9);
+            jTable2.setValueAt(client.getTelefono(), i, 10);
+            jTable2.setValueAt(client.getCelular(), i, 11);
+            jTable2.setValueAt(client.getEmail(), i, 12);
+
+            //getTabla().tableModel.addRow(fila);
+           
+            i++;
         }
     }
         
-        public DBTabla getTabla() { return tabla; }
+       // public DBTabla getTabla() { return tabla; }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

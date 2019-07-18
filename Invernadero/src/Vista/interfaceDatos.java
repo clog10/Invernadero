@@ -25,8 +25,8 @@ public class interfaceDatos extends javax.swing.JFrame {
      * Creates new form interfaceDatos
      */
     
-     private Conectiondb conectiondb;
-    private String db = "dbInvernadero";
+     public static  Conectiondb conectiondb;
+    public String db = "dbInvernadero";
     
     private Icon iconoEscalado;
     private ImageIcon icon;

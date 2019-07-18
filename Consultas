@@ -1,0 +1,17 @@
+("insert into " + "cliente(id_cliente,rfc,nombre,aPaterno,aMaterno,calle,numero,colonia,
+                    municipo,estado,numero,celular,correo)"
+                     + " values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+("insert into"+"empleado(id_empleado,nombre,aPaterno,aMaterno,calle,numero,colonia,
+                    municipo,estado,telefono)"+"values(?,?,?,?,?,?,?,?,?,?)");                     
+
+("insert into"+"vehiculos(matricula,marca,modelo,numSerie,anio,operador)"+"values(?,?,?,?,?,?)");
+("insert into"+"proveedores(id)_prove,razonSocial,rfc,calle,numero,colonia,municipio,estado,telefono,celular,email"
+           +"vales(?,?,?,?,?,?,?,?,?,?,?)");
+
+("insert into"+"producto(id_pro,nombre,uni_medida,pre_unitario)"+"vales (?,?,?,?)");
+
+
+---------------------------------------------------------
+Son solo para agregar, si no jala creo que hay que 
+especificar la base con el modelo de las tablas
+---------------------------------------------------------

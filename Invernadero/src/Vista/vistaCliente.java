@@ -5,17 +5,27 @@
  */
 package Vista;
 
+import Modelo.Cliente;
+import Modelo.ClienteDB;
+import Modelo.DBTabla;
+import java.util.List;
+import java.util.Vector;
+
 /**
  *
  * @author Clog_10
  */
 public class vistaCliente extends javax.swing.JInternalFrame {
 
+    private ClienteDB c;
+    private DBTabla tabla;
+    
     /**
      * Creates new form vistaCliente
      */
     public vistaCliente() {
         initComponents();
+       // cargarTabla();
     }
 
     /**
@@ -296,6 +306,14 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Cliente cliente;
+        
+        cliente=new Cliente(Integer.parseInt(jTextField1.getText()),jTextField12.getText(),jTextField3.getText(),
+                               jTextField4.getText(),jTextField5.getText(),jTextField6.getText(),jTextField10.getText(),
+                            jTextField8.getText(),jTextField9.getText(),Integer.parseInt(jTextField7.getText()),
+                            jTextField11.getText(),jTextField12.getText(),jTextField13.getText());
+        c.insertCliente(cliente);
+        cargarTabla();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -307,6 +325,37 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    
+        protected void cargarTabla() {
+        Vector<Object> fila;
+
+       // for (int i = jTable2.getRowCount(); i > 0; i--) {
+         //   jTable2.remove(-1);
+        //}
+
+        List<Cliente> clientes = c.listCliente();
+
+        for (Cliente client : clientes) {
+            fila = new Vector<Object>();
+            fila.add(client.getId());
+            fila.add(client.getRFC());
+            fila.add(client.getNombre());
+            fila.add(client.getaPaterno());
+            fila.add(client.getaMaterno());
+            fila.add(client.getCalle());
+            fila.add(client.getNumero());
+            fila.add(client.getColonia());
+            fila.add(client.getMunicipio());
+            fila.add(client.getEstado());
+            fila.add(client.getTelefono());
+            fila.add(client.getCelular());
+            fila.add(client.getEmail());
+            
+            getTabla().tableModel.addRow(fila);
+        }
+    }
+        
+        public DBTabla getTabla() { return tabla; }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -344,5 +393,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+
 }
 

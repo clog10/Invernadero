@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
- *
+ * Invernadero Gran Valle
  * @author Clog_10
  */
 public class Conectiondb {
@@ -62,5 +62,6 @@ public class Conectiondb {
     }
     
 }
+
 
 

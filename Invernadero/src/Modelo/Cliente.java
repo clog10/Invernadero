@@ -13,8 +13,8 @@ public class Cliente {
     private int numero;
     private String celular,telefono,email,RFC;
 
-    public Cliente(int id,String nombre, String aPaterno, String aMaterno, String calle, String colonia, String municipio, 
-                                String estado, int numero, String celular, String telefono, String email, String RFC) {
+    public Cliente(int id, String RFC,String nombre, String aPaterno, String aMaterno, String calle, String colonia, String municipio, 
+                                String estado, int numero, String celular, String telefono, String email) {
         this.id=id;
         this.nombre = nombre;
         this.aPaterno = aPaterno;
@@ -28,6 +28,10 @@ public class Cliente {
         this.telefono = telefono;
         this.email = email;
         this.RFC = RFC;
+    }
+    
+    public Cliente(){
+        
     }
 
     public String getNombre() {
@@ -143,5 +147,7 @@ public class Cliente {
     }
     
 }
+
+
 
 

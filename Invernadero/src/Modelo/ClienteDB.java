@@ -13,7 +13,104 @@ import java.util.List;
  */
 public class ClienteDB {
     
+     private Conectiondb conectiondb;
+    private String db = "dbInvernadero";
+    private Vista.vistaCliente vista;
+    private List<Cliente> clientes;
+    
+    private static ClienteDB c;
+    
+    public ClienteDB(){
+        conectiondb = new Conectiondb(db, "127.0.0.1");
+        this.vista = vista;
+    }
+    
+        public boolean insertCliente(Cliente c) {
+        PreparedStatement ps;
+        String sqlInsertCliente = "insert into invernadero_gran_valle.cliente values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        try {
+            ps = conectiondb.getConexion().prepareStatement(sqlInsertCliente);
+            ps.setInt(1, c.getId());
+            ps.setString(2, c.getNombre());
+            ps.setString(3, c.getaPaterno());
+            ps.setString(4, c.getaMaterno());
+            ps.setString(5, c.getCalle());
+            ps.setInt(6, c.getNumero());
+            ps.setString(7, c.getColonia());
+            ps.setString(8, c.getMunicipio());
+            ps.setString(9, c.getEstado());
+            ps.setString(10, c.getTelefono());
+            ps.setString(11, c.getCelular());
+            ps.setString(12, c.getEmail());
+            ps.setString(13, c.getRFC());
+
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException exception) {
+            System.err.println("Error en al añadir (Cliente)" + exception);
+            return false;
+        }
+    }
+        
+            public boolean deleteCliente(Cliente c) {
+        PreparedStatement ps;
+        String sqlDeleteCliente = "delete from invernadero_gran_valle.cliente where id_cliente  = ?;";
+
+        try {
+            ps = conectiondb.getConexion().prepareStatement(sqlDeleteCliente);
+            ps.setInt(1, c.getId());
+
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException exception) {
+            System.err.println("Error al borrar (Cliente)" + exception);
+            return false;
+        }
+    }
+    
+                public List<Cliente> listCliente() {
+        PreparedStatement ps;
+        ResultSet rs;
+        String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
+                                + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
+
+        clientes = new ArrayList<Cliente>();
+        try {
+            ps = conectiondb.getConexion().prepareStatement(consultaSQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Cliente c = new Cliente();
+                c.setId(rs.getInt("id_cliente"));
+                c.setNombre(rs.getString("nombre"));
+                c.setaPaterno(rs.getString("a_paterno"));
+                c.setaMaterno(rs.getString("a_materno"));
+                c.setCalle(rs.getString("calle"));
+                c.setNumero(rs.getInt("numero"));
+                c.setColonia(rs.getString("colonia"));
+                c.setMunicipio(rs.getString("municipio"));
+                c.setEstado(rs.getString("estado"));
+                c.setTelefono(rs.getString("telefono"));
+                c.setCelular(rs.getString("celular"));
+                c.setEmail(rs.getString("e_mail"));
+                c.setRFC(rs.getString("rfc"));
+                
+                clientes.add(c);
+
+                for(Cliente q:clientes){
+                    System.out.println(q.getId());
+                }
+            }
+        } catch (SQLException exception) {
+            System.err.println("Error al CARGAR DATOS (Cliente) " + exception);
+        }
+        return clientes;
+    }
 }
+
+
+
+
+
 
 
 

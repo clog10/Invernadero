@@ -349,7 +349,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
                             jTextField11.getText(),jTextField12.getText(),jTextField13.getText());
         c.insertCliente(cliente);
         cargarTabla();
-        vaciarCampos();
+       // vaciarCampos();
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -366,7 +366,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    public void vaciarCampos(){
+  /*  public void vaciarCampos(){
         jTextField1.setText(" ");
         jTextField2.setText(" ");
         jTextField3.setText(" ");
@@ -380,7 +380,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         jTextField11.setText(" ");
         jTextField12.setText(" ");
         jTextField13.setText(" ");
-    }
+    }*/
     
     
         protected void cargarTabla() {

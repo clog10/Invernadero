@@ -128,11 +128,11 @@ public class interfaceMenu extends javax.swing.JFrame {
         vistaPrincipal.setLayout(vistaPrincipalLayout);
         vistaPrincipalLayout.setHorizontalGroup(
             vistaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 706, Short.MAX_VALUE)
+            .addGap(0, 710, Short.MAX_VALUE)
         );
         vistaPrincipalLayout.setVerticalGroup(
             vistaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
@@ -245,17 +245,31 @@ public class interfaceMenu extends javax.swing.JFrame {
         //vehiculos.setBorder(null);
         centrarVista(vehiculos);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
-
+    
+    public void centrarVistaDATOS(JInternalFrame fr){
+        vistaPrincipal.add(fr);
+        Dimension dim = vistaPrincipal.getSize();
+        Dimension dimForm = fr.getSize();
+        fr.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
+        fr.setClosable(true);
+        fr.show();
+    }
+    
     //Metodo para centrar los JInternalFrame dentro  del desktop frame
     public void centrarVista(JInternalFrame fr){
         try {
-            reiniciarVista();
+            //reiniciarVista();
             vistaPrincipal.add(fr);
             Dimension dim = vistaPrincipal.getSize();
             Dimension dimForm = fr.getSize();
             fr.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
             fr.setMaximum(true);
+            
+            //fr.setClosable(true);
+            //fr.setIconifiable(true);
+            //fr.setMaximizable(true);
             //fr.setUI(null);
+            
             fr.show();
         } catch (PropertyVetoException ex) {
             Logger.getLogger(interfaceMenu.class.getName()).log(Level.SEVERE, null, ex);
@@ -276,7 +290,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         proveedor.setSize(950,500);
         this.setSize(980,580);
         this.repaint(); */
-       reiniciarVista();
+       //reiniciarVista();
        vistaProveedor proveedor = new vistaProveedor();
        centrarVista(proveedor);
 
@@ -386,6 +400,6 @@ public class interfaceMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JDesktopPane vistaPrincipal;
+    public static javax.swing.JDesktopPane vistaPrincipal;
     // End of variables declaration//GEN-END:variables
 }

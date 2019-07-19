@@ -122,15 +122,17 @@ public class interfaceMenu extends javax.swing.JFrame {
             }
         });
 
+        vistaPrincipal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout vistaPrincipalLayout = new javax.swing.GroupLayout(vistaPrincipal);
         vistaPrincipal.setLayout(vistaPrincipalLayout);
         vistaPrincipalLayout.setHorizontalGroup(
             vistaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addGap(0, 706, Short.MAX_VALUE)
         );
         vistaPrincipalLayout.setVerticalGroup(
             vistaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGap(0, 445, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
@@ -253,7 +255,7 @@ public class interfaceMenu extends javax.swing.JFrame {
             Dimension dimForm = fr.getSize();
             fr.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
             fr.setMaximum(true);
-            fr.setUI(null);
+            //fr.setUI(null);
             fr.show();
         } catch (PropertyVetoException ex) {
             Logger.getLogger(interfaceMenu.class.getName()).log(Level.SEVERE, null, ex);

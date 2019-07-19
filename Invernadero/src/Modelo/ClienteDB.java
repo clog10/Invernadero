@@ -73,13 +73,12 @@ public class ClienteDB {
     public List<Cliente> listCliente() {
         PreparedStatement ps;
         ResultSet rs;
-        //String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
-        //                      + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
+        String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
+                              + "estado,telefono,celular,e_mail,rfc_cliente from invernadero_gran_valle.cliente;";
 
-        String consultaSQL = "select * from invernadero_gran_valle.cliente;";
+        //String consultaSQL = "select * from invernadero_gran_valle.cliente;";
 
         List<Cliente> clientes = new ArrayList<Cliente>();
-        System.out.println("Hola");
         try {
             ps = interfaceDatos.conectiondb.getConexion().prepareStatement(consultaSQL);
             rs = ps.executeQuery();

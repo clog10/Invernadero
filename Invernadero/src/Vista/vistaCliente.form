@@ -359,7 +359,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Calle; "/>
+            <Property name="text" type="java.lang.String" value="Calle: "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">

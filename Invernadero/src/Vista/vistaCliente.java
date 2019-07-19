@@ -122,7 +122,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Direccion");
 
-        jLabel7.setText("Calle; ");
+        jLabel7.setText("Calle: ");
 
         jLabel8.setText("Numero: ");
 

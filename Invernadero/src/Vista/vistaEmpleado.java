@@ -5,11 +5,21 @@
  */
 package Vista;
 
-/**
- *
- * @author Clog_10
- */
+
+import javax.swing.JOptionPane;
+import Modelo.Empleado; 
+import Modelo.EmpleadoDB;
+import java.util.List;
+import java.util.Vector;
+
 public class vistaEmpleado extends javax.swing.JInternalFrame {
+ private EmpleadoDB e;
+    private  Empleado empleado;
+    public vistaEmpleado() {
+  
+        initComponents();
+        e=new EmpleadoDB();
+        cargarTabla();
 
     /**
      * Creates new form vistaCliente

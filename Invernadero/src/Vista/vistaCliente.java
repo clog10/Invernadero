@@ -138,10 +138,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+                                      
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -155,7 +152,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
       //  centrarVistaDATOS(datosCliente);
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
     public void centrarVistaDATOS(JInternalFrame fr){
         iM.add(fr);
@@ -164,7 +161,38 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         fr.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
         fr.setClosable(true);
         fr.show();
-    }
+    
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        try{
+            this.setClosed(true);
+        }catch(Exception e){
+            System.out.println("Error: " + e);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+  /*  public void vaciarCampos(){
+        jTextField1.setText(" ");
+        jTextField2.setText(" ");
+        jTextField3.setText(" ");
+        jTextField4.setText(" ");
+        jTextField5.setText(" ");
+        jTextField6.setText(" ");
+        jTextField7.setText(" ");
+        jTextField8.setText(" ");
+        jTextField9.setText(" ");
+        jTextField10.setText(" ");
+        jTextField11.setText(" ");
+        jTextField12.setText(" ");
+        jTextField13.setText(" ");
+    }*/
     
    
 
@@ -194,6 +222,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             fila.add(client.getCelular());
             fila.add(client.getEmail());*/
            
+/*
             jTable2.setValueAt(client.getId(),i ,0);
             jTable2.setValueAt(client.getRFC(), i, 1);
             jTable2.setValueAt(client.getNombre(),i,2);
@@ -207,7 +236,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             jTable2.setValueAt(client.getTelefono(), i, 10);
             jTable2.setValueAt(client.getCelular(), i, 11);
             jTable2.setValueAt(client.getEmail(), i, 12);
-
+*/
             //getTabla().tableModel.addRow(fila);
            
             i++;

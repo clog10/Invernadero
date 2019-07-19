@@ -20,7 +20,8 @@ is divided into following sections:
   - cleanup
 
         -->
-<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" basedir=".." default="default" name="Invernadero-impl">   
+<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" basedir=".." default="default" name="Invernadero-impl">  
+
   <fail message="Please build using Ant 1.8.0 or higher."> 
     <condition> 
       <not> 
@@ -298,7 +299,7 @@ is divided into following sections:
             <dirset dir="@{gensrcdir}" erroronmissingdir="false"> 
               <include name="*"/> 
             </dirset> 
-          </src> 
+          </src>  
           <classpath> 
             <path path="@{classpath}"/> 
           </classpath>  

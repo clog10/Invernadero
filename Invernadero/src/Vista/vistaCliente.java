@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vista;
 
 import Modelo.Cliente;
 import Modelo.ClienteDB;
-import Modelo.DBTabla;
 import java.awt.Dimension;
 import java.util.List;
 import java.util.Vector;
@@ -84,7 +79,15 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             new String [] {
                 "Id", "RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Calle", "Numero", "Colonia", "Municipio", "Estado", "Numero de Telefono", "Numero de Celular", "Email"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eliminar.png"))); // NOI18N
@@ -114,26 +117,25 @@ public class vistaCliente extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1213, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(263, 263, 263)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(124, 124, 124)
+                .addGap(74, 74, 74)
                 .addComponent(jButton2)
-                .addGap(115, 115, 115)
+                .addGap(86, 86, 86)
                 .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(508, 508, 508))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3)
                     .addComponent(jButton2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)))
-                .addGap(148, 148, 148))
+                    .addComponent(jButton1))
+                .addContainerGap())
         );
 
         pack();
@@ -148,10 +150,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         datosCliente.toFront();
         datosCliente.setVisible(true);
         System.out.println("asdfas");
-        
       //  centrarVistaDATOS(datosCliente);
-        
-        
     }                                        
 
     public void centrarVistaDATOS(JInternalFrame fr){
@@ -162,7 +161,6 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         fr.setClosable(true);
         fr.show();
     
-       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -178,51 +176,14 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-  /*  public void vaciarCampos(){
-        jTextField1.setText(" ");
-        jTextField2.setText(" ");
-        jTextField3.setText(" ");
-        jTextField4.setText(" ");
-        jTextField5.setText(" ");
-        jTextField6.setText(" ");
-        jTextField7.setText(" ");
-        jTextField8.setText(" ");
-        jTextField9.setText(" ");
-        jTextField10.setText(" ");
-        jTextField11.setText(" ");
-        jTextField12.setText(" ");
-        jTextField13.setText(" ");
-    }*/
-    
-   
 
     
-    
-        protected void cargarTabla() {
+        public void cargarTabla() {
         Vector<Object> fila;
         List<Cliente> clientes = c.listCliente();
         int i=0;
         for (Cliente client : clientes) {
-            
-            
-           
-            
-           /* fila = new Vector<Object>();
-            fila.add(client.getId());
-            fila.add(client.getRFC());
-            fila.add(client.getNombre());
-            fila.add(client.getaPaterno());
-            fila.add(client.getaMaterno());
-            fila.add(client.getCalle());
-            fila.add(client.getNumero());
-            fila.add(client.getColonia());
-            fila.add(client.getMunicipio());
-            fila.add(client.getEstado());
-            fila.add(client.getTelefono());
-            fila.add(client.getCelular());
-            fila.add(client.getEmail());*/
-           
-/*
+
             jTable2.setValueAt(client.getId(),i ,0);
             jTable2.setValueAt(client.getRFC(), i, 1);
             jTable2.setValueAt(client.getNombre(),i,2);
@@ -236,14 +197,10 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             jTable2.setValueAt(client.getTelefono(), i, 10);
             jTable2.setValueAt(client.getCelular(), i, 11);
             jTable2.setValueAt(client.getEmail(), i, 12);
-*/
-            //getTabla().tableModel.addRow(fila);
-           
+
             i++;
         }
     }
-        
-       // public DBTabla getTabla() { return tabla; }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

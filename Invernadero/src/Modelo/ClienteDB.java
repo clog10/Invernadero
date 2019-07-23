@@ -21,10 +21,10 @@ public class ClienteDB {
     //public List<Cliente> clientes;
 
     // private static ClienteDB c;
-    public ClienteDB() {
+    public ClienteDB() { 
         // conectiondb = new Conectiondb(db, "127.0.0.1");
-        this.vista = vista;
-    }
+        this.vista = vista; 
+    } 
 
     public boolean insertCliente(Cliente c) {
         PreparedStatement ps;
@@ -69,7 +69,68 @@ public class ClienteDB {
             return false;
         }
     }
+    
+    public boolean updateCliente(Cliente c) {
 
+        PreparedStatement ps;
+        String sqlUpdateCliente = "update invernadero_gran_valle.cliente set id_cliente = ?, nombre = ?, a_paterno = ?,"
+                              + "a_materno = ?, calle = ?, numero = ?, colonia = ?, municipio = ?, estado = ?,"
+                              + "telefono =?, celular = ?, e_mail = ?, rfc = ?  where id = ?;";
+        try {
+
+            ps =  interfaceDatos.conectiondb.getConexion().prepareStatement(sqlUpdateCliente);
+
+
+            ps.setInt(1, c.getId());
+            ps.setString(2, c.getNombre());
+            ps.setString(3, c.getaPaterno());
+            ps.setString(4, c.getaMaterno());
+            ps.setString(5, c.getCalle());
+            ps.setInt(6, c.getNumero());
+            ps.setString(7, c.getColonia());
+            ps.setString(8, c.getMunicipio());
+            ps.setString(9, c.getEstado());
+            ps.setString(10, c.getTelefono());
+            ps.setString(11, c.getCelular());
+            ps.setString(12, c.getEmail());
+            ps.setString(13, c.getRFC());
+            
+            ps.executeUpdate();
+
+            return true;
+        } catch (SQLException exception) {
+            System.err.println("Error al Actualizar (Cliente " + exception);
+            return false;
+        }
+    }
+
+    public Cliente selectCliente(Cliente c) {
+
+        PreparedStatement ps;
+
+        ResultSet rs;
+
+        Cliente clienteEncontrado = null;
+
+        String sqlConsulta = "select * from invernadero_gran_valle.cliente where id_cliente = ?;";
+        try {
+
+            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlConsulta);
+            ps.setInt(1, c.getId());
+
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+         /*       clienteEncontrado = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
+                                    rs.getString(5), rs.getString(6),rs.getString(7),rs.getString(8),rs.getInt(9),
+                                      rs.getString(10), rs.getString(11),rs.getString(12));*/
+            }
+        } catch (SQLException exception) {
+            System.err.println("Error al CARGAR cliente");
+        }
+        return clienteEncontrado;
+    }
+    
     public List<Cliente> listCliente() {
         PreparedStatement ps;
         ResultSet rs;
@@ -100,9 +161,9 @@ public class ClienteDB {
 
                 clientes.add(c);
 
-                for (Cliente q : clientes) {
+              /*  for (Cliente q : clientes) {
                     System.out.println(q.regresaDatos());
-                }
+                }*/
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Cliente) " + exception);
@@ -110,6 +171,14 @@ public class ClienteDB {
         return clientes;
     }
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -103,6 +103,11 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/editar.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/agregar.png"))); // NOI18N
         jButton1.setBorder(null);
@@ -170,7 +175,38 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        //int filaPulsada = vistaLibro.getTabla().tabla.getSelectedRow();
+        int filaPulsada = jTable2.getSelectedRow();
+        //System.out.println(filaPulsada);
+        if(filaPulsada>=0){
+            cliente =new Cliente();
+            
+           int id= (int) jTable2.getValueAt(filaPulsada, 0);
+           //System.out.println(id);
+            cliente.setId(id);
+            c.deleteCliente(cliente);
+        }
+        
+        cargarTabla();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int filaPulsada = jTable2.getSelectedRow();
+        if(filaPulsada>=0){
+            cliente =new Cliente();
+            int id= (int) jTable2.getValueAt(filaPulsada, 0);
+            
+            vistaDatosCliente datosCliente  = new vistaDatosCliente();
+        interfaceMenu.vistaPrincipal.add(datosCliente);
+        Dimension dim = interfaceMenu.vistaPrincipal.getSize();
+        Dimension dimForm = datosCliente.getSize();
+        datosCliente.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
+        datosCliente.toFront();
+        datosCliente.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     

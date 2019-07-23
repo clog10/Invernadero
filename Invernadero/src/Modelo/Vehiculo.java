@@ -10,12 +10,16 @@ public class Vehiculo {
     private String matricula,marca,modelo;
     private int numSerie,anio;
 
-    public Vehiculo(String matricula, String marca, String modelo, int numSerie, int anio, Empleado operador) {
+    public Vehiculo(String matricula, String marca, String modelo, int numSerie, int anio) {
         this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
         this.numSerie = numSerie;
         this.anio = anio;
+    }
+    
+    public Vehiculo(){
+        
     }
 
     public String getMatricula() {
@@ -69,6 +73,8 @@ public class Vehiculo {
     
     
 }
+
+
 
 
 

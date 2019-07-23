@@ -13,16 +13,16 @@ public class Empleado {
     private int numero;
 
     public Empleado(int id, String nombre, String aPaterno, String aMaterno, String numTel, 
-                            String calle, String colonia, String municipio, String estado, int numero) {
-        this.id = id;
-        this.nombre = nombre;
-        this.aPaterno = aPaterno;
-        this.aMaterno = aMaterno;
-        this.numTel = numTel;
-        this.calle = calle;
-        this.colonia = colonia;
+                            String calle, String colonia, String municipio, String estado, int numero) { 
+        this.id = id; 
+        this.nombre = nombre; 
+        this.aPaterno = aPaterno; 
+        this.aMaterno = aMaterno; 
+        this.numTel = numTel; 
+        this.calle = calle; 
+        this.colonia = colonia; 
         this.municipio = municipio;
-        this.estado = estado;
+        this.estado = estado; 
         this.numero = numero;
     }
 
@@ -116,5 +116,6 @@ public class Empleado {
     
     
 }
+
 
 

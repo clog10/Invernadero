@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>vistaDatosCliente.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Invernadero&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Vista</a> &gt; <span class="el_source">vistaDatosCliente.java</span></div><h1>vistaDatosCliente.java</h1><pre class="source lang-java linenums">package Vista;
+
+import Modelo.Cliente;
+import Modelo.ClienteDB;
+import java.awt.Container;
+import java.beans.PropertyVetoException;
+import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Invernadero Gran Valle
+ * @author
+ */
+public class vistaDatosCliente extends javax.swing.JInternalFrame {
+
+    private Cliente cliente;
+     private ClienteDB c;
+   private  vistaCliente v;
+   private interfaceMenu menu;
+   
+    /**
+     * Creates new form vistaDatosCliente
+     */
+<span class="nc" id="L31">    public vistaDatosCliente() {</span>
+<span class="nc" id="L32">        initComponents();</span>
+<span class="nc" id="L33">        c=new ClienteDB();</span>
+<span class="nc" id="L34">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L40">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L41">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L42">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L43">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L44">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L45">        jLabel5 = new javax.swing.JLabel();</span>
+<span class="nc" id="L46">        jLabel6 = new javax.swing.JLabel();</span>
+<span class="nc" id="L47">        jLabel7 = new javax.swing.JLabel();</span>
+<span class="nc" id="L48">        jLabel8 = new javax.swing.JLabel();</span>
+<span class="nc" id="L49">        jLabel9 = new javax.swing.JLabel();</span>
+<span class="nc" id="L50">        jLabel10 = new javax.swing.JLabel();</span>
+<span class="nc" id="L51">        jLabel11 = new javax.swing.JLabel();</span>
+<span class="nc" id="L52">        jLabel12 = new javax.swing.JLabel();</span>
+<span class="nc" id="L53">        jLabel13 = new javax.swing.JLabel();</span>
+<span class="nc" id="L54">        jLabel14 = new javax.swing.JLabel();</span>
+<span class="nc" id="L55">        jTextField1 = new javax.swing.JTextField();</span>
+<span class="nc" id="L56">        jTextField2 = new javax.swing.JTextField();</span>
+<span class="nc" id="L57">        jTextField3 = new javax.swing.JTextField();</span>
+<span class="nc" id="L58">        jTextField4 = new javax.swing.JTextField();</span>
+<span class="nc" id="L59">        jTextField5 = new javax.swing.JTextField();</span>
+<span class="nc" id="L60">        jTextField6 = new javax.swing.JTextField();</span>
+<span class="nc" id="L61">        jTextField7 = new javax.swing.JTextField();</span>
+<span class="nc" id="L62">        jTextField8 = new javax.swing.JTextField();</span>
+<span class="nc" id="L63">        jTextField9 = new javax.swing.JTextField();</span>
+<span class="nc" id="L64">        jTextField10 = new javax.swing.JTextField();</span>
+<span class="nc" id="L65">        jTextField11 = new javax.swing.JTextField();</span>
+<span class="nc" id="L66">        jTextField12 = new javax.swing.JTextField();</span>
+<span class="nc" id="L67">        jTextField13 = new javax.swing.JTextField();</span>
+<span class="nc" id="L68">        jButton5 = new javax.swing.JButton();</span>
+<span class="nc" id="L69">        jButton1 = new javax.swing.JButton();</span>
+
+<span class="nc" id="L71">        jLabel1.setText(&quot;Id: &quot;);</span>
+
+<span class="nc" id="L73">        jLabel2.setText(&quot;RFC: &quot;);</span>
+
+<span class="nc" id="L75">        jLabel3.setText(&quot;Nombre: &quot;);</span>
+
+<span class="nc" id="L77">        jLabel4.setText(&quot;Apellido Paterno: &quot;);</span>
+
+<span class="nc" id="L79">        jLabel5.setText(&quot;Apellido Materno: &quot;);</span>
+
+<span class="nc" id="L81">        jLabel6.setText(&quot;Direccion&quot;);</span>
+
+<span class="nc" id="L83">        jLabel7.setText(&quot;Calle: &quot;);</span>
+
+<span class="nc" id="L85">        jLabel8.setText(&quot;Numero: &quot;);</span>
+
+<span class="nc" id="L87">        jLabel9.setText(&quot;Colonia: &quot;);</span>
+
+<span class="nc" id="L89">        jLabel10.setText(&quot;Municipio: &quot;);</span>
+
+<span class="nc" id="L91">        jLabel11.setText(&quot;Estado: &quot;);</span>
+
+<span class="nc" id="L93">        jLabel12.setText(&quot;Numero de Telefono: &quot;);</span>
+
+<span class="nc" id="L95">        jLabel13.setText(&quot;Numero de Celular: &quot;);</span>
+
+<span class="nc" id="L97">        jLabel14.setText(&quot;Email: &quot;);</span>
+
+<span class="nc" id="L99">        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/resources/salir.png&quot;))); // NOI18N</span>
+<span class="nc" id="L100">        jButton5.setBorder(null);</span>
+<span class="nc" id="L101">        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));</span>
+<span class="nc" id="L102">        jButton5.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L104">                jButton5ActionPerformed(evt);</span>
+<span class="nc" id="L105">            }</span>
+        });
+
+<span class="nc" id="L108">        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/resources/registrar.png&quot;))); // NOI18N</span>
+<span class="nc" id="L109">        jButton1.setBorder(null);</span>
+<span class="nc" id="L110">        jButton1.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L112">                jButton1ActionPerformed(evt);</span>
+<span class="nc" id="L113">            }</span>
+        });
+
+<span class="nc" id="L116">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L117">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L118">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L119">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L120">            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L121">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L122">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L123">                        .addGap(53, 53, 53)</span>
+<span class="nc" id="L124">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L125">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L126">                                .addComponent(jLabel12)</span>
+<span class="nc" id="L127">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L128">                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L129">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L130">                                .addGap(45, 45, 45)</span>
+<span class="nc" id="L131">                                .addComponent(jLabel7)</span>
+<span class="nc" id="L132">                                .addGap(1, 1, 1)</span>
+<span class="nc" id="L133">                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L134">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L135">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L136">                                .addGap(49, 49, 49)</span>
+<span class="nc" id="L137">                                .addComponent(jLabel8))</span>
+<span class="nc" id="L138">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L139">                                .addGap(153, 153, 153)</span>
+<span class="nc" id="L140">                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L141">                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L142">                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L143">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L144">                                        .addComponent(jLabel9))</span>
+<span class="nc" id="L145">                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L146">                                        .addComponent(jLabel3)</span>
+<span class="nc" id="L147">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L148">                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L149">                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L150">                                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L151">                                        .addGap(29, 29, 29)</span>
+<span class="nc" id="L152">                                        .addComponent(jLabel4)</span>
+<span class="nc" id="L153">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L154">                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L155">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L156">                                        .addComponent(jLabel5)</span>
+<span class="nc" id="L157">                                        .addGap(4, 4, 4)</span>
+<span class="nc" id="L158">                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L159">                                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L160">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L161">                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L162">                                        .addGap(39, 39, 39)</span>
+<span class="nc" id="L163">                                        .addComponent(jLabel10)</span>
+<span class="nc" id="L164">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L165">                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L166">                                        .addGap(64, 64, 64)</span>
+<span class="nc" id="L167">                                        .addComponent(jLabel11)</span>
+<span class="nc" id="L168">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L169">                                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L170">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L171">                                .addGap(79, 79, 79)</span>
+<span class="nc" id="L172">                                .addComponent(jLabel13)</span>
+<span class="nc" id="L173">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L174">                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L175">                                .addGap(80, 80, 80)</span>
+<span class="nc" id="L176">                                .addComponent(jLabel14)</span>
+<span class="nc" id="L177">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L178">                                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L179">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L180">                        .addGap(29, 29, 29)</span>
+<span class="nc" id="L181">                        .addComponent(jLabel1)</span>
+<span class="nc" id="L182">                        .addGap(3, 3, 3)</span>
+<span class="nc" id="L183">                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L184">                        .addGap(37, 37, 37)</span>
+<span class="nc" id="L185">                        .addComponent(jLabel2)</span>
+<span class="nc" id="L186">                        .addGap(2, 2, 2)</span>
+<span class="nc" id="L187">                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L188">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L189">                        .addContainerGap()</span>
+<span class="nc" id="L190">                        .addComponent(jLabel6))</span>
+<span class="nc" id="L191">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L192">                        .addGap(548, 548, 548)</span>
+<span class="nc" id="L193">                        .addComponent(jButton1)</span>
+<span class="nc" id="L194">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L195">                        .addComponent(jButton5)</span>
+<span class="nc" id="L196">                        .addGap(195, 195, 195)))</span>
+<span class="nc" id="L197">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L199">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L200">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L201">            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L202">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L203">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L204">                    .addComponent(jLabel1)</span>
+<span class="nc" id="L205">                    .addComponent(jLabel2)</span>
+<span class="nc" id="L206">                    .addComponent(jLabel3)</span>
+<span class="nc" id="L207">                    .addComponent(jLabel4)</span>
+<span class="nc" id="L208">                    .addComponent(jLabel5)</span>
+<span class="nc" id="L209">                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L210">                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L211">                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L212">                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L213">                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L214">                .addGap(30, 30, 30)</span>
+<span class="nc" id="L215">                .addComponent(jLabel6)</span>
+<span class="nc" id="L216">                .addGap(33, 33, 33)</span>
+<span class="nc" id="L217">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L218">                    .addComponent(jLabel7)</span>
+<span class="nc" id="L219">                    .addComponent(jLabel8)</span>
+<span class="nc" id="L220">                    .addComponent(jLabel9)</span>
+<span class="nc" id="L221">                    .addComponent(jLabel10)</span>
+<span class="nc" id="L222">                    .addComponent(jLabel11)</span>
+<span class="nc" id="L223">                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L224">                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L225">                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L226">                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L227">                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L228">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L229">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L230">                        .addGap(73, 73, 73)</span>
+<span class="nc" id="L231">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L232">                            .addComponent(jLabel12)</span>
+<span class="nc" id="L233">                            .addComponent(jLabel13)</span>
+<span class="nc" id="L234">                            .addComponent(jLabel14)</span>
+<span class="nc" id="L235">                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L236">                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L237">                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L238">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)</span>
+<span class="nc" id="L239">                        .addComponent(jButton1))</span>
+<span class="nc" id="L240">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L241">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L242">                        .addComponent(jButton5)))</span>
+<span class="nc" id="L243">                .addGap(20, 20, 20))</span>
+        );
+
+<span class="nc" id="L246">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L247">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L248">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L249">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L250">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L251">                .addContainerGap()</span>
+<span class="nc" id="L252">                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L253">                .addContainerGap())</span>
+        );
+<span class="nc" id="L255">        layout.setVerticalGroup(</span>
+<span class="nc" id="L256">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L257">            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+
+<span class="nc" id="L260">        pack();</span>
+<span class="nc" id="L261">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+    
+        public void vaciarCampos(){
+<span class="nc" id="L264">        jTextField1.setText(&quot; &quot;);</span>
+<span class="nc" id="L265">        jTextField2.setText(&quot; &quot;);</span>
+<span class="nc" id="L266">        jTextField3.setText(&quot; &quot;);</span>
+<span class="nc" id="L267">        jTextField4.setText(&quot; &quot;);</span>
+<span class="nc" id="L268">        jTextField5.setText(&quot; &quot;);</span>
+<span class="nc" id="L269">        jTextField6.setText(&quot; &quot;);</span>
+<span class="nc" id="L270">        jTextField7.setText(&quot; &quot;);</span>
+<span class="nc" id="L271">        jTextField8.setText(&quot; &quot;);</span>
+<span class="nc" id="L272">        jTextField9.setText(&quot; &quot;);</span>
+<span class="nc" id="L273">        jTextField10.setText(&quot; &quot;);</span>
+<span class="nc" id="L274">        jTextField11.setText(&quot; &quot;);</span>
+<span class="nc" id="L275">        jTextField12.setText(&quot; &quot;);</span>
+<span class="nc" id="L276">        jTextField13.setText(&quot; &quot;);</span>
+<span class="nc" id="L277">    }</span>
+     
+        
+        //hacer que actualice la tabla en este evento
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        try{
+<span class="nc" id="L284">            this.setClosed(true);</span>
+            //v.cargarTabla();
+            //vistaCliente cliente=new vistaCliente();
+            //menu.centrarVista(cliente);
+<span class="nc" id="L288">        }catch(Exception e){</span>
+<span class="nc" id="L289">            System.out.println(&quot;Error: &quot; + e);</span>
+<span class="nc" id="L290">        }</span>
+<span class="nc" id="L291">    }//GEN-LAST:event_jButton5ActionPerformed</span>
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+<span class="nc bnc" id="L295" title="All 6 branches missed.">        if(jTextField1.getText().isEmpty() || jTextField2.getText().toString().isEmpty() || jTextField3.getText().toString().isEmpty()</span>
+<span class="nc bnc" id="L296" title="All 6 branches missed.">                || jTextField4.getText().toString().isEmpty() || jTextField5.getText().toString().isEmpty() || jTextField6.getText().toString().isEmpty()</span>
+<span class="nc bnc" id="L297" title="All 6 branches missed.">                || jTextField7.getText().toString().isEmpty() || jTextField8.getText().toString().isEmpty() || jTextField9.getText().toString().isEmpty()</span>
+<span class="nc bnc" id="L298" title="All 6 branches missed.">                || jTextField10.getText().toString().isEmpty() || jTextField11.getText().toString().isEmpty() || jTextField12.getText().toString().isEmpty()</span>
+<span class="nc bnc" id="L299" title="All 2 branches missed.">                || jTextField13.getText().toString().isEmpty()){</span>
+        
+<span class="nc" id="L301">                        JOptionPane.showMessageDialog(null, &quot;Verifica los campos vacios...&quot;);</span>
+
+        }else{
+<span class="nc" id="L304">        cliente = new Cliente( Integer.parseInt(jTextField1.getText()), jTextField12.getText(), jTextField3.getText(),</span>
+<span class="nc" id="L305">                               jTextField4.getText(), jTextField5.getText(), jTextField6.getText(), jTextField10.getText(),</span>
+<span class="nc" id="L306">                            jTextField8.getText(), jTextField9.getText(), Integer.parseInt(jTextField7.getText()),</span>
+<span class="nc" id="L307">                            jTextField11.getText(), jTextField12.getText(), jTextField13.getText());</span>
+<span class="nc" id="L308">        c.insertCliente(cliente);</span>
+<span class="nc" id="L309">        vaciarCampos();</span>
+        
+        try {
+<span class="nc" id="L312">      this.setClosed(true);</span>
+<span class="nc" id="L313">       interfaceMenu.cliente.cargarTabla();</span>
+      
+<span class="nc" id="L315">        } catch (PropertyVetoException ex) {</span>
+<span class="nc" id="L316">        System.err.println(&quot;Closing Exception&quot;);</span>
+<span class="nc" id="L317">     }</span>
+        }
+//        v.cargarTabla ();
+<span class="nc" id="L320">    }//GEN-LAST:event_jButton1ActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

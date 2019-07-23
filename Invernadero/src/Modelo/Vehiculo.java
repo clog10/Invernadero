@@ -9,7 +9,6 @@ public class Vehiculo {
     
     private String matricula,marca,modelo;
     private int numSerie,anio;
-    private Empleado operador;
 
     public Vehiculo(String matricula, String marca, String modelo, int numSerie, int anio, Empleado operador) {
         this.matricula = matricula;
@@ -17,7 +16,6 @@ public class Vehiculo {
         this.modelo = modelo;
         this.numSerie = numSerie;
         this.anio = anio;
-        this.operador = operador;
     }
 
     public String getMatricula() {
@@ -60,19 +58,10 @@ public class Vehiculo {
         this.anio = anio;
     }
 
-    public Empleado getOperador() {
-        return operador;
-    }
-
-    public void setOperador(Empleado operador) {
-        this.operador = operador;
-    }
-
     @Override
     public String toString() {
         String datos=" Vehiculo " + "\tMatricula: "+matricula+"\n";
                datos+=" Marca: " + marca + " Modelo: " + modelo + " Numero de Serie: " + numSerie + " Año: " + anio;
-               datos+=" Operador: " + operador.getNombre()+" "+operador.getaPaterno()+" "+operador.getaMaterno() ;
                
         return datos;
     }
@@ -80,6 +69,7 @@ public class Vehiculo {
     
     
 }
+
 
 
 

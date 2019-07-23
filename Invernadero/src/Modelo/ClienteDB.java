@@ -74,7 +74,7 @@ public class ClienteDB {
         PreparedStatement ps;
         ResultSet rs;
         String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
-                              + "estado,telefono,celular,e_mail,rfc_cliente from invernadero_gran_valle.cliente;";
+                              + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
 
         //String consultaSQL = "select * from invernadero_gran_valle.cliente;";
 
@@ -96,7 +96,7 @@ public class ClienteDB {
                 c.setTelefono(rs.getString("telefono"));
                 c.setCelular(rs.getString("celular"));
                 c.setEmail(rs.getString("e_mail"));
-                c.setRFC(rs.getString("rfc_cliente"));
+                c.setRFC(rs.getString("rfc"));
 
                 clientes.add(c);
 
@@ -110,6 +110,7 @@ public class ClienteDB {
         return clientes;
     }
 }
+
 
 
 

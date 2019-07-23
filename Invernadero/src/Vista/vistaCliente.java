@@ -9,6 +9,7 @@ import java.util.Vector;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * Invernadero Gran Valle
@@ -20,6 +21,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
    // private DBTabla tabla;
     private  Cliente cliente;
     private JDesktopPane iM;
+    private DefaultTableModel modelo;
     /**
      * Creates new form vistaCliente
      */
@@ -27,6 +29,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         initComponents();
         iM = this.getDesktopPane();
         c=new ClienteDB();
+        
         cargarTabla();
 
     }
@@ -152,6 +155,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         datosCliente.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
         datosCliente.toFront();
         datosCliente.setVisible(true);
+
       //  centrarVistaDATOS(datosCliente);                                       
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -173,6 +177,32 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         public void cargarTabla() {
         Vector<Object> fila;
         List<Cliente> clientes = c.listCliente();
+       
+        /*String data[] ={
+            "Id", "RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Calle", "Numero", "Colonia", "Municipio", "Estado", "Numero de Telefono", "Numero de Celular", "Email"
+        };
+        modelo = new DefaultTableModel();
+        modelo.setColumnIdentifiers(data);
+        Vector datos = new Vector();
+        for(int i=0;i<clientes.size();i++){
+            datos.add(clientes.get(i).getId());
+            datos.add(clientes.get(i).getRFC());
+            datos.add(clientes.get(i).getNombre());
+            datos.add(clientes.get(i).getaPaterno());
+            datos.add(clientes.get(i).getaMaterno());
+            datos.add(clientes.get(i).getCalle());
+            datos.add(clientes.get(i).getNumero());
+            datos.add(clientes.get(i).getColonia());
+            datos.add(clientes.get(i).getMunicipio());
+            datos.add(clientes.get(i).getEstado());
+            datos.add(clientes.get(i).getTelefono());
+            datos.add(clientes.get(i).getCelular());
+            datos.add(clientes.get(i).getEmail());
+            modelo.addRow(datos);
+        }
+        jTable2.setModel(modelo);
+        */
+        
         int i=0;
         for (Cliente client : clientes) {
 
@@ -192,6 +222,9 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
             i++;
         }
+        
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

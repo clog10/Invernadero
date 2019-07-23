@@ -29,6 +29,12 @@ public class interfaceMenu extends javax.swing.JFrame {
 
     private Icon iconoEscalado;
     private Icon anu;
+    public static vistaCliente cliente;
+    public static vistaVehiculos vehiculos;
+    public static vistaProveedor proveedor;
+    public static  vistaEmpleado empleado;
+    public static vistaVenta ventas;
+    
     public interfaceMenu() {
         initComponents();
 
@@ -248,21 +254,13 @@ public class interfaceMenu extends javax.swing.JFrame {
         //vistaPrincipal.removeAll();
         //vistaPrincipal.updateUI();
 
-        vistaVehiculos vehiculos = new vistaVehiculos();
+        vehiculos = new vistaVehiculos();
         //BasicInternalFrameUI bi = (BasicInternalFrameUI)vehiculos.getUI();
         //bi.setNorthPane(null);
         //vehiculos.setBorder(null);
         centrarVista(vehiculos);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
-    
-    public void centrarVistaDATOS(JInternalFrame fr){
-        vistaPrincipal.add(fr);
-        Dimension dim = vistaPrincipal.getSize();
-        Dimension dimForm = fr.getSize();
-        fr.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
-        fr.setClosable(true);
-        fr.show();
-    }
+
     
     //Metodo para centrar los JInternalFrame dentro  del desktop frame
     public void centrarVista(JInternalFrame fr){
@@ -274,7 +272,7 @@ public class interfaceMenu extends javax.swing.JFrame {
             fr.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
             fr.setMaximum(true);
             
-            //fr.setClosable(true);
+            fr.setClosable(true);
             //fr.setIconifiable(true);
             //fr.setMaximizable(true);
             //fr.setUI(null);
@@ -300,7 +298,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         this.setSize(980,580);
         this.repaint(); */
        //reiniciarVista();
-       vistaProveedor proveedor = new vistaProveedor();
+       proveedor = new vistaProveedor();
        centrarVista(proveedor);
 
     }//GEN-LAST:event_jMenuItem9ActionPerformed
@@ -336,19 +334,19 @@ public class interfaceMenu extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-        vistaEmpleado empleado = new vistaEmpleado();
+        empleado = new vistaEmpleado();
         centrarVista(empleado);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        vistaVenta ventas = new vistaVenta();
+        ventas = new vistaVenta();
         centrarVista(ventas);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        vistaCliente cliente=new vistaCliente();
+         cliente=new vistaCliente();
         centrarVista(cliente);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 

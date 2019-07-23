@@ -2,7 +2,11 @@ package Vista;
 
 import Modelo.Cliente;
 import Modelo.ClienteDB;
+import java.awt.Container;
+import java.beans.PropertyVetoException;
 import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -101,7 +105,8 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Registrar");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/registrar.png"))); // NOI18N
+        jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -230,7 +235,7 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
                             .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -287,12 +292,30 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(jTextField1.getText().isEmpty() || jTextField2.getText().toString().isEmpty() || jTextField3.getText().toString().isEmpty()
+                || jTextField4.getText().toString().isEmpty() || jTextField5.getText().toString().isEmpty() || jTextField6.getText().toString().isEmpty()
+                || jTextField7.getText().toString().isEmpty() || jTextField8.getText().toString().isEmpty() || jTextField9.getText().toString().isEmpty()
+                || jTextField10.getText().toString().isEmpty() || jTextField11.getText().toString().isEmpty() || jTextField12.getText().toString().isEmpty()
+                || jTextField13.getText().toString().isEmpty()){
+        
+                        JOptionPane.showMessageDialog(null, "Verifica los campos vacios...");
+
+        }else{
         cliente = new Cliente( Integer.parseInt(jTextField1.getText()), jTextField12.getText(), jTextField3.getText(),
                                jTextField4.getText(), jTextField5.getText(), jTextField6.getText(), jTextField10.getText(),
                             jTextField8.getText(), jTextField9.getText(), Integer.parseInt(jTextField7.getText()),
                             jTextField11.getText(), jTextField12.getText(), jTextField13.getText());
         c.insertCliente(cliente);
         vaciarCampos();
+        
+        try {
+      this.setClosed(true);
+       interfaceMenu.cliente.cargarTabla();
+      
+        } catch (PropertyVetoException ex) {
+        System.err.println("Closing Exception");
+     }
+        }
 //        v.cargarTabla ();
     }//GEN-LAST:event_jButton1ActionPerformed
 

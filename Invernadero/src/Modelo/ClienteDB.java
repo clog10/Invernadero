@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -98,7 +97,7 @@ public class ClienteDB {
                 c.setCelular(rs.getString("celular"));
                 c.setEmail(rs.getString("e_mail"));
                 c.setRFC(rs.getString("rfc_cliente"));
-                
+
                 clientes.add(c);
 
                 for (Cliente q : clientes) {
@@ -107,7 +106,6 @@ public class ClienteDB {
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Cliente) " + exception);
-            clientes =  Collections.emptyList();
         }
         return clientes;
     }

@@ -27,6 +27,10 @@ public class Proveedor {
         this.celular = celular;
         this.email = email;
     }
+    
+    public Proveedor(){
+    
+    }
 
     public int getId() {
         return id;

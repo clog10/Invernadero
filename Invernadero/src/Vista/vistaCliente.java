@@ -147,20 +147,12 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         //Cliente cliente;
         vistaDatosCliente datosCliente  = new vistaDatosCliente();
         interfaceMenu.vistaPrincipal.add(datosCliente);
+        Dimension dim = interfaceMenu.vistaPrincipal.getSize();
+        Dimension dimForm = datosCliente.getSize();
+        datosCliente.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
         datosCliente.toFront();
         datosCliente.setVisible(true);
-        System.out.println("asdfas");
-      //  centrarVistaDATOS(datosCliente);
-    }                                        
-
-    public void centrarVistaDATOS(JInternalFrame fr){
-        iM.add(fr);
-        Dimension dim = iM.getSize();
-        Dimension dimForm = fr.getSize();
-        fr.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
-        fr.setClosable(true);
-        fr.show();
-    
+      //  centrarVistaDATOS(datosCliente);                                       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

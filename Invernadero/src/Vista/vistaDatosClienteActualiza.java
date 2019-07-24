@@ -8,13 +8,12 @@ import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-
 /**
  * Invernadero Gran Valle
  * @author clog10
  */
 
-public class vistaDatosCliente extends javax.swing.JInternalFrame {
+public class vistaDatosClienteActualiza extends javax.swing.JInternalFrame {
 
     private Cliente cliente;
      private ClienteDB c;
@@ -24,9 +23,10 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
     /**
      * Creates new form vistaDatosCliente
      */
-    public vistaDatosCliente() {
+    public vistaDatosClienteActualiza() {
         initComponents();
         c=new ClienteDB();
+        llenarCampos();
     }
 
     @SuppressWarnings("unchecked")
@@ -271,6 +271,22 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
         jTextField12.setText(" ");
         jTextField13.setText(" ");
     }
+        
+          public void llenarCampos(){
+        jTextField1.setText(" ");
+        jTextField2.setText(" ");
+        jTextField3.setText(" ");
+        jTextField4.setText(" ");
+        jTextField5.setText(" ");
+        jTextField6.setText(" ");
+        jTextField7.setText(" ");
+        jTextField8.setText(" ");
+        jTextField9.setText(" ");
+        jTextField10.setText(" ");
+        jTextField11.setText(" ");
+        jTextField12.setText(" ");
+        jTextField13.setText(" ");
+    }
      
         
         //hacer que actualice la tabla en este evento
@@ -301,7 +317,7 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
                                jTextField4.getText(), jTextField5.getText(), jTextField6.getText(), jTextField10.getText(),
                             jTextField8.getText(), jTextField9.getText(), Integer.parseInt(jTextField7.getText()),
                             jTextField11.getText(), jTextField12.getText(), jTextField13.getText());
-        c.insertCliente(cliente);
+        c.updateCliente(cliente);
         vaciarCampos();
         
         try {

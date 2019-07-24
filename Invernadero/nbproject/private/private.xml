@@ -7,11 +7,10 @@
         </group>
         <group>
             <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaDatosCliente.java</file>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Modelo/Conectiondb.java</file>
             <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaCliente.java</file>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaDatosClienteActualiza.java</file>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Modelo/Cliente.java</file>
             <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Modelo/ClienteDB.java</file>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/interfaceDatos.java</file>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/interfaceMenu.java</file>
         </group>
     </open-files>
 </project-private>

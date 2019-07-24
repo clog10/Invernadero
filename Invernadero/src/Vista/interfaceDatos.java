@@ -221,6 +221,7 @@ public class interfaceDatos extends javax.swing.JFrame {
 
         }else{
             if(usuario.equals("usuario1") && paswd.equals("1234")){
+                conectiondb = new Conectiondb(db, "127.0.0.1");
                 JOptionPane.showMessageDialog(null,"Bienvenido");
                 interfaceMenu iM= new interfaceMenu();
 
@@ -231,7 +232,7 @@ public class interfaceDatos extends javax.swing.JFrame {
                 JOptionPane.showConfirmDialog(null,"Su usuario o contraseña es incorrecto");
             }
         }
-        conectiondb = new Conectiondb(db, "127.0.0.1");
+        //conectiondb = new Conectiondb(db, "127.0.0.1");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

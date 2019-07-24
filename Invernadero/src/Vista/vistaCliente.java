@@ -1,4 +1,3 @@
-
 package Vista;
 
 import Modelo.Cliente;
@@ -13,23 +12,26 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  * Invernadero Gran Valle
+ *
  * @author Clog_10
  */
 public class vistaCliente extends javax.swing.JInternalFrame {
 
     private ClienteDB c;
-   // private DBTabla tabla;
-    private  Cliente cliente;
+    // private DBTabla tabla;
+    private Cliente cliente;
     private JDesktopPane iM;
     private DefaultTableModel modelo;
+    public Cliente clienteActualiza;
+
     /**
      * Creates new form vistaCliente
      */
     public vistaCliente() {
         initComponents();
         iM = this.getDesktopPane();
-        c=new ClienteDB();
-        
+        c = new ClienteDB();
+
         cargarTabla();
 
     }
@@ -148,72 +150,105 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-                                      
+
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //Cliente cliente;
-        vistaDatosCliente datosCliente  = new vistaDatosCliente();
+        vistaDatosCliente datosCliente = new vistaDatosCliente();
         interfaceMenu.vistaPrincipal.add(datosCliente);
         Dimension dim = interfaceMenu.vistaPrincipal.getSize();
         Dimension dimForm = datosCliente.getSize();
-        datosCliente.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
+        datosCliente.setLocation((dim.width - dimForm.width) / 2, (dim.height - dimForm.height) / 2);
         datosCliente.toFront();
         datosCliente.setVisible(true);
 
-      //  centrarVistaDATOS(datosCliente);                                       
+        //  centrarVistaDATOS(datosCliente);                                       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        try{
+        try {
             this.setClosed(true);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Error: " + e);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        
+
         //int filaPulsada = vistaLibro.getTabla().tabla.getSelectedRow();
         int filaPulsada = jTable2.getSelectedRow();
         //System.out.println(filaPulsada);
-        if(filaPulsada>=0){
-            cliente =new Cliente();
-            
-           int id= (int) jTable2.getValueAt(filaPulsada, 0);
-           //System.out.println(id);
+        if (filaPulsada >= 0) {
+            cliente = new Cliente();
+
+            int id = (int) jTable2.getValueAt(filaPulsada, 0);
+            //System.out.println(id);
             cliente.setId(id);
             c.deleteCliente(cliente);
         }
-        
+
         cargarTabla();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         int filaPulsada = jTable2.getSelectedRow();
-        if(filaPulsada>=0){
-            cliente =new Cliente();
-            int id= (int) jTable2.getValueAt(filaPulsada, 0);
+        if (filaPulsada >= 0) {
+            clienteActualiza = new Cliente();
+            int id = (int) jTable2.getValueAt(filaPulsada, 0);
+            String rfc = (String) jTable2.getValueAt(filaPulsada, 1);
+            String nombre = (String) jTable2.getValueAt(filaPulsada, 2);
+            String aPaterno = (String) jTable2.getValueAt(filaPulsada, 3);
+            String aMaterno = (String) jTable2.getValueAt(filaPulsada, 4);
+            String calle = (String) jTable2.getValueAt(filaPulsada, 5);
+            int numero = (int) jTable2.getValueAt(filaPulsada, 6);
+            String colonia = (String) jTable2.getValueAt(filaPulsada, 7);
+            String municipio = (String) jTable2.getValueAt(filaPulsada, 8);
+            String estado = (String) jTable2.getValueAt(filaPulsada, 9);
+            String telefono = (String) jTable2.getValueAt(filaPulsada, 10);
+            String celular = (String) jTable2.getValueAt(filaPulsada, 11);
+            String email = (String) jTable2.getValueAt(filaPulsada, 12);
             
-            vistaDatosCliente datosCliente  = new vistaDatosCliente();
-        interfaceMenu.vistaPrincipal.add(datosCliente);
-        Dimension dim = interfaceMenu.vistaPrincipal.getSize();
-        Dimension dimForm = datosCliente.getSize();
-        datosCliente.setLocation((dim.width-dimForm.width)/2, (dim.height-dimForm.height)/2);
-        datosCliente.toFront();
-        datosCliente.setVisible(true);
+            clienteActualiza.setId(id);
+            clienteActualiza.setNombre(nombre);
+            clienteActualiza.setaPaterno(aPaterno);
+            clienteActualiza.setaMaterno(aMaterno);
+            clienteActualiza.setCalle(calle);
+            clienteActualiza.setNumero(numero);
+            clienteActualiza.setColonia(colonia);
+            clienteActualiza.setMunicipio(municipio);
+            clienteActualiza.setEstado(estado);
+            clienteActualiza.setTelefono(telefono);
+            clienteActualiza.setCelular(celular);
+            clienteActualiza.setEmail(email);
+            clienteActualiza.setRFC(rfc);
+
+            System.out.println(clienteActualiza.regresaDatos());
+ 
+            //cliente = clienteActualiza;
+           // clienteActualiza= (Cliente) cliente.clone();
+           // System.out.println(clienteActualiza.regresaDatos());
+           // c.selectCliente(cliente);
+
+            vistaDatosClienteActualiza datosCliente = new vistaDatosClienteActualiza();
+            interfaceMenu.vistaPrincipal.add(datosCliente);
+            Dimension dim = interfaceMenu.vistaPrincipal.getSize();
+            Dimension dimForm = datosCliente.getSize();
+            datosCliente.setLocation((dim.width - dimForm.width) / 2, (dim.height - dimForm.height) / 2);
+            datosCliente.toFront();
+            datosCliente.setVisible(true);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
     
-        public void cargarTabla() {
+    public void cargarTabla() {
         Vector<Object> fila;
         List<Cliente> clientes = c.listCliente();
-       
+
         /*String data[] ={
             "Id", "RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Calle", "Numero", "Colonia", "Municipio", "Estado", "Numero de Telefono", "Numero de Celular", "Email"
         };
@@ -237,30 +272,27 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             modelo.addRow(datos);
         }
         jTable2.setModel(modelo);
-        */
-        
-        int i=0;
+         */
+        int i = 0;
         for (Cliente client : clientes) {
 
-            jTable2.setValueAt(client.getId(),i ,0);
+            jTable2.setValueAt(client.getId(), i, 0);
             jTable2.setValueAt(client.getRFC(), i, 1);
-            jTable2.setValueAt(client.getNombre(),i,2);
-            jTable2.setValueAt(client.getaPaterno(), i,3);
+            jTable2.setValueAt(client.getNombre(), i, 2);
+            jTable2.setValueAt(client.getaPaterno(), i, 3);
             jTable2.setValueAt(client.getaMaterno(), i, 4);
-            jTable2.setValueAt(client.getCalle(),i,5);
-            jTable2.setValueAt(client.getNumero(),i,6);
-            jTable2.setValueAt(client.getColonia(),i,7);
-            jTable2.setValueAt(client.getMunicipio(),i,8);
-            jTable2.setValueAt(client.getEstado(),i,9);
+            jTable2.setValueAt(client.getCalle(), i, 5);
+            jTable2.setValueAt(client.getNumero(), i, 6);
+            jTable2.setValueAt(client.getColonia(), i, 7);
+            jTable2.setValueAt(client.getMunicipio(), i, 8);
+            jTable2.setValueAt(client.getEstado(), i, 9);
             jTable2.setValueAt(client.getTelefono(), i, 10);
             jTable2.setValueAt(client.getCelular(), i, 11);
             jTable2.setValueAt(client.getEmail(), i, 12);
 
             i++;
         }
-        
-        
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -271,6 +303,4 @@ public class vistaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 
-
 }
-

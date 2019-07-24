@@ -138,6 +138,20 @@ public class Cliente {
         this.id = id;
     }
     
+        public Object clone()
+{
+    Object clone = null;
+    try
+    {
+        clone = super.clone();
+    } 
+    catch(CloneNotSupportedException e)
+    {
+        // No deberia suceder
+    }
+    return clone;
+}
+    
     public String regresaDatos(){
         String datos="Id: "+id+" "+nombre+" "+aPaterno+ " "+aMaterno+"\n";
         datos+=" "+calle+" "+numero+" "+colonia+" "+municipio+" "+estado+"\n";
@@ -147,6 +161,7 @@ public class Cliente {
     }
     
 }
+
 
 
 

@@ -24,7 +24,7 @@ public class productos extends javax.swing.JInternalFrame {
     public productos() {
         initComponents();
         p= new ProductoDB();
-        cargarTabla();
+        //cargarTabla();
     }
 
     /**
@@ -115,7 +115,7 @@ public class productos extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        vistaDatosProductos vista= new vistaDatosProductos();
+      /*  vistaDatosProductos vista= new vistaDatosProductos();
         //vistaDatosCliente datosCliente  = new vistaDatosCliente();
         interfaceMenu.vistaPrincipal.add(vista);
         Dimension dim = interfaceMenu.vistaPrincipal.getSize();
@@ -139,7 +139,7 @@ public class productos extends javax.swing.JInternalFrame {
 
             i++;
         }
-   
+   */
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -150,3 +150,4 @@ public class productos extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
+

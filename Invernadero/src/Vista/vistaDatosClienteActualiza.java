@@ -15,18 +15,19 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class vistaDatosClienteActualiza extends javax.swing.JInternalFrame {
 
-    private Cliente cliente;
+    private Cliente cliente,actualiza;
      private ClienteDB c;
-   private  vistaCliente v;
-   private interfaceMenu menu;
    
     /**
      * Creates new form vistaDatosCliente
      */
-    public vistaDatosClienteActualiza() {
+    public vistaDatosClienteActualiza(Cliente actualiza) {
+        this.actualiza=actualiza;
         initComponents();
         c=new ClienteDB();
         llenarCampos();
+        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -273,19 +274,19 @@ public class vistaDatosClienteActualiza extends javax.swing.JInternalFrame {
     }
         
           public void llenarCampos(){
-        jTextField1.setText(" ");
-        jTextField2.setText(" ");
-        jTextField3.setText(" ");
-        jTextField4.setText(" ");
-        jTextField5.setText(" ");
-        jTextField6.setText(" ");
-        jTextField7.setText(" ");
-        jTextField8.setText(" ");
-        jTextField9.setText(" ");
-        jTextField10.setText(" ");
-        jTextField11.setText(" ");
-        jTextField12.setText(" ");
-        jTextField13.setText(" ");
+        jTextField1.setText(""+actualiza.getId());
+        jTextField2.setText(actualiza.getRFC());
+        jTextField3.setText(actualiza.getNombre());
+        jTextField4.setText(actualiza.getaPaterno());
+        jTextField5.setText(actualiza.getaMaterno());
+        jTextField6.setText(actualiza.getCalle());
+        jTextField7.setText(""+actualiza.getNumero());
+        jTextField8.setText(actualiza.getColonia());
+        jTextField9.setText(actualiza.getMunicipio());
+        jTextField10.setText(actualiza.getEstado());
+        jTextField11.setText(actualiza.getTelefono());
+        jTextField12.setText(actualiza.getCelular());
+        jTextField13.setText(actualiza.getEmail());
     }
      
         

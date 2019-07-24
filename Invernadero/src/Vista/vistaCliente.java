@@ -22,7 +22,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
     private Cliente cliente;
     private JDesktopPane iM;
     private DefaultTableModel modelo;
-    public Cliente clienteActualiza;
+    private Cliente clienteActualiza;
 
     /**
      * Creates new form vistaCliente
@@ -233,7 +233,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
            // System.out.println(clienteActualiza.regresaDatos());
            // c.selectCliente(cliente);
 
-            vistaDatosClienteActualiza datosCliente = new vistaDatosClienteActualiza();
+            vistaDatosClienteActualiza datosCliente = new vistaDatosClienteActualiza(clienteActualiza);
             interfaceMenu.vistaPrincipal.add(datosCliente);
             Dimension dim = interfaceMenu.vistaPrincipal.getSize();
             Dimension dimForm = datosCliente.getSize();
@@ -295,6 +295,12 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
     }
 
+    public Cliente getClienteActualiza() {
+        return clienteActualiza;
+    }
+
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

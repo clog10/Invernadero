@@ -73,13 +73,11 @@ public class ClienteDB {
     public boolean updateCliente(Cliente c) {
 
         PreparedStatement ps;
-        String sqlUpdateCliente = "update invernadero_gran_valle.cliente set id_cliente = ?, nombre = ?, a_paterno = ?,"
-                              + "a_materno = ?, calle = ?, numero = ?, colonia = ?, municipio = ?, estado = ?,"
-                              + "telefono =?, celular = ?, e_mail = ?, rfc = ?  where id = ?;";
+        String sqlUpdateCliente = "UPDATE invernadero_gran_valle.cliente SET id_cliente=?, nombre=?, a_paterno=?,"
+                              + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
+                              + "telefono=?, celular=?, e_mail=?, rfc=?  WHERE id_cliente="+c.getId()+";";
         try {
-
             ps =  interfaceDatos.conectiondb.getConexion().prepareStatement(sqlUpdateCliente);
-
 
             ps.setInt(1, c.getId());
             ps.setString(2, c.getNombre());
@@ -171,6 +169,14 @@ public class ClienteDB {
         return clientes;
     }
 }
+
+
+
+
+
+
+
+
 
 
 

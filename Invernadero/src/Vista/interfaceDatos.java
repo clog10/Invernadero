@@ -9,11 +9,19 @@ import Modelo.Conectiondb;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Handler;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
@@ -218,7 +226,26 @@ public class interfaceDatos extends javax.swing.JFrame {
 
         }else{
             if(usuario.equals("usuario1") && paswd.equals("1234")){
-                JOptionPane.showMessageDialog(null,"Bienvenido");
+
+                ///THREAD                
+           JOptionPane pane = new JOptionPane("¡Bienvenido!", JOptionPane.INFORMATION_MESSAGE);
+                 JDialog dialog = pane.createDialog("INVERNADERO 'EL GRAN VALLLE'");
+                    dialog.addWindowListener(null);
+                    dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+
+                ScheduledExecutorService sch = Executors.newSingleThreadScheduledExecutor();     
+                sch.schedule(new Runnable() {
+                    public void run() {
+                        dialog.setVisible(false);
+                        dialog.dispose();
+                    }
+                }, 1, TimeUnit.SECONDS);
+
+                dialog.setVisible(true);
+                
+                //THREAD
+                
+                
                 interfaceMenu iM= new interfaceMenu();
 
                 iM.setVisible(true);

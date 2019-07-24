@@ -7,6 +7,7 @@ package Vista;
 
 import Modelo.Proveedor;
 import Modelo.ProveedorDB;
+import static Vista.interfaceMenu.vistaPrincipal;
 import java.awt.Dimension;
 import java.util.List;
 import java.util.Vector;
@@ -179,7 +180,11 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
         datosProveedor.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-
+    private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {                                         
+            // TODO add your handling code here:
+            vistaPrincipal.removeAll();
+            vistaPrincipal.updateUI();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

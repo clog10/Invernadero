@@ -8,6 +8,7 @@ package Vista;
 import javax.swing.JOptionPane;
 import Modelo.Empleado; 
 import Modelo.EmpleadoDB;
+import static Vista.interfaceMenu.vistaPrincipal;
 import java.util.List;
 import java.util.Vector;
 public class vistaEmpleado extends javax.swing.JInternalFrame {
@@ -319,6 +320,11 @@ private EmpleadoDB e;
         jTextField10.setText(" ");
         jTextField11.setText(" ");
         
+    }
+    private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {                                         
+        // TODO add your handling code here:
+        vistaPrincipal.removeAll();
+        vistaPrincipal.updateUI();
     }
              protected void cargarTabla() {
 //        Vector<Object> fila;

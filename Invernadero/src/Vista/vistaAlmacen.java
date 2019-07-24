@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import static Vista.interfaceMenu.vistaPrincipal;
+
 /**
  *
  * @author Clog_10
@@ -41,7 +43,11 @@ public class vistaAlmacen extends javax.swing.JInternalFrame {
     }
     // </editor-fold>//GEN-END:initComponents
 
-
+    private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {                                         
+        // TODO add your handling code here:
+        vistaPrincipal.removeAll();
+        vistaPrincipal.updateUI();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

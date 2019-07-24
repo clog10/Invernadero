@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import static Vista.interfaceMenu.vistaPrincipal;
+
 /**
  *
  * @author gurren-lagann
@@ -171,7 +173,12 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
             System.out.println("Error: " + e);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-
+   
+    private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {                                         
+            // TODO add your handling code here:
+            vistaPrincipal.removeAll();
+            vistaPrincipal.updateUI();
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -2,6 +2,7 @@ package Vista;
 
 import Modelo.Cliente;
 import Modelo.ClienteDB;
+import static Vista.interfaceMenu.vistaPrincipal;
 import java.awt.Dimension;
 import java.util.List;
 import java.util.Vector;
@@ -52,6 +53,23 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
 
         setTitle("Clientes");
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosed(evt);
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -245,6 +263,13 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //Evento cerrar ventana para que se refresque el JDesktopPane
+    private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosed
+        // TODO add your handling code here:
+        vistaPrincipal.removeAll();
+        vistaPrincipal.updateUI();
+    }//GEN-LAST:event_formInternalFrameClosed
+
 
     
     public void cargarTabla() {
@@ -300,7 +325,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
     public Cliente getClienteActualiza() {
         return clienteActualiza;
     }
-
+ 
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

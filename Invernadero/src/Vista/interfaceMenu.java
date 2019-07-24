@@ -265,7 +265,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     //Metodo para centrar los JInternalFrame dentro  del desktop frame
     public void centrarVista(JInternalFrame fr){
         try {
-            //reiniciarVista();
+            reiniciarVista();
             vistaPrincipal.add(fr);
             Dimension dim = vistaPrincipal.getSize();
             Dimension dimForm = fr.getSize();

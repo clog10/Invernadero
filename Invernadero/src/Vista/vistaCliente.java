@@ -125,27 +125,27 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1213, Short.MAX_VALUE)
+                .addComponent(jScrollPane2)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(275, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(74, 74, 74)
+                .addGap(180, 180, 180)
                 .addComponent(jButton2)
-                .addGap(86, 86, 86)
+                .addGap(184, 184, 184)
                 .addComponent(jButton3)
-                .addGap(508, 508, 508))
+                .addGap(291, 291, 291))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap())
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -156,6 +156,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         //Cliente cliente;
         vistaDatosCliente datosCliente = new vistaDatosCliente();
+        datosCliente.setClosable(true);
         interfaceMenu.vistaPrincipal.add(datosCliente);
         Dimension dim = interfaceMenu.vistaPrincipal.getSize();
         Dimension dimForm = datosCliente.getSize();
@@ -234,6 +235,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
            // c.selectCliente(cliente);
 
             vistaDatosClienteActualiza datosCliente = new vistaDatosClienteActualiza(clienteActualiza);
+            datosCliente.setClosable(true);
             interfaceMenu.vistaPrincipal.add(datosCliente);
             Dimension dim = interfaceMenu.vistaPrincipal.getSize();
             Dimension dimForm = datosCliente.getSize();

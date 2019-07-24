@@ -5,18 +5,21 @@
  */
 package Vista;
 
-/**
- *
- * @author Clog_10
- */
+import javax.swing.JOptionPane;
+import Modelo.Empleado; 
+import Modelo.EmpleadoDB;
+import java.util.List;
+import java.util.Vector;
 public class vistaEmpleado extends javax.swing.JInternalFrame {
-
-    /**
-     * Creates new form vistaCliente
-     */
+private EmpleadoDB e;
+    private  Empleado empleado;
     public vistaEmpleado() {
+  
         initComponents();
+        e=new EmpleadoDB();
+        cargarTabla();
     }
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -273,7 +276,27 @@ public class vistaEmpleado extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+              
+        if(jTextField1.getText().isEmpty() || jTextField3.getText().isEmpty() || jTextField4.getText().isEmpty() || jTextField5.getText().isEmpty()
+          || jTextField6.getText().isEmpty() || jTextField7.getText().isEmpty() || jTextField8.getText().isEmpty() || jTextField9.getText().isEmpty()
+          || jTextField10.getText().isEmpty() || jTextField11.getText().isEmpty() ){
+       
+        JOptionPane.showMessageDialog(null, "Campos Vacios, Verificar", "Error", JOptionPane.ERROR_MESSAGE);
+      }else{
+            empleado = new Empleado (Integer.parseInt(jTextField1.getText()),jTextField3.getText(),jTextField4.getText(),
+                    jTextField5.getText(),jTextField6.getText(),jTextField7.getText(),jTextField8.getText(),
+                    jTextField8.getText(),jTextField9.getText(),Integer.parseInt(jTextField7.getText()),
+                    jTextField9.getText(),jTextField10.getText(),jTextField11.getText());
+       e.insertEmpleado(empleado);
+      
+        cargarTabla();
+       vaciarCampos();
+      }
+
+        
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -284,6 +307,42 @@ public class vistaEmpleado extends javax.swing.JInternalFrame {
             System.out.println("Error: " + e);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+         public void vaciarCampos(){
+        jTextField1.setText(" ");
+        jTextField3.setText(" ");
+        jTextField4.setText(" ");
+        jTextField5.setText(" ");
+        jTextField6.setText(" ");
+        jTextField7.setText(" ");
+        jTextField8.setText(" ");
+        jTextField9.setText(" ");
+        jTextField10.setText(" ");
+        jTextField11.setText(" ");
+        
+    }
+             protected void cargarTabla() {
+        Vector<Object> fila;
+        List<Empleado> empleado = e.listEmpleado();
+        int i=0;
+        for (Empleado e : empleado) {
+            
+            
+           
+            jTable2.setValueAt(e.getId(),i ,0);
+            jTable2.setValueAt(e.getNombre(),i,1);
+            jTable2.setValueAt(e.getaPaterno(), i,2);
+            jTable2.setValueAt(e.getaMaterno(), i, 3);
+            jTable2.setValueAt(e.getCalle(),i,4);
+            jTable2.setValueAt(e.getNumero(),i,5);
+            jTable2.setValueAt(e.getColonia(),i,6);
+            jTable2.setValueAt(e.getMunicipio(),i,7);
+            jTable2.setValueAt(e.getEstado(),i,8);
+            jTable2.setValueAt(e.getNumero(), i, 9);
+            
+            i++;
+        }
+    }
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -321,7 +321,7 @@ private EmpleadoDB e;
         
     }
              protected void cargarTabla() {
-        Vector<Object> fila;
+//        Vector<Object> fila;
         List<Empleado> empleado = e.listEmpleado();
         int i=0;
         for (Empleado e : empleado) {

@@ -1,6 +1,7 @@
 package Modelo;
 
 import Vista.interfaceDatos;
+import Vista.interfaceLogin;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,7 +30,7 @@ public class ClienteDB {
         PreparedStatement ps;
         String sqlInsertCliente = "insert into invernadero_gran_valle.cliente values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
         try {
-            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
             ps.setInt(1, c.getId());
             ps.setString(2, c.getNombre());
             ps.setString(3, c.getaPaterno());
@@ -57,7 +58,7 @@ public class ClienteDB {
         PreparedStatement ps;
         String sqlInsertCliente = "insert into invernadero_gran_valle.cliente values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
         try {
-            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
             ps.setInt(1, c.getId());
             ps.setString(2, c.getNombre());
             ps.setString(3, c.getaPaterno());
@@ -86,7 +87,7 @@ public class ClienteDB {
         String sqlDeleteCliente = "delete from invernadero_gran_valle.cliente where id_cliente  = ?;";
 
         try {
-            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlDeleteCliente);
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlDeleteCliente);
             ps.setInt(1, c.getId());
 
             ps.executeUpdate();
@@ -104,7 +105,7 @@ public class ClienteDB {
                               + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
                               + "telefono=?, celular=?, e_mail=?, rfc=?  WHERE id_cliente="+c.getId()+";";
         try {
-            ps =  interfaceDatos.conectiondb.getConexion().prepareStatement(sqlUpdateCliente);
+            ps =  interfaceLogin.conectiondb.getConexion().prepareStatement(sqlUpdateCliente);
 
             ps.setInt(1, c.getId());
             ps.setString(2, c.getNombre());
@@ -140,7 +141,7 @@ public class ClienteDB {
         String sqlConsulta = "select * from invernadero_gran_valle.cliente where id_cliente = ?;";
         try {
 
-            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlConsulta);
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlConsulta);
             ps.setInt(1, c.getId());
 
             rs = ps.executeQuery();
@@ -166,7 +167,7 @@ public class ClienteDB {
 
         List<Cliente> clientes = new ArrayList<Cliente>();
         try {
-            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(consultaSQL);
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(consultaSQL);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Cliente c = new Cliente();
@@ -196,6 +197,7 @@ public class ClienteDB {
         return clientes;
     }
 }
+
 
 
 

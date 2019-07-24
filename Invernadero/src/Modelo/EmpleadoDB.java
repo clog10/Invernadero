@@ -3,6 +3,7 @@ package Modelo;
 
 
 import Vista.interfaceDatos;
+import Vista.interfaceLogin;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +23,7 @@ public class EmpleadoDB {
         PreparedStatement ps;
         String sqlInsertEmpleado = "insert into invernadero_gran_valle.empleado values (?,?,?,?,?,?,?,?,?,?);";
         try {
-            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlInsertEmpleado);
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertEmpleado);
             ps.setInt(1, e.getId());
             ps.setString(3, e.getNombre());
             ps.setString(4, e.getaPaterno());
@@ -48,7 +49,7 @@ public class EmpleadoDB {
         String sqlDeleteEmpleado = "delete from invernadero_gran_valle.empleado where id_empleado  = ?;";
 
         try {
-            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlDeleteEmpleado);
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlDeleteEmpleado);
             ps.setInt(1, e.getId());
 
             ps.executeUpdate();
@@ -70,7 +71,7 @@ public class EmpleadoDB {
         List<Empleado> empleado = new ArrayList<Empleado>();
         //System.out.println("Hola");
         try {
-            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(consultaSQL);
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(consultaSQL);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Empleado e = new Empleado();
@@ -99,3 +100,4 @@ public class EmpleadoDB {
     }
     
 }
+

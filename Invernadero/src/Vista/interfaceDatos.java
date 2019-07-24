@@ -25,9 +25,6 @@ public class interfaceDatos extends javax.swing.JFrame {
      * Creates new form interfaceDatos
      */
     
-     public static  Conectiondb conectiondb;
-    public String db = "dbInvernadero";
-    
     private Icon iconoEscalado;
     private ImageIcon icon;
     private Icon iconoLetras;
@@ -221,7 +218,6 @@ public class interfaceDatos extends javax.swing.JFrame {
 
         }else{
             if(usuario.equals("usuario1") && paswd.equals("1234")){
-                conectiondb = new Conectiondb(db, "127.0.0.1");
                 JOptionPane.showMessageDialog(null,"Bienvenido");
                 interfaceMenu iM= new interfaceMenu();
 

@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 
 /**
  * Invernadero Gran Valle
- *
  * @author Clog_10
  */
 public class ClienteDB {
@@ -50,6 +49,34 @@ public class ClienteDB {
             return true;
         } catch (SQLException exception) {
             System.err.println("Error en al añadir (Cliente) " + exception);
+            return false;
+        }
+    }
+    
+    public boolean insertClienteActualiza(Cliente c) {
+        PreparedStatement ps;
+        String sqlInsertCliente = "insert into invernadero_gran_valle.cliente values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        try {
+            ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
+            ps.setInt(1, c.getId());
+            ps.setString(2, c.getNombre());
+            ps.setString(3, c.getaPaterno());
+            ps.setString(4, c.getaMaterno());
+            ps.setString(5, c.getCalle());
+            ps.setInt(6, c.getNumero());
+            ps.setString(7, c.getColonia());
+            ps.setString(8, c.getMunicipio());
+            ps.setString(9, c.getEstado());
+            ps.setString(10, c.getTelefono());
+            ps.setString(11, c.getCelular());
+            ps.setString(12, c.getEmail());
+            ps.setString(13, c.getRFC());
+
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Cliente Actualizado");
+            return true;
+        } catch (SQLException exception) {
+            System.err.println("Error en al Actualizar (Cliente) " + exception);
             return false;
         }
     }
@@ -169,6 +196,9 @@ public class ClienteDB {
         return clientes;
     }
 }
+
+
+
 
 
 

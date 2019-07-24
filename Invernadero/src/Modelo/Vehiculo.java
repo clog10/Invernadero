@@ -19,7 +19,7 @@ public class Vehiculo {
     }
     
     public Vehiculo(){
-        
+         
     }
 
     public String getMatricula() {
@@ -73,6 +73,7 @@ public class Vehiculo {
     
     
 }
+
 
 
 

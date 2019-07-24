@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.Conectiondb;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -17,6 +18,10 @@ import javax.swing.ImageIcon;
  */
 public class interfaceLogin extends javax.swing.JFrame {
 
+         public static  Conectiondb conectiondb;
+             public String db = "dbInvernadero";
+             
+    
     /**
      * Creates new form interfaceLogin
      */
@@ -114,7 +119,8 @@ public class interfaceLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    interfaceDatos iDatos = new interfaceDatos();
+                    conectiondb = new Conectiondb(db, "127.0.0.1");
+        interfaceDatos iDatos = new interfaceDatos();
     iDatos.setVisible(true);
     this.setVisible(false);
         

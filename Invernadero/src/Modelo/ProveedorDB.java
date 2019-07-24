@@ -2,6 +2,7 @@
 package Modelo;
 
 import Vista.interfaceDatos;
+import Vista.interfaceLogin;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,7 +31,7 @@ public boolean insertProveedor(Proveedor c) {
     PreparedStatement ps;
     String sqlInsertProveedor = "insert into invernadero_gran_valle.proveedor values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
     try {
-        ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlInsertProveedor);
+        ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertProveedor);
         ps.setInt(1, c.getId());
         ps.setString(2, c.getRazonSocial());
         ps.setString(3, c.getRfc());
@@ -57,7 +58,7 @@ public boolean deleteProveedor(Proveedor c) {
     String sqlDeleteProveedor = "delete from invernadero_gran_valle.proveedor where id_cliente  = ?;";
 
     try {
-        ps = interfaceDatos.conectiondb.getConexion().prepareStatement(sqlDeleteProveedor);
+        ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlDeleteProveedor);
         ps.setInt(1, c.getId());
 
         ps.executeUpdate();
@@ -78,7 +79,7 @@ public List<Proveedor> listProveedor() {
 
     List<Proveedor> proveedores = new ArrayList<Proveedor>();
     try {
-        ps = interfaceDatos.conectiondb.getConexion().prepareStatement(consultaSQL);
+        ps = interfaceLogin.conectiondb.getConexion().prepareStatement(consultaSQL);
         rs = ps.executeQuery();
         while (rs.next()) {
             Proveedor c = new Proveedor();
@@ -114,6 +115,7 @@ public List<Proveedor> listProveedor() {
     
     
 }
+
 
 
 

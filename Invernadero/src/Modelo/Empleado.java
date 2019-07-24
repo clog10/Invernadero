@@ -13,18 +13,27 @@ public class Empleado {
     private int numero;
 
     public Empleado(int id, String nombre, String aPaterno, String aMaterno, String numTel, 
-                            String calle, String colonia, String municipio, String estado, int numero) { 
-        this.id = id; 
-        this.nombre = nombre; 
-        this.aPaterno = aPaterno; 
-        this.aMaterno = aMaterno; 
-        this.numTel = numTel; 
-        this.calle = calle; 
-        this.colonia = colonia; 
+                            String calle, String colonia, String municipio, String estado, int numero) {
+        this.id = id;
+        this.nombre = nombre;
+        this.aPaterno = aPaterno;
+        this.aMaterno = aMaterno;
+        this.numTel = numTel;
+        this.calle = calle;
+        this.colonia = colonia;
         this.municipio = municipio;
-        this.estado = estado; 
+        this.estado = estado;
         this.numero = numero;
     }
+
+    public Empleado(int parseInt, String text, String text0, String text1, String text2, String text3, String text4, String text5, String text6, int parseInt0, String text7, String text8, String text9) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Empleado() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     public int getId() {
         return id;

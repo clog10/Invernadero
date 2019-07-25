@@ -5,19 +5,36 @@
  */
 package Vista;
 
+
 import static Vista.interfaceMenu.vistaPrincipal;
+
+import Modelo.Cliente;
+import Modelo.Vehiculo;
+import Modelo.VehiculoDB;
+import java.awt.Dimension;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.JDesktopPane;
+
 
 /**
  *
- * @author gurren-lagann
+ * @author clog10
  */
 public class vistaVehiculos extends javax.swing.JInternalFrame {
 
+    private Vehiculo vehiculo;
+    private VehiculoDB v;
+    private JDesktopPane iM;
+    
     /**
      * Creates new form vistaVehiculosI
      */
     public vistaVehiculos() {
         initComponents();
+        v=new VehiculoDB();
+        iM = this.getDesktopPane();
+        cargarTabla();
     }
 
     /**
@@ -49,38 +66,38 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Matricula", "Marca", "Modelo", "Numero de Serie", "Año", "Operador"
+                "Matricula", "Marca", "Modelo", "Numero de Serie", "Año"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -134,6 +151,11 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eliminar.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 20;
         gridBagConstraints.gridy = 6;
@@ -163,6 +185,15 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+                vistaDatosVehiculo datosCliente = new vistaDatosVehiculo();
+                datosCliente.setClosable(true);
+        interfaceMenu.vistaPrincipal.add(datosCliente);
+        Dimension dim = interfaceMenu.vistaPrincipal.getSize();
+        Dimension dimForm = datosCliente.getSize();
+        datosCliente.setLocation((dim.width - dimForm.width) / 2, (dim.height - dimForm.height) / 2);
+        datosCliente.toFront();
+        datosCliente.setVisible(true);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -173,6 +204,7 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
             System.out.println("Error: " + e);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
    
     private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {                                         
             // TODO add your handling code here:
@@ -180,6 +212,43 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
             vistaPrincipal.updateUI();
         }
 
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        int filaPulsada = jTable1.getSelectedRow();
+        //System.out.println(filaPulsada);
+        if (filaPulsada >= 0) {
+            vehiculo = new Vehiculo();
+
+
+            String matricula = (String) jTable1.getValueAt(filaPulsada, 0);
+            //System.out.println(id);
+            vehiculo.setMatricula(matricula);
+            v.deleteVehiculo(vehiculo);
+        }
+
+        cargarTabla();
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+
+    public void cargarTabla() {
+        List<Vehiculo> vehiculos = v.listVehiculo();
+
+        int i = 0;
+        for (Vehiculo ve: vehiculos) {
+
+            jTable1.setValueAt(ve.getMatricula(), i, 0);
+            jTable1.setValueAt(ve.getMarca(), i, 1);
+            jTable1.setValueAt(ve.getModelo(), i, 2);
+            jTable1.setValueAt(ve.getNumSerie(), i, 3);
+            jTable1.setValueAt(ve.getAnio(), i, 4);
+
+            i++;
+        }
+
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

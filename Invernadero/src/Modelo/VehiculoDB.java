@@ -83,7 +83,7 @@ public class VehiculoDB {
      public List<Vehiculo> listVehiculo() {
         PreparedStatement ps;
         ResultSet rs;
-        String consultaSQL = "Select matricula, marca,modelo,numero_serie,anio;";
+        String consultaSQL = "Select matricula,marca,modelo,numero_serie,anio from invernadero_gran_valle.vehiculo;";
 
         List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
         try {
@@ -100,9 +100,9 @@ public class VehiculoDB {
 
                 vehiculos.add(c); 
 
-              for (Vehiculo q : vehiculos) {
-                    System.out.println(q.toString());
-                }
+             // for (Vehiculo q : vehiculos) {
+               //     System.out.println(q.toString());
+               // }
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Vehiculos) " + exception);
@@ -111,6 +111,9 @@ public class VehiculoDB {
     }
     
 }
+
+
+
 
 
 

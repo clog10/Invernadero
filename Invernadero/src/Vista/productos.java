@@ -8,23 +8,35 @@ package Vista;
 import Modelo.Producto;
 import Modelo.ProductoDB;
 import java.awt.Dimension;
+import java.beans.PropertyVetoException;
 import java.util.List;
 import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author lenovo
  */
 public class productos extends javax.swing.JInternalFrame {
+    //Se define una instancia de ProductoDB que contiene los metodos con las consultas.
     private ProductoDB p;
+    //El modelo de la clase productos.
     private Producto producto;
+    private DefaultTableModel modelo;
+    //Arreglo de datos para la tabla de productos.
+    String []datitos;
     /**
      * Creates new form productos
      */
     public productos() {
         initComponents();
+        modelo=(DefaultTableModel)jTable2.getModel();
+        
         p= new ProductoDB();
-        //cargarTabla();
+       // producto= new Producto();
+       //Se actulizan los datos con cargarTabla2
+        cargarTabla2();
     }
 
     /**
@@ -41,6 +53,8 @@ public class productos extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+
+        setTitle("PRODUCTOS");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,6 +75,11 @@ public class productos extends javax.swing.JInternalFrame {
                 "ID", "Nombre", "Unidad de Medida", "Precio Unitario", "Cantidad"
             }
         ));
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable2);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/agregar.png"))); // NOI18N
@@ -72,6 +91,11 @@ public class productos extends javax.swing.JInternalFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/editar.png"))); // NOI18N
         jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eliminar.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -108,14 +132,33 @@ public class productos extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Metodo para el boton eliminar.
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        //int filaPulsada = vistaLibro.getTabla().tabla.getSelectedRow();
+        //int filaPulsada = jTable2.getSelectedRow();
+        //System.out.println(filaPulsada);
+        //if (filaPulsada >= 0) {
+          //  producto = new Producto();
+            //int id = (int) jTable2.getValueAt(filaPulsada, 0);
+            //System.out.println(id);
+            //producto.setId(id);           
+            boolean resultado= p.deleteProducto(Integer.parseInt(datitos[0]));
+            if(resultado)
+                System.out.println("SE elimino");
+            
+            else System.out.println("No se elimino");
+    //modelo.removeRow(filaPulsada);
+            //JOptionPane.showMessageDialog(this, "Eliminado");        
+        //}
+        //this.setClosed(true);
+        //System.out.println("Entre");
+        interfaceMenu.pro.cargarTabla2();       
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    //Metodo del boton registar, que nos permite abrir una nueva vista.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      /*  vistaDatosProductos vista= new vistaDatosProductos();
+        vistaDatosProductos vista= new vistaDatosProductos();
         //vistaDatosCliente datosCliente  = new vistaDatosCliente();
         interfaceMenu.vistaPrincipal.add(vista);
         Dimension dim = interfaceMenu.vistaPrincipal.getSize();
@@ -124,22 +167,52 @@ public class productos extends javax.swing.JInternalFrame {
         vista.toFront();
         vista.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-      public void cargarTabla() {
+    //Metodo para el boton editar, que nos permite editar los productos.
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        vistaDatosProductosEditar editar= new vistaDatosProductosEditar();
+        interfaceMenu.vistaPrincipal.add(editar);
+        
+        editar.setjTextField1(datitos[0]);
+        editar.setjTextField2(datitos[1]);
+        editar.setjComboBox1(datitos[2]);
+        editar.setjTextField3(datitos[3]);
+        editar.setjTextField4(datitos[4]);
+        System.out.println(datitos[0]);
+        editar.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+    //Evento de la tabla productos, que nos permite hacer click y recibir los datos de un fila
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        int numero= jTable2.getSelectedRow();
+        datitos= new String[modelo.getColumnCount()];
+        for(int i=0;i<datitos.length;i++){
+            datitos[i]= (String) jTable2.getValueAt(numero, i);
+            System.out.println(datitos[i]);
+        }
+    }//GEN-LAST:event_jTable2MouseClicked
+      /*public void cargarTabla() {
         Vector<Object> fila;
-        List<Producto> productos = p.listProducto();     
+        List<Producto> produc = p.listProducto();     
         
         int i=0;
-        for (Producto pro : productos) {
-
-            jTable2.setValueAt(pro.getId(),i ,0);
-            jTable2.setValueAt(pro.getNombre(), i, 1);
-            jTable2.setValueAt(pro.getUnidad(),i,2);
-            jTable2.setValueAt(pro.getPrecio(), i,3);
-            jTable2.setValueAt(pro.getCantidad(), i, 4);
-
+        modelo.setColumnCount(0);
+        for (Producto pro : produc) {
+            String [] dato= {String.valueOf(pro.getId()),pro.getNombre(),pro.getUnidad(),String.valueOf(pro.getPrecio()),String.valueOf(pro.getCantidad())};
+            modelo.addRow(dato);
+            System.out.println("El numero es:"+i);
+            modelo.setValueAt(pro.getNombre(), i, 1);
+            modelo.setValueAt(pro.getUnidad(),i,2);
+            modelo.setValueAt(pro.getPrecio(), i,3);
+            modelo.setValueAt(pro.getCantidad(), i, 4);
+            
             i++;
+            modelo.fireTableDataChanged();
         }
-   */
+    }*/
+    //Metodo para regresar valores de la tabla.
+    public void cargarTabla2(){
+     jTable2.setModel(p.listProducto2());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

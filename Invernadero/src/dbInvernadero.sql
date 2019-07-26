@@ -1,13 +1,17 @@
+﻿drop schema invernadero_gran_valle cascade;
+
+
 create schema invernadero_gran_valle authorization postgres;
 
 set search_path to invernadero_gran_valle;
-
-  create table cosecha
-  (
+select * from cosecha;
+create table cosecha
+(
 id_cosecha int primary key,
 nombre varchar (35),
 unidad_medida varchar(20),
-precio_u numeric(6,2)
+precio_u numeric(6,2),
+cantidad int
 );
 
  create table producto 
@@ -92,6 +96,7 @@ precio_compra numeric(6,2)
   create table detalle_venta
   (
   folio_v int,
+  id_cosecha int,
   id_p int,
   cantidad int,
   foreign key (folio_v) references venta (folio_v) match full on update cascade on delete restrict,

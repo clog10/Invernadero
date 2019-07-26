@@ -95,7 +95,6 @@ public class interfaceDatos extends javax.swing.JFrame {
         setTitle("Inicio de sesión");
         setBackground(new java.awt.Color(240, 239, 232));
         setIconImage(new ImageIcon(getClass().getResource("/resources/icon.png")).getImage());
-        setPreferredSize(new java.awt.Dimension(410, 460));
         setSize(new java.awt.Dimension(410, 460));
 
         jPanel1.setBackground(new java.awt.Color(240, 239, 232));
@@ -122,18 +121,20 @@ public class interfaceDatos extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(203, 75, 58));
         jLabel2.setText("Contraseña");
 
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(240, 239, 232));
         jButton2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ingresar.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -218,6 +219,23 @@ public class interfaceDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1AncestorAdded
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       verificarAutenticacion();
+        //conectiondb = new Conectiondb(db, "127.0.0.1");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("enter");
+        verificarAutenticacion();
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("enter pass");
+        verificarAutenticacion();
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    
+    public void verificarAutenticacion(){
         String usuario = jTextField1.getText();
         String paswd = jPasswordField1.getText();
 
@@ -255,13 +273,9 @@ public class interfaceDatos extends javax.swing.JFrame {
                 JOptionPane.showConfirmDialog(null,"Su usuario o contraseña es incorrecto");
             }
         }
-        //conectiondb = new Conectiondb(db, "127.0.0.1");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
+    
+    }
+    
     /**
      * @param args the command line arguments
      */

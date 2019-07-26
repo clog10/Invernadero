@@ -25,15 +25,15 @@ public class EmpleadoDB {
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertEmpleado);
             ps.setInt(1, e.getId());
-            ps.setString(3, e.getNombre());
-            ps.setString(4, e.getaPaterno());
-            ps.setString(5, e.getaMaterno());
-            ps.setString(6, e.getNumTel());
-            ps.setString(7, e.getCalle());
+            ps.setString(2, e.getNombre());
+            ps.setString(3, e.getaPaterno());
+            ps.setString(4, e.getaMaterno());
+            ps.setString(5, e.getNumTel());
+            ps.setString(6, e.getCalle());
+            ps.setInt(7, e.getNumero());
             ps.setString(8, e.getColonia());
             ps.setString(9, e.getMunicipio());
             ps.setString(10, e.getEstado());
-            ps.setInt(11, e.getNumero());
             
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado añadido");
@@ -76,16 +76,16 @@ public class EmpleadoDB {
             while (rs.next()) {
                 Empleado e = new Empleado();
                 
-                e.setId(rs.getInt("id_cliente"));
+                e.setId(rs.getInt("id_empleado"));
                 e.setNombre(rs.getString("nombre"));
                 e.setaPaterno(rs.getString("a_paterno"));
                 e.setaMaterno(rs.getString("a_materno"));
+                e.setNumTel(rs.getString("telefono"));
                 e.setCalle(rs.getString("calle"));
                 e.setNumero(rs.getInt("numero"));
                 e.setColonia(rs.getString("colonia"));
                 e.setMunicipio(rs.getString("municipio"));
                 e.setEstado(rs.getString("estado"));
-                e.setNumero(rs.getInt("Numero"));
 
                 empleado.add(e);
 

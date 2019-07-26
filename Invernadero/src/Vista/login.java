@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
@@ -117,6 +120,10 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 // Esta clase se encarga de guardar los datos de usuario y contraseña para poder compararlos 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        verificarAutenticacion();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    public void verificarAutenticacion(){
         String usuario = jTextField1.getText();
         String paswd = jPasswordField1.getText();
         
@@ -134,11 +141,12 @@ public class login extends javax.swing.JFrame {
                  JOptionPane.showConfirmDialog(null,"Su usuario o contraseña es incorrecto");
              }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

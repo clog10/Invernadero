@@ -12,8 +12,8 @@ public class Empleado {
     private String calle,colonia,municipio,estado;
     private int numero;
 
-    public Empleado(int id, String nombre, String aPaterno, String aMaterno, String numTel, 
-                            String calle, String colonia, String municipio, String estado, int numero) {
+    public Empleado(int id, String nombre, String aPaterno, String aMaterno, 
+                            String calle, int numero, String colonia, String municipio, String estado, String numTel) {
         this.id = id;
         this.nombre = nombre;
         this.aPaterno = aPaterno;
@@ -30,8 +30,8 @@ public class Empleado {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    Empleado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Empleado() {
+
     }
 
 

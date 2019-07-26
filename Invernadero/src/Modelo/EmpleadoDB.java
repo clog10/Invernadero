@@ -43,6 +43,30 @@ public class EmpleadoDB {
             return false;
         }
     }
+    
+      public boolean insertEmpleadoActualiza(Empleado e){
+        PreparedStatement ps;
+        String sqlInsertEmpleado = "insert into invernadero_gran_valle.empleado values (?,?,?,?,?,?,?,?,?,?);";
+        try {
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertEmpleado);
+            ps.setInt(1, e.getId());
+            ps.setString(2, e.getNombre());
+            ps.setString(3, e.getaPaterno());
+            ps.setString(4, e.getaMaterno());
+            ps.setString(5, e.getNumTel());
+            ps.setString(6, e.getCalle());
+            ps.setInt(7, e.getNumero());
+            ps.setString(8, e.getColonia());
+            ps.setString(9, e.getMunicipio());
+            ps.setString(10, e.getEstado());
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Empleado Actualizado");
+            return true;
+        } catch (SQLException exception) {
+            System.err.println("Error en al Actualizar (Empleado) " + exception);
+            return false;
+        }
+    }
 
     public boolean deleteEmpleado(Empleado e) {
         PreparedStatement ps;

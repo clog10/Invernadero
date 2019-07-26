@@ -20,11 +20,13 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
      * Creates new form vistaDatosEmpleado
      */
     private EmpleadoDB e;
-    private  Empleado empleado;
+    private  Empleado empleado,actualiza;
     
-    public vistaDatosEmpleadoActualiza() {
+    public vistaDatosEmpleadoActualiza(Empleado actualiza) {
         initComponents();
+        this.actualiza = actualiza;
         e = new EmpleadoDB();
+        llenarCampos();
     }
     
       public void vaciarCampos(){
@@ -39,6 +41,20 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
         jTextField10.setText(" ");
         
     }
+      
+     public void llenarCampos(){
+        jTextField1.setText(""+actualiza.getId());
+        jTextField2.setText(actualiza.getNombre());
+        jTextField3.setText(actualiza.getaPaterno());
+        jTextField4.setText(actualiza.getaMaterno());
+        jTextField5.setText(actualiza.getNumTel());
+        jTextField6.setText(actualiza.getCalle());
+        jTextField7.setText(""+actualiza.getNumero());
+        jTextField8.setText(actualiza.getColonia());
+        jTextField9.setText(actualiza.getMunicipio());
+        jTextField10.setText(actualiza.getEstado());
+    }
+      
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,7 +75,7 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
                 jTextField4.getText(), jTextField5.getText(), Integer.parseInt(jTextField6.getText()), jTextField7.getText(),
                 jTextField8.getText(), jTextField9.getText(), jTextField10.getText());
             
-            e.insertEmpleado(empleado);
+            e.insertEmpleadoActualiza(empleado);
             vaciarCampos();
 
             try {
@@ -71,7 +87,9 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
             }
         }
     }
-      
+    
+  
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -95,9 +113,9 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jTextField9 = new javax.swing.JTextField();
 
         jLabel1.setText("Id: ");
 
@@ -121,12 +139,6 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
 
         jLabel12.setText("Telefono: ");
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/registrar.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +156,7 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 34, Short.MAX_VALUE)
+                .addGap(0, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel12)
@@ -174,8 +186,8 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32))
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(58, 58, 58))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(29, 29, 29)
@@ -240,15 +252,33 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       agregarDatos();
+      // agregarDatos();
         //        v.cargarTabla ();
+         if(jTextField1.getText().isEmpty() || jTextField2.getText().toString().isEmpty() || jTextField2.getText().toString().isEmpty()
+            || jTextField3.getText().toString().isEmpty() || jTextField4.getText().toString().isEmpty() || jTextField5.getText().toString().isEmpty()
+            || jTextField6.getText().toString().isEmpty() || jTextField7.getText().toString().isEmpty() || jTextField8.getText().toString().isEmpty()
+            || jTextField9.getText().toString().isEmpty() || jTextField10.getText().toString().isEmpty()){
+
+            JOptionPane.showMessageDialog(null, "Verifica los campos vacios...");
+
+        }else{
+            empleado = new Empleado( Integer.parseInt(jTextField1.getText()), jTextField2.getText(), jTextField3.getText(),
+                jTextField4.getText(), jTextField5.getText(), Integer.parseInt(jTextField6.getText()), jTextField7.getText(),
+                jTextField8.getText(), jTextField9.getText(), jTextField10.getText());
+            
+            e.insertEmpleadoActualiza(empleado);
+            vaciarCampos();
+
+            try {
+                this.setClosed(true);
+                interfaceMenu.empleado.cargarTabla();
+
+            } catch (PropertyVetoException ex) {
+                System.err.println("Closing Exception");
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-        agregarDatos();
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
+/**/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -15,7 +15,7 @@ import java.util.Vector;
 public class vistaEmpleado extends javax.swing.JInternalFrame {
 
     private EmpleadoDB e;
-    private  Empleado empleado;
+    private  Empleado empleado,empleadoActualiza;
     public vistaEmpleado() {
   
         initComponents();
@@ -39,7 +39,6 @@ public class vistaEmpleado extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
 
         setTitle("Empleados");
 
@@ -82,18 +81,14 @@ public class vistaEmpleado extends javax.swing.JInternalFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/editar.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eliminar.png"))); // NOI18N
         jButton3.setBorder(null);
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/salir.png"))); // NOI18N
-        jButton5.setBorder(null);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,26 +96,19 @@ public class vistaEmpleado extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(209, 209, 209)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(708, 708, 708)
-                        .addComponent(jButton5))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(124, 124, 124)
-                        .addComponent(jButton2)
-                        .addGap(115, 115, 115)
-                        .addComponent(jButton3)))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addGap(124, 124, 124)
+                .addComponent(jButton2)
+                .addGap(115, 115, 115)
+                .addComponent(jButton3)
+                .addContainerGap(499, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(163, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton2)
-                        .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jButton2)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)))
@@ -164,21 +152,59 @@ public class vistaEmpleado extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        try{
-            this.setClosed(true);
-        }catch(Exception e){
-            System.out.println("Error: " + e);
+        int filaPulsada = jTable2.getSelectedRow();
+        if (filaPulsada >= 0) {
+            empleadoActualiza = new Empleado();
+            int id = (int) jTable2.getValueAt(filaPulsada, 0);
+            String nombre = (String) jTable2.getValueAt(filaPulsada, 1);
+            String aPaterno = (String) jTable2.getValueAt(filaPulsada, 2);
+            String aMaterno = (String) jTable2.getValueAt(filaPulsada, 3);
+            String calle = (String) jTable2.getValueAt(filaPulsada, 4);
+            int numero = (int) jTable2.getValueAt(filaPulsada, 5);
+            String colonia = (String) jTable2.getValueAt(filaPulsada, 6);
+            String municipio = (String) jTable2.getValueAt(filaPulsada, 7);
+            String estado = (String) jTable2.getValueAt(filaPulsada, 8);
+            String telefono = (String) jTable2.getValueAt(filaPulsada, 9);
+
+            empleadoActualiza.setId(id);
+            empleadoActualiza.setNombre(nombre);
+            empleadoActualiza.setaPaterno(aPaterno);
+            empleadoActualiza.setaMaterno(aMaterno);
+            empleadoActualiza.setCalle(calle);
+            empleadoActualiza.setNumero(numero);
+            empleadoActualiza.setColonia(colonia);
+            empleadoActualiza.setMunicipio(municipio);
+            empleadoActualiza.setEstado(estado);
+            empleadoActualiza.setNumTel(telefono);
+
+            System.out.println(empleadoActualiza.regresaDatos());
+            e.deleteEmpleado(empleadoActualiza);
+            //cliente = empleadoActualiza;
+           // empleadoActualiza= (Cliente) cliente.clone();
+           // System.out.println(empleadoActualiza.regresaDatos());
+           // c.selectCliente(cliente);
+
+            vistaDatosEmpleadoActualiza datosEmpleado = new vistaDatosEmpleadoActualiza(empleadoActualiza);
+            datosEmpleado.setClosable(true);
+            interfaceMenu.vistaPrincipal.add(datosEmpleado);
+            Dimension dim = interfaceMenu.vistaPrincipal.getSize();
+            Dimension dimForm = datosEmpleado.getSize();
+            datosEmpleado.setLocation((dim.width - dimForm.width) / 2, (dim.height - dimForm.height) / 2);
+            datosEmpleado.toFront();
+            datosEmpleado.setVisible(true);
+        
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
        
     private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {                                         
         // TODO add your handling code here:
         vistaPrincipal.removeAll();
         vistaPrincipal.updateUI();
     }
-             protected void cargarTabla() {
+    
+      protected void cargarTabla() {
 //        Vector<Object> fila;
         List<Empleado> empleado = e.listEmpleado();
         int i=0;
@@ -207,7 +233,6 @@ public class vistaEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;

@@ -56,6 +56,7 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
 
         setBorder(null);
         setResizable(true);
+        setTitle("Vehiculos");
         setAlignmentX(0.0F);
         setPreferredSize(new java.awt.Dimension(690, 420));
         setRequestFocusEnabled(false);

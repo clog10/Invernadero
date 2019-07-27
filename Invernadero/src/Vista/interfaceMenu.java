@@ -36,6 +36,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     public static vistaVenta ventas;
     public static productos pro;
     public static vistaPuntoVenta puntoventa;
+    public static vistaPedidos pedido;
     
     public interfaceMenu() {
         initComponents();
@@ -175,6 +176,11 @@ public class interfaceMenu extends javax.swing.JFrame {
 
         jMenuItem4.setText("Pedidos");
         jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jMenuBar1.add(jMenu2);
@@ -360,6 +366,12 @@ public class interfaceMenu extends javax.swing.JFrame {
         pro= new productos();
         centrarVista(pro);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        pedido = new vistaPedidos();
+        centrarVista(pedido);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     //Metodo para reiniciar la vista de la ventana principal y no se encimen los jinternaframes
     public void reiniciarVista(){

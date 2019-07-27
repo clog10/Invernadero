@@ -80,6 +80,7 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        setTitle("Proovedores");
         setPreferredSize(new java.awt.Dimension(900, 400));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(

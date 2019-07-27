@@ -18,7 +18,7 @@ import javax.swing.JDesktopPane;
 
 
 /**
- *
+ * Invernadero Gran Valle
  * @author clog10
  */
 public class vistaVehiculos extends javax.swing.JInternalFrame {
@@ -54,7 +54,6 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(240, 236, 232));
         setBorder(null);
         setResizable(true);
         setAlignmentX(0.0F);
@@ -62,8 +61,6 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         setRequestFocusEnabled(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -104,6 +101,7 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setToolTipText("");
         jScrollPane1.setViewportView(jTable1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -220,24 +218,22 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         if (filaPulsada >= 0) {
             vehiculo = new Vehiculo();
 
-
             String matricula = (String) jTable1.getValueAt(filaPulsada, 0);
             //System.out.println(id);
             vehiculo.setMatricula(matricula);
             v.deleteVehiculo(vehiculo);
+           // cargarTabla();
         }
-
+        //System.out.println(" Cargando");
         cargarTabla();
-        
+        //System.out.println("Cargado");
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
     public void cargarTabla() {
         List<Vehiculo> vehiculos = v.listVehiculo();
-
         int i = 0;
         for (Vehiculo ve: vehiculos) {
-
             jTable1.setValueAt(ve.getMatricula(), i, 0);
             jTable1.setValueAt(ve.getMarca(), i, 1);
             jTable1.setValueAt(ve.getModelo(), i, 2);
@@ -246,7 +242,6 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
 
             i++;
         }
-
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

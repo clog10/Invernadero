@@ -50,6 +50,18 @@ public class vistaDatosVehiculoActualiza extends javax.swing.JInternalFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField4KeyTyped(evt);
+            }
+        });
+
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField5KeyTyped(evt);
+            }
+        });
+
         jLabel1.setText("Matrícula: ");
 
         jLabel2.setText("Marca: ");
@@ -148,6 +160,18 @@ public class vistaDatosVehiculoActualiza extends javax.swing.JInternalFrame {
         //        v.cargarTabla ();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
+        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
+    }//GEN-LAST:event_jTextField4KeyTyped
+
+    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
+        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
+    }//GEN-LAST:event_jTextField5KeyTyped
+    
       public void vaciarCampos(){
         jTextField1.setText(" ");
         jTextField2.setText(" ");

@@ -232,6 +232,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField1KeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="vistaCliente_jTextField1"/>
       </AuxValues>
@@ -247,6 +250,9 @@
     <Component class="javax.swing.JTextField" name="jTextField6">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField7">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField7KeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField8">
     </Component>
@@ -255,8 +261,14 @@
     <Component class="javax.swing.JTextField" name="jTextField10">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField11">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField11KeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField12">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField12KeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField13">
     </Component>

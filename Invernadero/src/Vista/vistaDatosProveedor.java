@@ -85,6 +85,24 @@ public class vistaDatosProveedor extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextField6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField6KeyTyped(evt);
+            }
+        });
+
+        jTextField9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField9KeyTyped(evt);
+            }
+        });
+
+        jTextField11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField11KeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -221,6 +239,24 @@ public class vistaDatosProveedor extends javax.swing.JInternalFrame {
         }
         //        v.cargarTabla ();}*/
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6KeyTyped
+        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
+    }//GEN-LAST:event_jTextField6KeyTyped
+
+    private void jTextField9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField9KeyTyped
+        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
+    }//GEN-LAST:event_jTextField9KeyTyped
+
+    private void jTextField11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField11KeyTyped
+        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
+    }//GEN-LAST:event_jTextField11KeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

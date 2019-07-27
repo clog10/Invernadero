@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vista;
 
 import java.awt.Dimension;
@@ -17,9 +13,10 @@ import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import java.awt.Graphics;
 import javax.swing.JFrame;
+
 /**
- *
- * @author
+ * Invernadero Gran Valle
+ * @author Clog_10
  */
 public class interfaceMenu extends javax.swing.JFrame {
 
@@ -37,6 +34,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     public static productos pro;
     public static vistaPuntoVenta puntoventa;
     public static vistaPedidos pedido;
+    public static Estadisticas estadisticas;
     
     public interfaceMenu() {
         initComponents();
@@ -97,7 +95,6 @@ public class interfaceMenu extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -170,10 +167,6 @@ public class interfaceMenu extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
-        jMenuItem3.setText("Almacen");
-        jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu2.add(jMenuItem3);
-
         jMenuItem4.setText("Pedidos");
         jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +226,11 @@ public class interfaceMenu extends javax.swing.JFrame {
 
         jMenuItem10.setText("Estadisticas");
         jMenuItem10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem10);
 
         jMenuBar1.add(jMenu3);
@@ -373,6 +371,12 @@ public class interfaceMenu extends javax.swing.JFrame {
         centrarVista(pedido);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        estadisticas = new Estadisticas();
+        centrarVista(estadisticas);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
     //Metodo para reiniciar la vista de la ventana principal y no se encimen los jinternaframes
     public void reiniciarVista(){
         vistaPrincipal.removeAll();
@@ -424,7 +428,6 @@ public class interfaceMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

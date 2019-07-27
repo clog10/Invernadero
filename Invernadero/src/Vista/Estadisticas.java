@@ -1,9 +1,13 @@
-
 package Vista;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  * Invernadero Gran Valle
+ *
  * @author Clog_10
  */
 public class Estadisticas extends javax.swing.JInternalFrame {
@@ -13,8 +17,9 @@ public class Estadisticas extends javax.swing.JInternalFrame {
      */
     public Estadisticas() {
         initComponents();
+        graph();
     }
-
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,18 +35,36 @@ public class Estadisticas extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGap(0, 1022, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void graph() {
+        DefaultPieDataset data = new DefaultPieDataset();
+        data.setValue(" ", 40.0);
+        data.setValue(" ", 20.0);
+        data.setValue(" ", 30.0);
+        data.setValue(" ",10.0);
+
+        JFreeChart chart = ChartFactory.createPieChart(
+                "Los Mejores Clientes",
+                data,
+                true, // legend?
+                true, // tooltips?
+                false // URLs?
+        );
+// create and display a frame...
+        ChartFrame frame = new ChartFrame("Invernadero Gran Valle, Estadisticas", chart);
+        frame.pack();
+        frame.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
-

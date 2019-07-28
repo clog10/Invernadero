@@ -91,6 +91,7 @@ public class vistaDatosClienteActualiza extends javax.swing.JInternalFrame {
 
         jLabel14.setText("Email: ");
 
+        jTextField1.setToolTipText("");
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField1KeyTyped(evt);

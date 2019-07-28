@@ -246,7 +246,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             clienteActualiza.setRFC(rfc);
 
             System.out.println(clienteActualiza.regresaDatos());
-            c.deleteCliente(clienteActualiza);
+            //c.deleteCliente(clienteActualiza);
             //cliente = clienteActualiza;
            // clienteActualiza= (Cliente) cliente.clone();
            // System.out.println(clienteActualiza.regresaDatos());

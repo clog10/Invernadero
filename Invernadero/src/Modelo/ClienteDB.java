@@ -101,11 +101,13 @@ public class ClienteDB {
     public boolean updateCliente(Cliente c) {
 
         PreparedStatement ps;
-        String sqlUpdateCliente = "UPDATE invernadero_gran_valle.cliente SET id_cliente=?, nombre=?, a_paterno=?,"
+        String sqlUpdateCliente = "update invernadero_gran_valle.cliente set id_cliente=?, nombre=?, a_paterno=?,"
                               + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
-                              + "telefono=?, celular=?, e_mail=?, rfc=?  WHERE id_cliente="+c.getId()+";";
+                              + "telefono=?, celular=?, e_mail=?, rfc=?  where id_cliente=?";
         try {
-            ps =  interfaceLogin.conectiondb.getConexion().prepareStatement(sqlUpdateCliente);
+            ps =  interfaceLogin.conectiondb.getConexion().prepareStatement( "update invernadero_gran_valle.cliente set id_cliente=?, nombre=?, a_paterno=?,"
+                              + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
+                              + "telefono=?, celular=?, e_mail=?, rfc=?  where id_cliente=?");
 
             ps.setInt(1, c.getId());
             ps.setString(2, c.getNombre());
@@ -122,7 +124,8 @@ public class ClienteDB {
             ps.setString(13, c.getRFC());
             
             ps.executeUpdate();
-
+             System.out.println("Actualizdo");
+             ps.close();
             return true;
         } catch (SQLException exception) {
             System.err.println("Error al Actualizar (Cliente " + exception);
@@ -197,6 +200,11 @@ public class ClienteDB {
         return clientes;
     }
 }
+
+
+
+
+
 
 
 

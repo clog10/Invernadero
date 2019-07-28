@@ -70,15 +70,23 @@ public class vistaVenta extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Precio", "Cantidad"
+                "ID", "¿Quien Vendió?", "Cliente", "Fecha de Entrega"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setText("Ventas");
 
-        jButton1.setText("Regresar");
+        jButton1.setText("Visualizar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -99,7 +107,7 @@ public class vistaVenta extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(555, 555, 555)
                 .addComponent(jButton1)
-                .addGap(0, 590, Short.MAX_VALUE))
+                .addGap(0, 587, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,6 +138,9 @@ public class vistaVenta extends javax.swing.JInternalFrame {
             vistaPrincipal.removeAll();
             vistaPrincipal.updateUI();
         }
+    
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

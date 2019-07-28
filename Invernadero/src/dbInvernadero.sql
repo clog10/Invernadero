@@ -83,14 +83,16 @@ precio_compra numeric(6,2)
   );
 
  
-  create table venta
-  (
+  create table venta(
   folio_v int primary key,
-  fecha date,
+  fecha varchar(11),
   id_usuario int,
   id_cliente smallint,
-  foreign key (id_usuario) references usuario (id_usuario) match full on update cascade on delete restrict,
-  foreign key (id_cliente) references cliente (id_cliente) match full on update cascade on delete restrict
+  total numeric(6.2),
+  subtotal numeric(6.2),
+  cantidad int,
+  foreign key (id_usuario) references usuario (id_usuario),
+  foreign key (id_cliente) references cliente (id_cliente) 
   );
 
   create table detalle_venta
@@ -102,3 +104,24 @@ precio_compra numeric(6,2)
   foreign key (folio_v) references venta (folio_v) match full on update cascade on delete restrict,
   foreign key (id_cosecha) references cosecha (id_cosecha) match full on update cascade on delete restrict
   );
+
+CREATE TABLE invernadero_gran_valle.venta
+(
+    folio_v integer NOT NULL,
+    fecha character varying(11) COLLATE pg_catalog."default",
+    nombre_usuario character varying(15) COLLATE pg_catalog."default",
+    id_cliente smallint,
+    cantidad integer,
+    total numeric,
+    subtotal numeric,
+    productos integer[],
+    CONSTRAINT venta_pkey PRIMARY KEY (folio_v),
+    CONSTRAINT venta_id_cliente_fkey FOREIGN KEY (id_cliente)
+        REFERENCES invernadero_gran_valle.cliente (id_cliente) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT venta_nombre_usuario_fkey FOREIGN KEY (nombre_usuario)
+        REFERENCES invernadero_gran_valle.usuario (nombre_usuario) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);

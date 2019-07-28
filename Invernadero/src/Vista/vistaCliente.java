@@ -246,11 +246,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             clienteActualiza.setRFC(rfc);
 
             System.out.println(clienteActualiza.regresaDatos());
-            //c.deleteCliente(clienteActualiza);
-            //cliente = clienteActualiza;
-           // clienteActualiza= (Cliente) cliente.clone();
-           // System.out.println(clienteActualiza.regresaDatos());
-           // c.selectCliente(cliente);
+            c.deleteCliente(clienteActualiza);
 
             vistaDatosClienteActualiza datosCliente = new vistaDatosClienteActualiza(clienteActualiza);
             datosCliente.setClosable(true);
@@ -273,33 +269,8 @@ public class vistaCliente extends javax.swing.JInternalFrame {
 
     
     public void cargarTabla() {
-        Vector<Object> fila;
         List<Cliente> clientes = c.listCliente();
 
-        /*String data[] ={
-            "Id", "RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Calle", "Numero", "Colonia", "Municipio", "Estado", "Numero de Telefono", "Numero de Celular", "Email"
-        };
-        modelo = new DefaultTableModel();
-        modelo.setColumnIdentifiers(data);
-        Vector datos = new Vector();
-        for(int i=0;i<clientes.size();i++){
-            datos.add(clientes.get(i).getId());
-            datos.add(clientes.get(i).getRFC());
-            datos.add(clientes.get(i).getNombre());
-            datos.add(clientes.get(i).getaPaterno());
-            datos.add(clientes.get(i).getaMaterno());
-            datos.add(clientes.get(i).getCalle());
-            datos.add(clientes.get(i).getNumero());
-            datos.add(clientes.get(i).getColonia());
-            datos.add(clientes.get(i).getMunicipio());
-            datos.add(clientes.get(i).getEstado());
-            datos.add(clientes.get(i).getTelefono());
-            datos.add(clientes.get(i).getCelular());
-            datos.add(clientes.get(i).getEmail());
-            modelo.addRow(datos);
-        }
-        jTable2.setModel(modelo);
-         */
         int i = 0;
         for (Cliente client : clientes) {
 

@@ -77,7 +77,7 @@ public class vistaDatosProductos extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Unidad de Medida:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kg", "g" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caja", "Kg", "g" }));
 
         jLabel4.setText("Preico Unitario:");
 

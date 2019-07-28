@@ -223,7 +223,7 @@ public class vistaDatosVehiculo extends javax.swing.JInternalFrame {
 
             try {
                 this.setClosed(true);
-                interfaceMenu.cliente.cargarTabla();
+                interfaceMenu.vehiculos.cargarTabla();
 
             } catch (PropertyVetoException ex) {
                 System.err.println("Closing Exception");

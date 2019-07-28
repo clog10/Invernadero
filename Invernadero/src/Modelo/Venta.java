@@ -14,8 +14,9 @@ public class Venta {
     private Producto[] productos;
     private Cliente cliente;
     private Usuario user;
+    private String fecha;
 
-    public Venta(int id, int cantidad, int subtotal,int total, Cliente cliente,Usuario user, Producto... productos) {
+    public Venta(int id, int cantidad, int subtotal,int total, Cliente cliente,Usuario user,String fecha, Producto... productos) {
         this.id = id;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
@@ -23,6 +24,7 @@ public class Venta {
         this.cliente = cliente;
         this.user=user;
         this.total=total;
+        this.fecha=fecha;
     }
 
     public int getId() {
@@ -81,8 +83,16 @@ public class Venta {
         this.user = user;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+            //para obtener los precios de los productos y sumarlos
     public int Totales() {
-        //para obtener los totales de los productos y sumarlos
         //int total = 0;
         for (Producto p : productos) {
             total += p.getPrecio();
@@ -93,8 +103,8 @@ public class Venta {
     @Override
     public String toString() {
         String datos = "Cliente: " + cliente.toString();
+        datos+="Fecha de Entrega: "+fecha;
         datos+="Vendió: "+user.getEmpleado().getNombre()+" "+user.getEmpleado().getaPaterno()+" "+user.getEmpleado().getaMaterno();
-       // datos = " Cantidad: " + cantidad + " subtotal:" + subtotal + " total: " + precio + "\n";
         for(Producto p:productos){
             datos +=""+p;
         }
@@ -103,6 +113,10 @@ public class Venta {
         return datos;
     }
 }
+
+
+
+
 
 
 

@@ -2,6 +2,7 @@
 package Modelo;
 
 import Vista.interfaceLogin;
+import Vista.vistaVenta;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,11 +17,11 @@ import org.postgresql.util.PSQLException;
  * @author Clog_10
  */
 public class VentaDB {
-     private Vista.productos vista;
+     private vistaVenta venta;
     public VentaDB(){
-        this.vista = vista;
+        this.venta = venta;
     }
-     public boolean buscarid(int id){
+     /**public boolean buscarid(int id){
              try{
              PreparedStatement pstmid=interfaceLogin.conectiondb.getConexion().prepareStatement("select id_cosecha from invernadero_gran_valle.cosecha where id_cosecha = ? ");
              return true;
@@ -31,8 +32,12 @@ public class VentaDB {
              Logger.getLogger(ProductoDB.class.getName()).log(Level.SEVERE, null, ex);
              return false;
          }
-         }
+         }*/
+    
+    
 }
+
+
 
 
 

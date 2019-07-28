@@ -296,7 +296,8 @@ public class vistaDatosClienteActualiza extends javax.swing.JInternalFrame {
                             jTextField8.getText(), jTextField9.getText(), Integer.parseInt(jTextField7.getText()),
                             jTextField11.getText(), jTextField12.getText(), jTextField13.getText());
        
-        c.updateCliente(cliente);
+        //c.updateCliente(cliente);
+        c.insertClienteActualiza(cliente);
         vaciarCampos();
         
         try {

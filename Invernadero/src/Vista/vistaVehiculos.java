@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vista;
 
 
@@ -23,7 +19,7 @@ import javax.swing.JDesktopPane;
  */
 public class vistaVehiculos extends javax.swing.JInternalFrame {
 
-    private Vehiculo vehiculo;
+    private Vehiculo vehiculo,vehiculoActualiza;
     private VehiculoDB v;
     private JDesktopPane iM;
     
@@ -138,6 +134,11 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/editar.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 6;
@@ -229,6 +230,38 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         cargarTabla();
         //System.out.println("Cargado");
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    //Boton para editar Vehiculo
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int filaPulsada = jTable1.getSelectedRow();
+        
+        if (filaPulsada >= 0) {
+            vehiculoActualiza= new Vehiculo();
+            String matricula=(String) jTable1.getValueAt(filaPulsada, 0);
+            String marca=(String) jTable1.getValueAt(filaPulsada, 1);
+            String modelo=(String) jTable1.getValueAt(filaPulsada, 2);
+            int numSerie=(int) jTable1.getValueAt(filaPulsada, 3);
+            int anio=(int) jTable1.getValueAt(filaPulsada, 4);
+            
+            vehiculoActualiza.setMatricula(matricula);
+            vehiculoActualiza.setMarca(marca);
+            vehiculoActualiza.setModelo(modelo);
+            vehiculoActualiza.setNumSerie(numSerie);
+            vehiculoActualiza.setAnio(anio);
+            
+            v.deleteVehiculo(vehiculoActualiza);
+            
+            vistaDatosVehiculoActualiza datosVehiculo = new vistaDatosVehiculoActualiza(vehiculoActualiza);
+            datosVehiculo.setClosable(true);
+            interfaceMenu.vistaPrincipal.add(datosVehiculo);
+            Dimension dim = interfaceMenu.vistaPrincipal.getSize();
+            Dimension dimForm = datosVehiculo.getSize();
+            datosVehiculo.setLocation((dim.width - dimForm.width) / 2, (dim.height - dimForm.height) / 2);
+            datosVehiculo.toFront();
+            datosVehiculo.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     public void cargarTabla() {

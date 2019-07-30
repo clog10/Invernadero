@@ -36,7 +36,7 @@ public boolean insertProveedor(Proveedor c) {
         ps.setString(2, c.getRfc());
         ps.setString(3, c.getRazonSocial());
         ps.setString(4, c.getCalle());
-        ps.setInt(5, c.getNumero());
+        ps.setString(5, c.getNumero()+"");
         ps.setString(6, c.getColonia());
         ps.setString(7, c.getEstado());
         ps.setString(8, c.getMunicipio());
@@ -63,7 +63,7 @@ public boolean updateProveedor(Proveedor c) {
         ps.setString(1, c.getRfc());
         ps.setString(2, c.getRazonSocial());
         ps.setString(3, c.getCalle());
-        ps.setInt(4, c.getNumero());
+        ps.setString(4, c.getNumero());
         ps.setString(5, c.getColonia());
         ps.setString(6, c.getMunicipio());
         ps.setString(7, c.getEstado());
@@ -115,7 +115,7 @@ public List<Proveedor> listProveedor() {
             c.setRfc(rs.getString("rfc_prov"));
             c.setRazonSocial(rs.getString("razon_social"));      
             c.setCalle(rs.getString("calle"));
-            c.setNumero(rs.getInt("numero"));
+            c.setNumero(rs.getString("numero"));
             c.setColonia(rs.getString("colonia"));
             c.setMunicipio(rs.getString("municipio"));
             c.setEstado(rs.getString("estado"));

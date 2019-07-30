@@ -10,11 +10,11 @@ public class Proveedor implements Comparable<Proveedor>{
     private int id;
     private String razonSocial,rfc;
     private String calle,colonia,municipio,estado;
-    private int numero;
+    private String numero;
     private String telefono,celular,email;
 
     public Proveedor(int id,String razonSocial, String rfc, String calle, String colonia, String municipio, String estado, 
-                                int numero, String telefono, String celular, String email) {
+                               String numero, String telefono, String celular, String email) {
         this.id=id;
         this.razonSocial = razonSocial;
         this.rfc = rfc;
@@ -88,11 +88,11 @@ public class Proveedor implements Comparable<Proveedor>{
         this.estado = estado;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

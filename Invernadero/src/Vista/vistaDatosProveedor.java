@@ -275,7 +275,7 @@ public class vistaDatosProveedor extends javax.swing.JInternalFrame {
         }else{
             proveedor = new Proveedor( Integer.parseInt(jTextField1.getText()), jTextField2.getText(), jTextField3.getText(),
                 jTextField4.getText(), jTextField5.getText(), jTextField6.getText(), jTextField7.getText(),
-                Integer.parseInt(jTextField8.getText()), jTextField9.getText(), jTextField10.getText(),
+                jTextField8.getText(), jTextField9.getText(), jTextField10.getText(),
                 jTextField11.getText());
             c.insertProveedor(proveedor);
             vaciarCampos();

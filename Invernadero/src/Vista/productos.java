@@ -194,7 +194,6 @@ public class productos extends javax.swing.JInternalFrame {
         editar.setjComboBox1(datitos[2]);
         editar.setjTextField3(datitos[3]);
         editar.setjTextField4(datitos[4]);
-        System.out.println(datitos[0]);
         editar.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
     //Evento de la tabla productos, que nos permite hacer click y recibir los datos de un fila

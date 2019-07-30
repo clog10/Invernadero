@@ -53,6 +53,32 @@ public boolean insertProveedor(Proveedor c) {
     }
 }
 
+public boolean updateProveedor(Proveedor c) {
+    PreparedStatement ps;
+    try {
+        ps = interfaceLogin.conectiondb.getConexion().prepareStatement("update ingernadero_gran_valle.proveedor set  ");
+        
+        ps.setString(1, c.getRazonSocial());
+        ps.setString(2, c.getRfc());
+        ps.setString(3, c.getCalle());
+        ps.setString(4, c.getColonia());
+        ps.setString(5, c.getEstado());
+        ps.setInt(6, c.getNumero());
+        ps.setString(7, c.getMunicipio());
+        ps.setString(8, c.getEmail());
+        ps.setString(9, c.getTelefono());
+        ps.setString(10, c.getCelular());
+        ps.setInt(11, c.getId());
+
+        ps.executeUpdate();
+        JOptionPane.showMessageDialog(null, "Proveedor añadido");
+        return true;
+    } catch (SQLException exception) {
+        System.err.println("Error en al añadir (Proveedor) " + exception);
+        return false;
+    }
+}
+
 public boolean deleteProveedor(Proveedor c) {
     PreparedStatement ps;
     String sqlDeleteProveedor = "delete from invernadero_gran_valle.proveedor where id_cliente  = ?;";
@@ -115,6 +141,8 @@ public List<Proveedor> listProveedor() {
     
     
 }
+
+
 
 
 

@@ -34,7 +34,7 @@ public class ProductoDB {
             ps.setInt(1, p.getId());
             ps.setString(2, p.getNombre());
             ps.setString(3, p.getUnidad());
-            ps.setInt(4, p.getPrecio());
+            ps.setDouble(4, p.getPrecio());
             ps.setInt(5, p.getCantidad());
             
             ps.executeUpdate();
@@ -62,7 +62,7 @@ public class ProductoDB {
         }
     }
     //Metodo para regresar valores a una tabla de producto.
-    /*public List<Producto> listProducto() {
+    public List<Producto> listProducto() {
         PreparedStatement ps;
         ResultSet rs;
         String consultaSQL = "Select id_cosecha, nombre,unidad_medida,precio_u,cantidad from invernadero_gran_valle.cosecha;";
@@ -92,7 +92,7 @@ public class ProductoDB {
             System.err.println("Error al CARGAR DATOS (Producto) " + exception);
         }
         return pro;
-    }*/
+    }
     //Metodo para regresar valores a una tabla de producto.
      public DefaultTableModel listProducto2() {
          String[] titulos={"ID","Nombre","Unidad de Medida","Precio Unitario","Cantidad"};
@@ -128,11 +128,10 @@ public class ProductoDB {
              PreparedStatement pstm= interfaceLogin.conectiondb.getConexion().prepareStatement("update invernadero_gran_valle.cosecha set nombre=?,unidad_medida=?,precio_u=?,cantidad=? where id_cosecha= ?");
              pstm.setString(1,p.getNombre());
              pstm.setString(2,p.getUnidad());
-             pstm.setInt(3,p.getPrecio());
+             pstm.setDouble(3,p.getPrecio());
              pstm.setInt(4,p.getCantidad());
              pstm.setInt(5,p.getId());
              pstm.executeUpdate();
-             pstm.close();
              return true;
          }catch(PSQLException e){
              System.out.println(e);
@@ -145,8 +144,5 @@ public class ProductoDB {
      }
             
 }
-
-
-
 
 

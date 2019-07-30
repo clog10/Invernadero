@@ -9,11 +9,11 @@ public class Producto {
     //Variables para la clase producto que se utilizaran.
     public int id;
     public String nombre;
-    private int precio;
+    private double precio;
     private String unidad;
     private int cantidad;
     //Constructor de la clase Producto.
-    public Producto(int id,String nombre,int precio,String unidad,int cantidad) {
+    public Producto(int id,String nombre,double precio,String unidad,int cantidad) {
         this.id = id;
         this.nombre = nombre;
         this.unidad=unidad;
@@ -41,11 +41,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -68,5 +68,6 @@ public class Producto {
         return datos;
     }    
 }
+
 
 

@@ -204,7 +204,7 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
             String rsocial = (String) jTable2.getValueAt(filaPulsada, 1);
             String rfc = (String) jTable2.getValueAt(filaPulsada, 2);
             String calle = (String) jTable2.getValueAt(filaPulsada, 3);
-            int numero = (int) jTable2.getValueAt(filaPulsada, 4);
+            String numero = (String) jTable2.getValueAt(filaPulsada, 4);
             String colonia = (String) jTable2.getValueAt(filaPulsada, 5);
             String municipio = (String) jTable2.getValueAt(filaPulsada, 6);
             String estado = (String) jTable2.getValueAt(filaPulsada, 7);

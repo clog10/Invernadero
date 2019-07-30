@@ -97,17 +97,17 @@ public class interfaceDatos extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/resources/icon.png")).getImage());
         setSize(new java.awt.Dimension(410, 460));
 
-        jPanel1.setBackground(new java.awt.Color(240, 239, 232));
+        jPanel1.setBackground(new java.awt.Color(240, 236, 232));
         jPanel1.setForeground(new java.awt.Color(240, 239, 232));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setPreferredSize(new java.awt.Dimension(410, 460));
         jPanel1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel1AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 

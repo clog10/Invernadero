@@ -3,6 +3,7 @@ package Vista;
 
 import Modelo.Vehiculo;
 import Modelo.VehiculoDB;
+import java.awt.Color;
 import java.beans.PropertyVetoException;
 import javax.swing.JOptionPane;
 
@@ -20,6 +21,7 @@ public class vistaDatosVehiculoActualiza extends javax.swing.JInternalFrame {
      */
     public vistaDatosVehiculoActualiza(Vehiculo vehiculoActualiza) {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         v=new VehiculoDB();
         this.vehiculoActualiza=vehiculoActualiza;
         llenaCampos();
@@ -46,6 +48,8 @@ public class vistaDatosVehiculoActualiza extends javax.swing.JInternalFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
+
+        setBackground(new java.awt.Color(240, 239, 232));
 
         jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {

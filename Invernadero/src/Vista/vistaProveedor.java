@@ -8,6 +8,7 @@ package Vista;
 import Modelo.Proveedor;
 import Modelo.ProveedorDB;
 import static Vista.interfaceMenu.vistaPrincipal;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.util.List;
 import java.util.Vector;
@@ -28,6 +29,7 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
     private JDesktopPane iM;
     public vistaProveedor() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         iM = this.getDesktopPane();
         c = new ProveedorDB();
         cargarTabla();
@@ -80,6 +82,7 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setTitle("Proovedores");
         setPreferredSize(new java.awt.Dimension(900, 400));
 

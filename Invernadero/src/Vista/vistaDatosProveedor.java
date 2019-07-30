@@ -7,6 +7,7 @@ package Vista;
 
 import Modelo.Proveedor;
 import static Vista.interfaceMenu.proveedor;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +21,7 @@ public class vistaDatosProveedor extends javax.swing.JInternalFrame {
      */
     public vistaDatosProveedor() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
     }
 
     /**
@@ -54,6 +56,8 @@ public class vistaDatosProveedor extends javax.swing.JInternalFrame {
         jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(240, 239, 232));
 
         jLabel9.setText("Dirección: ");
 

@@ -2,6 +2,7 @@ package Vista;
 
 import Modelo.Cliente;
 import Modelo.ClienteDB;
+import java.awt.Color;
 import java.awt.Container;
 import java.beans.PropertyVetoException;
 import javax.swing.JDesktopPane;
@@ -26,6 +27,7 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
      */
     public vistaDatosCliente() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         c=new ClienteDB();
     }
 
@@ -61,6 +63,8 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(240, 239, 232));
 
         jLabel1.setText("Id: ");
 

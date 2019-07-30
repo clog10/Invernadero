@@ -7,6 +7,7 @@ package Vista;
 
 import Modelo.Empleado;
 import Modelo.EmpleadoDB;
+import java.awt.Color;
 import java.beans.PropertyVetoException;
 import javax.swing.JOptionPane;
 
@@ -24,6 +25,7 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
     
     public vistaDatosEmpleadoActualiza(Empleado actualiza) {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         this.actualiza = actualiza;
         e = new EmpleadoDB();
         llenarCampos();
@@ -116,6 +118,8 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
         jTextField10 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jTextField9 = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(240, 239, 232));
 
         jLabel1.setText("Id: ");
 

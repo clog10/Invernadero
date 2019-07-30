@@ -6,6 +6,7 @@
 package Vista;
 
 import static Vista.interfaceMenu.vistaPrincipal;
+import java.awt.Color;
 
 /**
  * Invernadero Gran Valle
@@ -18,6 +19,7 @@ public class vistaPedidos extends javax.swing.JInternalFrame {
      */
     public vistaPedidos() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
     }
 
     /**
@@ -39,6 +41,7 @@ public class vistaPedidos extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setTitle("Pedidos");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

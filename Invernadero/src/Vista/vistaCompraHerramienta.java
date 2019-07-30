@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author lenovo
@@ -16,6 +18,7 @@ public class vistaCompraHerramienta extends javax.swing.JInternalFrame {
      */
     public vistaCompraHerramienta() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
     }
 
     /**
@@ -41,6 +44,8 @@ public class vistaCompraHerramienta extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(240, 239, 232));
 
         jLabel1.setText("PRODUCTOS:");
 

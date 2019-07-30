@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -20,6 +21,7 @@ public class UsuarioDB {
 
     public UsuarioDB() {
         this.vista = vista;
+        
     }
     
      public boolean insertUsuario(Usuario c) {
@@ -33,17 +35,83 @@ public class UsuarioDB {
 
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Vehiculo añadido");
+            JOptionPane.showMessageDialog(null, "Usuario añadido");
             return true;
         } catch (SQLException exception) {
-            System.err.println("Error en al añadir (Vehiculo) " + exception);
+            System.err.println("Error en al añadir (Usuario) " + exception);
             return false;
         }
     }
     
     
     
+     
+     public List<Empleado> listEmpleado() {
+        PreparedStatement ps;
+        ResultSet rs;
+        String consultaSQL = "Select id_empleado, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
+                              + "estado,telefono from invernadero_gran_valle.empleado;";
+        //String consultaSQL = "select * from invernadero_gran_valle.empleado;";
+        List<Empleado> empleado = new ArrayList<Empleado>();
+        try {
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(consultaSQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Empleado e = new Empleado();
+                
+                e.setId(rs.getInt("id_empleado"));
+                e.setNombre(rs.getString("nombre"));
+                e.setaPaterno(rs.getString("a_paterno"));
+                e.setaMaterno(rs.getString("a_materno"));
+                e.setCalle(rs.getString("calle"));
+                e.setNumero(rs.getInt("numero"));
+                e.setColonia(rs.getString("colonia"));
+                e.setMunicipio(rs.getString("municipio"));
+                e.setEstado(rs.getString("estado"));
+                e.setNumTel(rs.getString("telefono"));
+
+                empleado.add(e);
+
+                for (Empleado t : empleado) {
+                    System.out.println(t.regresaDatos());
+                }
+            }
+        } catch (SQLException exception) {
+            System.err.println("Error al CARGAR DATOS (Empleado) " + exception);
+            empleado = Collections.emptyList();
+        }
+        Collections.sort(empleado);
+        return empleado;
+    }
+     
+      public List<Usuario> listUsuario() {
+        PreparedStatement ps;
+        ResultSet rs;
+        String consultaSQL = "Select usuario,contraseña,id_empleado from invernadero_gran_valle.usuario;";
+
+        List<Usuario> usuarios= new ArrayList<Usuario>();
+        try {
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(consultaSQL);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+               Usuario c = new Usuario();
+                c.setId_empleado(rs.getInt("id_empleado"));
+                c.setUser(rs.getString("usuario"));
+                c.setPassword(rs.getString("contraseña"));
+
+                usuarios.add(c); 
+            }
+        } catch (SQLException exception) {
+            System.err.println("Error al CARGAR DATOS (Vehiculos) " + exception);
+            usuarios = Collections.emptyList();
+        }
+        Collections.sort(usuarios);
+        return usuarios;
+    }
+      
+      
 }
+
 
 
 

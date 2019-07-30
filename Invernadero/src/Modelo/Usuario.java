@@ -17,6 +17,10 @@ public class Usuario implements Comparable<Usuario>{
         this.user = user;
         this.password = password;
     }
+    
+    public Usuario(){
+        
+    }
 
     public String getUser() {
         return user;
@@ -55,6 +59,7 @@ public class Usuario implements Comparable<Usuario>{
         return this.getId_empleado() > o.getId_empleado() ? 1 : this.getId_empleado() < o.getId_empleado() ? -1 : 0;
     }
 }
+
 
 
 

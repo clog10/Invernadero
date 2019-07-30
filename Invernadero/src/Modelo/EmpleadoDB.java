@@ -90,13 +90,10 @@ public class EmpleadoDB {
     public List<Empleado> listEmpleado() {
         PreparedStatement ps;
         ResultSet rs;
-        //String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
-        //                      + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
-
-        String consultaSQL = "select * from invernadero_gran_valle.empleado;";
-
+        String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
+                              + "estado,telefono from invernadero_gran_valle.empleado;";
+        //String consultaSQL = "select * from invernadero_gran_valle.empleado;";
         List<Empleado> empleado = new ArrayList<Empleado>();
-        //System.out.println("Hola");
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(consultaSQL);
             rs = ps.executeQuery();
@@ -107,7 +104,6 @@ public class EmpleadoDB {
                 e.setNombre(rs.getString("nombre"));
                 e.setaPaterno(rs.getString("a_paterno"));
                 e.setaMaterno(rs.getString("a_materno"));
-                e.setNumTel(rs.getString("telefono"));
                 e.setCalle(rs.getString("calle"));
                 e.setNumero(rs.getInt("numero"));
                 e.setColonia(rs.getString("colonia"));
@@ -130,6 +126,9 @@ public class EmpleadoDB {
     }
     
 }
+
+
+
 
 
 

@@ -68,8 +68,6 @@ public class ProductoDB {
         ResultSet rs;
         String consultaSQL = "Select id_cosecha, nombre,unidad_medida,precio_u,cantidad from invernadero_gran_valle.cosecha;";
 
-        //String consultaSQL = "select * from invernadero_gran_valle.cliente;";
-
         List<Producto> pro = new ArrayList<Producto>();
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(consultaSQL);
@@ -81,10 +79,7 @@ public class ProductoDB {
                 c.setUnidad(rs.getString("unidad_medida"));
                 c.setPrecio(rs.getInt("precio_u"));
                 c.setCantidad(rs.getInt("cantidad"));
-                
-
                 pro.add(c);
-
                 for (Producto q : pro) {
                     System.out.println(q.toString());
                 }
@@ -96,6 +91,7 @@ public class ProductoDB {
         Collections.sort(pro);
         return pro;
     }
+    
     //Metodo para regresar valores a una tabla de producto.
      public DefaultTableModel listProducto2() {
          String[] titulos={"ID","Nombre","Unidad de Medida","Precio Unitario","Cantidad"};
@@ -147,5 +143,6 @@ public class ProductoDB {
      }
             
 }
+
 
 

@@ -8,10 +8,12 @@
             <file>file:/C:/Users/AMAURY/Documents/NetBeansProjects/Invernadero/Invernadero/src/Modelo/EmpleadoDB.java</file>
         </group>
         <group>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaVehiculos.java</file>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaCliente.java</file>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaDatosClienteActualiza.java</file>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaDatosVehiculoActualiza.java</file>
+            <file>file:/C:/Users/saint/Desktop/FUN-ING-SOFTWARE/INV7/Invernadero/Invernadero/src/Vista/vistaProveedor.java</file>
+            <file>file:/C:/Users/saint/Desktop/FUN-ING-SOFTWARE/INV7/Invernadero/Invernadero/src/Modelo/ProductoDB.java</file>
+            <file>file:/C:/Users/saint/Desktop/FUN-ING-SOFTWARE/INV7/Invernadero/Invernadero/src/Vista/login.java</file>
+            <file>file:/C:/Users/saint/Desktop/FUN-ING-SOFTWARE/INV7/Invernadero/Invernadero/src/Vista/interfaceMenu.java</file>
+            <file>file:/C:/Users/saint/Desktop/FUN-ING-SOFTWARE/INV7/Invernadero/Invernadero/src/Vista/interfaceLogin.java</file>
+            <file>file:/C:/Users/saint/Desktop/FUN-ING-SOFTWARE/INV7/Invernadero/Invernadero/src/Vista/interfaceDatos.java</file>
         </group>
     </open-files>
 </project-private>

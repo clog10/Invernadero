@@ -10,6 +10,7 @@ import Modelo.ProveedorDB;
 import static Vista.interfaceMenu.vistaPrincipal;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JDesktopPane;
@@ -33,6 +34,11 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
         this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         iM = this.getDesktopPane();
         c = new ProveedorDB();
+        jTable2.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD,12));
+        jTable2.getTableHeader().setOpaque(false);
+        jTable2.getTableHeader().setBackground(new Color(32,136,203));
+        jTable2.getTableHeader().setForeground(new Color(255,255,255));
+        jTable2.setRowHeight(25);
         cargarTabla();
     }
     
@@ -87,6 +93,9 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
         setTitle("Proovedores");
         setPreferredSize(new java.awt.Dimension(900, 400));
 
+        jTable2.setBackground(new java.awt.Color(255, 255, 255));
+        jTable2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTable2.setForeground(new java.awt.Color(0, 0, 0));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -124,6 +133,13 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
                 "Id", "Razón Social", "RFC", "Calle", "Numero", "Colonia", "Municipio", "Estado", "Telefono", "Celular", "Email"
             }
         ));
+        jTable2.setFocusable(false);
+        jTable2.setGridColor(new java.awt.Color(128, 128, 128));
+        jTable2.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        jTable2.setRowHeight(25);
+        jTable2.setSelectionBackground(new java.awt.Color(238, 238, 238));
+        jTable2.setShowVerticalLines(false);
+        jTable2.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTable2);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/agregar.png"))); // NOI18N

@@ -162,13 +162,6 @@ public class vistaEmpleado extends javax.swing.JInternalFrame {
             empleadoActualiza.setEstado(estado);
             empleadoActualiza.setNumTel(telefono);
 
-            System.out.println(empleadoActualiza.regresaDatos());
-            //e.deleteEmpleado(empleadoActualiza);
-            //cliente = empleadoActualiza;
-           // empleadoActualiza= (Cliente) cliente.clone();
-           // System.out.println(empleadoActualiza.regresaDatos());
-           // c.selectCliente(cliente);
-
             vistaDatosEmpleadoActualiza datosEmpleado = new vistaDatosEmpleadoActualiza(empleadoActualiza);
             datosEmpleado.setClosable(true);
             interfaceMenu.vistaPrincipal.add(datosEmpleado);

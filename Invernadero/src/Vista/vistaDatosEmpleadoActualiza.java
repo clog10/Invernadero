@@ -274,9 +274,7 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      // agregarDatos();
-        //        v.cargarTabla ();
-         if(jTextField1.getText().isEmpty() || jTextField2.getText().toString().isEmpty() || jTextField2.getText().toString().isEmpty()
+         if(jTextField1.getText().isEmpty() || jTextField1.getText().toString().isEmpty() || jTextField2.getText().toString().isEmpty()
             || jTextField3.getText().toString().isEmpty() || jTextField4.getText().toString().isEmpty() || jTextField5.getText().toString().isEmpty()
             || jTextField6.getText().toString().isEmpty() || jTextField7.getText().toString().isEmpty() || jTextField8.getText().toString().isEmpty()
             || jTextField9.getText().toString().isEmpty() || jTextField10.getText().toString().isEmpty()){
@@ -287,7 +285,6 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
             empleado = new Empleado( Integer.parseInt(jTextField1.getText()), jTextField2.getText(), jTextField3.getText(),
                 jTextField4.getText(), jTextField5.getText(), Integer.parseInt(jTextField6.getText()), jTextField7.getText(),
                 jTextField8.getText(), jTextField9.getText(), jTextField10.getText());
-            System.out.println(empleado.regresaDatos());
             e.updateEmpleado(empleado);
             vaciarCampos();
 

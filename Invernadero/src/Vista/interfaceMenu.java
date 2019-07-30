@@ -279,14 +279,8 @@ public class interfaceMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        // TODO add your handling code here:
-        //vistaPrincipal.removeAll();
-        //vistaPrincipal.updateUI();
 
         vehiculos = new vistaVehiculos();
-        //BasicInternalFrameUI bi = (BasicInternalFrameUI)vehiculos.getUI();
-        //bi.setNorthPane(null);
-        //vehiculos.setBorder(null);
         centrarVista(vehiculos);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 

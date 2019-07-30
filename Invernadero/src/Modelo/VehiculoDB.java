@@ -47,7 +47,7 @@ public class VehiculoDB {
         PreparedStatement ps;
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement("update invernadero_gran_valle.vehiculo set marca=?,"
-                                                                     + " modelo=?, numero_serie=?, anio=? where matricula=?;");
+                                                                     + "modelo=?, numero_serie=?, anio=? where matricula=?");
             
             ps.setString(1, c.getMarca());
             ps.setString(2, c.getModelo());
@@ -56,7 +56,7 @@ public class VehiculoDB {
             ps.setString(5, c.getMatricula());
 
             ps.executeUpdate();
-            System.out.println("Actualizado");
+            //System.out.println("Actualizado");
             return true;
         } catch (SQLException exception) {
             System.err.println("Error en al Actualizar (Vehiculo) " + exception);
@@ -111,6 +111,9 @@ public class VehiculoDB {
     }
     
 }
+
+
+
 
 
 

@@ -77,7 +77,7 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
                 jTextField4.getText(), jTextField5.getText(), Integer.parseInt(jTextField6.getText()), jTextField7.getText(),
                 jTextField8.getText(), jTextField9.getText(), jTextField10.getText());
             
-            e.insertEmpleadoActualiza(empleado);
+            e.updateEmpleado(empleado);
             vaciarCampos();
 
             try {
@@ -287,8 +287,8 @@ public class vistaDatosEmpleadoActualiza extends javax.swing.JInternalFrame {
             empleado = new Empleado( Integer.parseInt(jTextField1.getText()), jTextField2.getText(), jTextField3.getText(),
                 jTextField4.getText(), jTextField5.getText(), Integer.parseInt(jTextField6.getText()), jTextField7.getText(),
                 jTextField8.getText(), jTextField9.getText(), jTextField10.getText());
-            
-            e.insertEmpleadoActualiza(empleado);
+            System.out.println(empleado.regresaDatos());
+            e.updateEmpleado(empleado);
             vaciarCampos();
 
             try {

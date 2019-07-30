@@ -119,12 +119,14 @@ public class Empleado {
     
     public String regresaDatos(){
         String datos="Id: "+id+" "+nombre+" "+aPaterno+ " "+aMaterno+"\n";
+               datos+=" "+calle+" "+numero+" "+colonia+" "+municipio+" "+estado+"\n";
                datos+="Numero de Celular: "+numTel;
         return datos;
     }
     
     
 }
+
 
 
 

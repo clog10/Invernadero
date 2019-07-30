@@ -5,6 +5,7 @@ import Modelo.Empleado;
 import Modelo.Usuario;
 import Modelo.UsuarioDB;
 import java.awt.Color;
+import java.beans.PropertyVetoException;
 import java.util.List;
 
 /**
@@ -182,19 +183,31 @@ public class vistaUsuario extends javax.swing.JInternalFrame {
                 id_empleado=ee.getId();
             }
         }
-        
         u=new Usuario(id_empleado,usuario,contraseña);
-        
         user.insertUsuario(u);
         
+        try {
+       interfaceMenu.user.cargarTabla();
+      
+        } catch (Exception ex) {
+        System.err.println(ex);
+     }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+         int filaPulsada = jTable1.getSelectedRow();
+        if (filaPulsada >= 0) {
+            u = new Usuario();
 
+            String usuario = (String) jTable1.getValueAt(filaPulsada, 1);
+            //System.out.println(id);
+            u.setUser(usuario);
+            user.deleteUsuario(u);
+        }
+        cargarTabla();
     }//GEN-LAST:event_jButton3ActionPerformed
-
 
    public void cargarTabla() {
         List<Usuario> usuarios = user.listUsuario();

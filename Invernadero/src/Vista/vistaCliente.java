@@ -211,7 +211,6 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             cliente.setId(id);
             c.deleteCliente(cliente);
         }
-
         cargarTabla();
     }//GEN-LAST:event_jButton3ActionPerformed
 

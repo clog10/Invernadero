@@ -33,7 +33,6 @@ public class UsuarioDB {
             ps.setString(2, c.getPassword());
             ps.setInt(3, c.getId_empleado());
 
-
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Usuario añadido");
             return true;
@@ -43,9 +42,22 @@ public class UsuarioDB {
         }
     }
     
+     public boolean deleteUsuario(Usuario c) {
+        PreparedStatement ps;
+        String sqlDeleteUsuario = "delete from invernadero_gran_valle.usuario where usuario = ?;";
+
+        try {
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlDeleteUsuario);
+            ps.setString(1, c.getUser());
+
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException exception) {
+            System.err.println("Error al eliminar (Usuario)" + exception);
+            return false;
+        }
+    }
     
-    
-     
      public List<Empleado> listEmpleado() {
         PreparedStatement ps;
         ResultSet rs;
@@ -111,6 +123,10 @@ public class UsuarioDB {
       
       
 }
+
+
+
+
 
 
 

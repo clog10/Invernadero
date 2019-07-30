@@ -90,7 +90,7 @@ public class EmpleadoDB {
     public List<Empleado> listEmpleado() {
         PreparedStatement ps;
         ResultSet rs;
-        String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
+        String consultaSQL = "Select id_empleado, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
                               + "estado,telefono from invernadero_gran_valle.empleado;";
         //String consultaSQL = "select * from invernadero_gran_valle.empleado;";
         List<Empleado> empleado = new ArrayList<Empleado>();
@@ -126,6 +126,7 @@ public class EmpleadoDB {
     }
     
 }
+
 
 
 

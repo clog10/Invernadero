@@ -6,12 +6,15 @@
 package Vista;
 
 import Modelo.Conectiondb;
+import Modelo.Usuario;
+import Modelo.UsuarioDB;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -29,6 +32,8 @@ import javax.swing.Timer;
  */
 public class interfaceDatos extends javax.swing.JFrame {
 
+    private UsuarioDB user;
+    
     /**
      * Creates new form interfaceDatos
      */
@@ -41,7 +46,7 @@ public class interfaceDatos extends javax.swing.JFrame {
     public interfaceDatos() {
         //this.setUndecorated(true);
         initComponents();
-       
+       user=new UsuarioDB();
         //icono usuario
         ImageIcon imgIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/usuario.png")));
         Image img = imgIcon.getImage();
@@ -236,6 +241,8 @@ public class interfaceDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
     
     public void verificarAutenticacion(){
+        
+        List<Usuario> u=user.listUsuario();
         String usuario = jTextField1.getText();
         String paswd = jPasswordField1.getText();
 
@@ -243,8 +250,8 @@ public class interfaceDatos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Algún campo esta vacio");
 
         }else{
-            if(usuario.equals("usuario1") && paswd.equals("1234")){
-
+           for(Usuario uu:u){
+            if(uu.getUser().equals(usuario)&&uu.getPassword().equals(paswd)){
                 ///THREAD                
            JOptionPane pane = new JOptionPane("¡Bienvenido!", JOptionPane.INFORMATION_MESSAGE);
                  JDialog dialog = pane.createDialog("INVERNADERO 'EL GRAN VALLLE'");
@@ -260,12 +267,7 @@ public class interfaceDatos extends javax.swing.JFrame {
                 }, 1, TimeUnit.SECONDS);
 
                 dialog.setVisible(true);
-                
-                //THREAD
-                
-                
                 interfaceMenu iM= new interfaceMenu();
-
                 iM.setVisible(true);
                 this.dispose();
 
@@ -273,7 +275,7 @@ public class interfaceDatos extends javax.swing.JFrame {
                 JOptionPane.showConfirmDialog(null,"Su usuario o contraseña es incorrecto");
             }
         }
-    
+        }
     }
     
     /**

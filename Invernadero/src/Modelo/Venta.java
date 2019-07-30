@@ -13,12 +13,12 @@ public class Venta implements Comparable<Venta> {
     private int cantidad;
     private int total;
     private int subtotal;
-    private Producto[] productos;
+    private String[] productos;
     private String cliente;
     private String user;
     private String fecha;
 
-    public Venta(int id, int cantidad, int subtotal,int total, String cliente,String user,String fecha, Producto... productos) {
+    public Venta(int id, int cantidad, int subtotal,int total, String cliente,String user,String fecha, String... productos) {
         this.id = id;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
@@ -69,11 +69,11 @@ public class Venta implements Comparable<Venta> {
         this.total = total;
     }
 
-    public Producto[] getProductos() {
+    public String[] getProductos() {
         return productos;
     }
 
-    public void setProductos(Producto[] productos) {
+    public void setProductos(String[] productos) {
         this.productos = productos;
     }
 
@@ -94,20 +94,20 @@ public class Venta implements Comparable<Venta> {
     }
 
             //para obtener los precios de los productos y sumarlos
-    public int Totales() {
+   /* public int Totales() {
         //int total = 0;
-        for (Producto p : productos) {
+        for (String p : productos) {
             total += p.getPrecio();
         }
         return total;
-    }
+    }*/
 
     @Override
     public String toString() {
         String datos = "Cliente: " + cliente+"\n";
         datos+="Fecha de Entrega: "+fecha+"\n";
         datos+="Vendió: "+user+"\n";
-        for(Producto p:productos){
+        for(String p:productos){
             datos +=""+p+"\n";
         }
        datos+=" subtotal:" + subtotal + " total: " + total + "\n";
@@ -122,6 +122,7 @@ public class Venta implements Comparable<Venta> {
     
     //Cuando llames a este metodo dale "reverseOrder" para que en la tabla se muestren las ultimas ventas primero
 }
+
 
 
 

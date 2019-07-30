@@ -12,11 +12,11 @@ public class Venta {
     private int total;
     private int subtotal;
     private Producto[] productos;
-    private Cliente cliente;
-    private Usuario user;
+    private String cliente;
+    private String user;
     private String fecha;
 
-    public Venta(int id, int cantidad, int subtotal,int total, Cliente cliente,Usuario user,String fecha, Producto... productos) {
+    public Venta(int id, int cantidad, int subtotal,int total, String cliente,String user,String fecha, Producto... productos) {
         this.id = id;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
@@ -51,11 +51,11 @@ public class Venta {
         this.subtotal = subtotal;
     }
 
-    public Cliente getCliente() {
+    public String getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(String cliente) {
         this.cliente = cliente;
     }
 
@@ -75,11 +75,11 @@ public class Venta {
         this.productos = productos;
     }
 
-    public Usuario getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(Usuario user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
@@ -102,10 +102,9 @@ public class Venta {
 
     @Override
     public String toString() {
-        String datos = "Cliente: " + cliente.toString()+"\n";
+        String datos = "Cliente: " + cliente+"\n";
         datos+="Fecha de Entrega: "+fecha+"\n";
-        //datos+="Vendió: "+user.getEmpleado().getNombre()+" "+user.getEmpleado().getaPaterno()+" "+user.getEmpleado().getaMaterno();
-        datos+="Vendió: "+user.getUser()+"\n";
+        datos+="Vendió: "+user+"\n";
         for(Producto p:productos){
             datos +=""+p+"\n";
         }
@@ -114,6 +113,8 @@ public class Venta {
         return datos;
     }
 }
+
+
 
 
 

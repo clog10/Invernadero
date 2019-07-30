@@ -10,6 +10,7 @@ import Modelo.puntoVentaDB;
 import static Vista.interfaceMenu.vistaPrincipal;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -243,7 +244,9 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
 
         // TODO add your handling code here:
         
-        String fecha= jDateChooser1.getDateFormatString();
+        //String fecha= jDateChooser1.getDateFormatString();
+        SimpleDateFormat formato=new SimpleDateFormat("dd-MM-yyyy");
+        String fecha=formato.format(jDateChooser1.getDate());
         System.out.println(fecha);
         
         //Crear numero aleatorio para id venta
@@ -271,7 +274,7 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         
         //actualizar subtotal y total de venta
         
-        cargarTabla(producto);
+       // cargarTabla(producto);
                 
     }//GEN-LAST:event_jButton5ActionPerformed
 

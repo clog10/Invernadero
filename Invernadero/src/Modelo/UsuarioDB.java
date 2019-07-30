@@ -22,16 +22,14 @@ public class UsuarioDB {
         this.vista = vista;
     }
     
-     public boolean insertVehiculo(Vehiculo c) {
+     public boolean insertUsuario(Usuario c) {
         PreparedStatement ps;
-        String sqlInsertVehiculo = "insert into invernadero_gran_valle.vehiculo values (?,?,?,?,?);";
+        String sqlInsertVehiculo = "insert into invernadero_gran_valle.usuario values (?,?,?);";
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertVehiculo);
-            ps.setString(1, c.getMatricula());
-            ps.setString(2, c.getMarca());
-            ps.setString(3, c.getModelo());
-            ps.setInt(4, c.getNumSerie());
-            ps.setInt(5, c.getAnio());
+            ps.setString(1, c.getUser());
+            ps.setString(2, c.getPassword());
+            ps.setInt(3, c.getId_empleado());
 
 
             ps.executeUpdate();
@@ -46,6 +44,7 @@ public class UsuarioDB {
     
     
 }
+
 
 
 

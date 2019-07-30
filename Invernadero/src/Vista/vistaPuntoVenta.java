@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vista;
 
 import Modelo.Cliente;
@@ -16,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Invernadero Gran Valle
  * @author Clog_10
  */
 public class vistaPuntoVenta extends javax.swing.JInternalFrame {
@@ -235,8 +231,14 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
         // TODO add your handling code here:
+        
+        //Crear numero aleatorio para id venta
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
@@ -252,8 +254,20 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         
+        String fecha= jDateChooser1.getDateFormatString();
+        System.out.println(fecha);
+        
+        String producto=(String)jComboBox2.getSelectedItem();
+        System.out.println(producto);
+        
+        int cantidad=Integer.parseInt(jTextField4.getText());
+        System.out.println(cantidad);
+        
+        
+                
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

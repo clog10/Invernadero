@@ -8,8 +8,10 @@
             <file>file:/C:/Users/AMAURY/Documents/NetBeansProjects/Invernadero/Invernadero/src/Modelo/EmpleadoDB.java</file>
         </group>
         <group>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/Estadisticas.java</file>
-            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Modelo/EstadisticasDB.java</file>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaVehiculos.java</file>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaCliente.java</file>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaDatosClienteActualiza.java</file>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/vistaDatosVehiculoActualiza.java</file>
         </group>
     </open-files>
 </project-private>

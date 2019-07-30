@@ -105,7 +105,7 @@ public class ClienteDB {
                               + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
                               + "telefono=?, celular=?, e_mail=?, rfc=?  where id_cliente=?";
         try {
-            ps =  interfaceLogin.conectiondb.getConexion().prepareStatement( "update invernadero_gran_valle.cliente set id_cliente=?, nombre=?, a_paterno=?,"
+            ps =  interfaceLogin.conectiondb.getConexion().prepareStatement( "update invernadero_gran_valle.cliente set nombre=?, a_paterno=?,"
                               + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
                               + "telefono=?, celular=?, e_mail=?, rfc=?  where id_cliente=?");
 
@@ -125,7 +125,6 @@ public class ClienteDB {
             
             ps.executeUpdate();
              System.out.println("Actualizdo");
-             ps.close();
             return true;
         } catch (SQLException exception) {
             System.err.println("Error al Actualizar (Cliente " + exception);
@@ -200,4 +199,6 @@ public class ClienteDB {
         return clientes;
     }
 }
+
+
 

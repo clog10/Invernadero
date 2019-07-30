@@ -245,8 +245,8 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             clienteActualiza.setEmail(email);
             clienteActualiza.setRFC(rfc);
 
-            System.out.println(clienteActualiza.regresaDatos());
-            c.deleteCliente(clienteActualiza);
+            //System.out.println(clienteActualiza.regresaDatos());
+            //c.deleteCliente(clienteActualiza);
 
             vistaDatosClienteActualiza datosCliente = new vistaDatosClienteActualiza(clienteActualiza);
             datosCliente.setClosable(true);

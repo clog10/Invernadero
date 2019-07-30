@@ -33,16 +33,16 @@ public boolean insertProveedor(Proveedor c) {
     try {
         ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertProveedor);
         ps.setInt(1, c.getId());
-        ps.setString(2, c.getRazonSocial());
-        ps.setString(3, c.getRfc());
+        ps.setString(2, c.getRfc());
+        ps.setString(3, c.getRazonSocial());
         ps.setString(4, c.getCalle());
-        ps.setString(5, c.getColonia());
-        ps.setString(6, c.getEstado());
-        ps.setInt(7, c.getNumero());
+        ps.setInt(5, c.getNumero());
+        ps.setString(6, c.getColonia());
+        ps.setString(7, c.getEstado());
         ps.setString(8, c.getMunicipio());
-        ps.setString(9, c.getEmail());
-        ps.setString(10, c.getTelefono());
-        ps.setString(11, c.getCelular());
+        ps.setString(9, c.getTelefono());
+        ps.setString(10, c.getCelular());
+        ps.setString(11, c.getEmail());
 
         ps.executeUpdate();
         JOptionPane.showMessageDialog(null, "Proveedor añadido");
@@ -56,18 +56,20 @@ public boolean insertProveedor(Proveedor c) {
 public boolean updateProveedor(Proveedor c) {
     PreparedStatement ps;
     try {
-        ps = interfaceLogin.conectiondb.getConexion().prepareStatement("update ingernadero_gran_valle.proveedor set  ");
+        ps = interfaceLogin.conectiondb.getConexion().prepareStatement("update ingernadero_gran_valle.proveedor set rfc_prov=?,"
+                + " razon_social=?,calle=?, numero=?, colonia=?, municipio=?, estado=?,telefono=?, celular=?, e_mail=? "
+                + "where id_prov=?");
         
-        ps.setString(1, c.getRazonSocial());
-        ps.setString(2, c.getRfc());
+        ps.setString(1, c.getRfc());
+        ps.setString(2, c.getRazonSocial());
         ps.setString(3, c.getCalle());
-        ps.setString(4, c.getColonia());
-        ps.setString(5, c.getEstado());
-        ps.setInt(6, c.getNumero());
-        ps.setString(7, c.getMunicipio());
-        ps.setString(8, c.getEmail());
-        ps.setString(9, c.getTelefono());
-        ps.setString(10, c.getCelular());
+        ps.setInt(4, c.getNumero());
+        ps.setString(5, c.getColonia());
+        ps.setString(6, c.getMunicipio());
+        ps.setString(7, c.getEstado());
+        ps.setString(8, c.getTelefono());
+        ps.setString(9, c.getCelular());
+        ps.setString(10, c.getEmail());
         ps.setInt(11, c.getId());
 
         ps.executeUpdate();
@@ -98,8 +100,8 @@ public boolean deleteProveedor(Proveedor c) {
 public List<Proveedor> listProveedor() {
     PreparedStatement ps;
     ResultSet rs;
-    String consultaSQL = "Select id_prov, razon_social, rfc_prov, calle, colonia, estado,"
-                          + " numero, municipio, e_mail, telefono, celular from invernadero_gran_valle.proveedor;";
+    String consultaSQL = "Select id_prov, rfc_prov, razon_social, calle, numero, colonia, municipio,"
+                          + " estado, telefono, celular, e_mail from invernadero_gran_valle.proveedor;";
 
     //String consultaSQL = "select * from invernadero_gran_valle.cliente;";
 
@@ -110,17 +112,16 @@ public List<Proveedor> listProveedor() {
         while (rs.next()) {
             Proveedor c = new Proveedor();
             c.setId(rs.getInt("id_prov"));
-            c.setRazonSocial(rs.getString("razon_social"));
             c.setRfc(rs.getString("rfc_prov"));
+            c.setRazonSocial(rs.getString("razon_social"));      
             c.setCalle(rs.getString("calle"));
-            c.setColonia(rs.getString("colonia"));
-            c.setEstado(rs.getString("estado"));
             c.setNumero(rs.getInt("numero"));
+            c.setColonia(rs.getString("colonia"));
             c.setMunicipio(rs.getString("municipio"));
-            c.setEmail(rs.getString("e_mail"));
+            c.setEstado(rs.getString("estado"));
             c.setTelefono(rs.getString("telefono"));
             c.setCelular(rs.getString("celular"));
-            
+            c.setEmail(rs.getString("e_mail"));
             
             proveedores.add(c);
 
@@ -135,16 +136,8 @@ public List<Proveedor> listProveedor() {
     }
     return proveedores;
 }
-    
-    
-    
-    
-    
+       
 }
-
-
-
-
 
 
 

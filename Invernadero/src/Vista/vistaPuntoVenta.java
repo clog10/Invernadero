@@ -3,6 +3,8 @@ package Vista;
 
 import Modelo.Cliente;
 import Modelo.Producto;
+import Modelo.ProductoDB;
+import Modelo.Vehiculo;
 import Modelo.VentaDB;
 import Modelo.puntoVentaDB;
 import static Vista.interfaceMenu.vistaPrincipal;
@@ -20,7 +22,11 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
     private VentaDB v;
     private puntoVentaDB pv;
     private Producto producto;
+    private ProductoDB p;
 
+    int cantidad;
+    double total;
+    
     /**
      * Creates new form vistaPuntoVenta
      */
@@ -103,38 +109,38 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID compra", "Cantidad", "Unidad", "Nombre Producto", "Precio Unitario", "Total"
+                "Cantidad", "Unidad", "Nombre Producto", "Precio Unitario", "Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -237,6 +243,9 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
 
         // TODO add your handling code here:
         
+        String fecha= jDateChooser1.getDateFormatString();
+        System.out.println(fecha);
+        
         //Crear numero aleatorio para id venta
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -254,19 +263,35 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         
-        String fecha= jDateChooser1.getDateFormatString();
-        System.out.println(fecha);
-        
         String producto=(String)jComboBox2.getSelectedItem();
         System.out.println(producto);
         
-        int cantidad=Integer.parseInt(jTextField4.getText());
+        cantidad=Integer.parseInt(jTextField4.getText());
         System.out.println(cantidad);
         
+        //actualizar subtotal y total de venta
         
+        cargarTabla(producto);
                 
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    
+    public void cargarTabla(String nombre){
+        List<Producto> productos= p.listProducto();
+       int i = 0;
+       jTable1.setValueAt(cantidad, i, 0);
+        for (Producto pp:productos) {
+            if(nombre.equalsIgnoreCase(pp.getNombre())){
+            jTable1.setValueAt(pp.getUnidad(), i, 1);
+            jTable1.setValueAt(pp.getNombre(), i, 2);
+            jTable1.setValueAt(pp.getPrecio(), i, 3);
+            }
+            i++;
+            total=cantidad*pp.getPrecio();
+        }
+        
+        jTable1.setValueAt(total, i, 4);
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -251,7 +251,7 @@ public class interfaceDatos extends javax.swing.JFrame {
 
         }else{
            for(Usuario uu:u){
-            if(uu.getUser().equals(usuario)&&uu.getPassword().equals(paswd)){
+            if(uu.getUser().equals(usuario) && uu.getPassword().equals(paswd)){
                 ///THREAD                
            JOptionPane pane = new JOptionPane("¡Bienvenido!", JOptionPane.INFORMATION_MESSAGE);
                  JDialog dialog = pane.createDialog("INVERNADERO 'EL GRAN VALLLE'");
@@ -270,7 +270,7 @@ public class interfaceDatos extends javax.swing.JFrame {
                 interfaceMenu iM= new interfaceMenu();
                 iM.setVisible(true);
                 this.dispose();
-
+                break;
             }else{
                 JOptionPane.showConfirmDialog(null,"Su usuario o contraseña es incorrecto");
             }

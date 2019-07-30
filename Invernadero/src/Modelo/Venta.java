@@ -16,9 +16,9 @@ public class Venta implements Comparable<Venta> {
     private Producto[] productos;
     private String cliente;
     private String user;
-    private Date fecha;
+    private String fecha;
 
-    public Venta(int id, int cantidad, int subtotal,int total, String cliente,String user,Date fecha, Producto... productos) {
+    public Venta(int id, int cantidad, int subtotal,int total, String cliente,String user,String fecha, Producto... productos) {
         this.id = id;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
@@ -85,11 +85,11 @@ public class Venta implements Comparable<Venta> {
         this.user = user;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -122,6 +122,7 @@ public class Venta implements Comparable<Venta> {
     
     //Cuando llames a este metodo dale "reverseOrder" para que en la tabla se muestren las ultimas ventas primero
 }
+
 
 
 

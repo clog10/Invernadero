@@ -84,9 +84,6 @@ public class UsuarioDB {
 
                 empleado.add(e);
 
-                for (Empleado t : empleado) {
-                    System.out.println(t.regresaDatos());
-                }
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Empleado) " + exception);
@@ -123,6 +120,7 @@ public class UsuarioDB {
       
       
 }
+
 
 
 

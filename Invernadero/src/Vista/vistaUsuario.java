@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author Clog_10
@@ -16,6 +18,7 @@ public class vistaUsuario extends javax.swing.JInternalFrame {
      */
     public vistaUsuario() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
     }
 
     /**
@@ -38,6 +41,7 @@ public class vistaUsuario extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setTitle("Usuarios");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

@@ -7,6 +7,7 @@ import static Vista.interfaceMenu.vistaPrincipal;
 import Modelo.Cliente;
 import Modelo.Vehiculo;
 import Modelo.VehiculoDB;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.util.List;
 import java.util.Vector;
@@ -28,6 +29,7 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
      */
     public vistaVehiculos() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         v=new VehiculoDB();
         iM = this.getDesktopPane();
         cargarTabla();
@@ -50,6 +52,7 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setBorder(null);
         setResizable(true);
         setTitle("Vehiculos");
@@ -221,14 +224,10 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
             vehiculo = new Vehiculo();
 
             String matricula = (String) jTable1.getValueAt(filaPulsada, 0);
-            //System.out.println(id);
             vehiculo.setMatricula(matricula);
             v.deleteVehiculo(vehiculo);
-           // cargarTabla();
         }
-        //System.out.println(" Cargando");
         cargarTabla();
-        //System.out.println("Cargado");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     //Boton para editar Vehiculo

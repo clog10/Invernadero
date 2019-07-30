@@ -10,6 +10,7 @@ import Modelo.Producto;
 import Modelo.VentaDB;
 import Modelo.puntoVentaDB;
 import static Vista.interfaceMenu.vistaPrincipal;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
      */
     public vistaPuntoVenta() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         //v= new VentaDB();
         pv = new puntoVentaDB();
         llenaProducto();
@@ -76,6 +78,7 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setTitle("Punto de Venta");
 
         jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {

@@ -6,6 +6,7 @@
 package Vista;
 
 import static Vista.interfaceMenu.vistaPrincipal;
+import java.awt.Color;
 
 /**
  *
@@ -18,6 +19,7 @@ public class vistaEstadisticas extends javax.swing.JInternalFrame {
      */
     public vistaEstadisticas() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
     }
 
     /**
@@ -31,22 +33,24 @@ public class vistaEstadisticas extends javax.swing.JInternalFrame {
         vistaPrincipal.updateUI();
     }
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc=" Generated Code ">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        setBackground(new java.awt.Color(240, 239, 232));
+
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 394, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 274, Short.MAX_VALUE)
         );
+
         pack();
-    }
-    // </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

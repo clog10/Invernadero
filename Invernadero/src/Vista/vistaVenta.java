@@ -6,6 +6,7 @@
 package Vista;
 
 import static Vista.interfaceMenu.vistaPrincipal;
+import java.awt.Color;
 
 /**
  *
@@ -18,6 +19,7 @@ public class vistaVenta extends javax.swing.JInternalFrame {
      */
     public vistaVenta() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
     }
 
     /**
@@ -34,6 +36,7 @@ public class vistaVenta extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setTitle("Ventas");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

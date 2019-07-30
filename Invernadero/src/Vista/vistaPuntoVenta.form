@@ -2,6 +2,9 @@
 
 <Form version="1.5" maxVersion="1.5" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="e8" green="ef" red="f0" type="rgb"/>
+    </Property>
     <Property name="title" type="java.lang.String" value="Punto de Venta"/>
   </Properties>
   <SyntheticProperties>

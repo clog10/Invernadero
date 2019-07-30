@@ -3,6 +3,7 @@ package Vista;
 import Modelo.Cliente;
 import Modelo.ClienteDB;
 import static Vista.interfaceMenu.vistaPrincipal;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.util.List;
 import java.util.Vector;
@@ -30,6 +31,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
      */
     public vistaCliente() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         iM = this.getDesktopPane();
         c = new ClienteDB();
 
@@ -52,6 +54,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setTitle("Clientes");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {

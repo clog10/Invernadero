@@ -7,6 +7,7 @@ package Vista;
 
 import Modelo.Producto;
 import Modelo.ProductoDB;
+import java.awt.Color;
 import java.beans.PropertyVetoException;
 import javax.swing.JOptionPane;
 
@@ -28,6 +29,7 @@ public class vistaDatosProductos extends javax.swing.JInternalFrame {
      */
     public vistaDatosProductos() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         productodb= new ProductoDB();
     }
     public void vaciarCampos(){
@@ -58,6 +60,8 @@ public class vistaDatosProductos extends javax.swing.JInternalFrame {
         jTextField4 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(240, 239, 232));
 
         jLabel1.setText("ID:");
 

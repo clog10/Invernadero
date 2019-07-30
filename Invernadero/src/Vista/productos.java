@@ -7,6 +7,7 @@ package Vista;
 
 import Modelo.Producto;
 import Modelo.ProductoDB;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.beans.PropertyVetoException;
 import java.util.List;
@@ -31,6 +32,7 @@ public class productos extends javax.swing.JInternalFrame {
      */
     public productos() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         modelo=(DefaultTableModel)jTable2.getModel();
         
         p= new ProductoDB();
@@ -54,6 +56,7 @@ public class productos extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setTitle("PRODUCTOS");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(

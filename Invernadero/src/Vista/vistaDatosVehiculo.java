@@ -3,6 +3,7 @@ package Vista;
 
 import Modelo.Vehiculo;
 import Modelo.VehiculoDB;
+import java.awt.Color;
 import java.beans.PropertyVetoException;
 import javax.swing.JOptionPane;
 
@@ -20,6 +21,7 @@ public class vistaDatosVehiculo extends javax.swing.JInternalFrame {
      */
     public vistaDatosVehiculo() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         v=new VehiculoDB();
     }
 
@@ -54,6 +56,8 @@ public class vistaDatosVehiculo extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(240, 239, 232));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/registrar.png"))); // NOI18N
         jButton1.setBorder(null);

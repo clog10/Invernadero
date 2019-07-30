@@ -1,5 +1,6 @@
 package Vista;
 
+import java.awt.Color;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -17,6 +18,7 @@ public class Estadisticas extends javax.swing.JInternalFrame {
      */
     public Estadisticas() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         graph();
     }
  
@@ -29,6 +31,7 @@ public class Estadisticas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        setBackground(new java.awt.Color(240, 239, 232));
         setTitle("Estadisticas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

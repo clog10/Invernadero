@@ -43,20 +43,20 @@ public class VehiculoDB {
         }
     }
      
-      public boolean insertVehiculoActualiza(Vehiculo c) {
+      public boolean updateVehiculo(Vehiculo c) {
         PreparedStatement ps;
-        String sqlInsertVehiculo = "insert into invernadero_gran_valle.vehiculo values (?,?,?,?,?);";
         try {
-            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertVehiculo);
-            ps.setString(1, c.getMatricula());
-            ps.setString(2, c.getMarca());
-            ps.setString(3, c.getModelo());
-            ps.setInt(4, c.getNumSerie());
-            ps.setInt(5, c.getAnio());
-
+            ps = interfaceLogin.conectiondb.getConexion().prepareStatement("update invernadero_gran_valle.vehiculo set marca=?,"
+                                                                     + " modelo=?, numero_serie=?, anio=? where matricula=?;");
+            
+            ps.setString(1, c.getMarca());
+            ps.setString(2, c.getModelo());
+            ps.setInt(3, c.getNumSerie());
+            ps.setInt(4, c.getAnio());
+            ps.setString(5, c.getMatricula());
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Vehiculo Actualizado");
+            System.out.println("Actualizado");
             return true;
         } catch (SQLException exception) {
             System.err.println("Error en al Actualizar (Vehiculo) " + exception);
@@ -111,6 +111,14 @@ public class VehiculoDB {
     }
     
 }
+
+
+
+
+
+
+
+
 
 
 

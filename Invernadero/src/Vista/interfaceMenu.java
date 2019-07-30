@@ -36,6 +36,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     public static vistaPedidos pedido;
     public static Estadisticas estadisticas;
     public static vistaUsuario user;
+    public static vistaCompraHerramienta compras; 
     
     public interfaceMenu() {
         initComponents();
@@ -104,6 +105,7 @@ public class interfaceMenu extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -233,6 +235,14 @@ public class interfaceMenu extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem9);
+
+        jMenuItem12.setText("Compras");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem12);
 
         jMenuItem10.setText("Estadisticas");
         jMenuItem10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -393,6 +403,12 @@ public class interfaceMenu extends javax.swing.JFrame {
         centrarVista(user);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        compras = new vistaCompraHerramienta();
+        centrarVista(compras);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
     //Metodo para reiniciar la vista de la ventana principal y no se encimen los jinternaframes
     public void reiniciarVista(){
         vistaPrincipal.removeAll();
@@ -443,6 +459,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

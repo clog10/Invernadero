@@ -7,22 +7,15 @@ package Modelo;
  */
 public class Usuario {
 
-    private Empleado empleado;
-
+    //private Empleado empleado;
+    private int id_empleado;
     private String user, password;
 
-    public Usuario(Empleado empleado, String user, String password) {
-        this.empleado = empleado;
+    public Usuario(int id_empleado, String user, String password) {
+        //this.empleado = empleado;
+        this.id_empleado=id_empleado;
         this.user = user;
         this.password = password;
-    }
-
-    public Empleado getEmpleado() {
-        return empleado;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
     }
 
     public String getUser() {
@@ -31,6 +24,14 @@ public class Usuario {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public int getId_empleado() {
+        return id_empleado;
+    }
+
+    public void setId_empleado(int id_empleado) {
+        this.id_empleado = id_empleado;
     }
 
     public String getPassword() {
@@ -42,11 +43,15 @@ public class Usuario {
     }
 
     public String regresaDatos() {
-        String datos = "Id: " + empleado.getId() + " " + empleado.getNombre() + " "
-                + empleado.getaPaterno() + " " + empleado.getaMaterno() + "\n";
-        datos += "Usuario: " + user + " Contraseña: " + password;
+      //  String datos = "Id: " + empleado.getId() + " " + empleado.getNombre() + " "
+        //        + empleado.getaPaterno() + " " + empleado.getaMaterno() + "\n";
+        String datos = "Usuario: " + user + " Contraseña: " + password;
 
         return datos;
     }
 }
+
+
+
+
 

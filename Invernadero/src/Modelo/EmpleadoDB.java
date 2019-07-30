@@ -21,7 +21,7 @@ public class EmpleadoDB {
 
     public boolean insertEmpleado(Empleado e) {
         PreparedStatement ps;
-        String sqlInsertEmpleado = "insert into invernadero_gran_valle.empleado values (?,?,?,?,?,?,?,?,?,?);";
+        String sqlInsertEmpleado = "insert into invernadero_gran_valle.empleado values (?,?,?,?,?,?,?,?,?,?,?);";
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertEmpleado);
             ps.setInt(1, e.getId());
@@ -34,6 +34,7 @@ public class EmpleadoDB {
             ps.setString(8, e.getColonia());
             ps.setString(9, e.getMunicipio());
             ps.setString(10, e.getEstado());
+            ps.setString(11,e.getNumTel());
             
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado añadido");
@@ -46,7 +47,7 @@ public class EmpleadoDB {
     
       public boolean insertEmpleadoActualiza(Empleado e){
         PreparedStatement ps;
-        String sqlInsertEmpleado = "insert into invernadero_gran_valle.empleado values (?,?,?,?,?,?,?,?,?,?);";
+        String sqlInsertEmpleado = "insert into invernadero_gran_valle.empleado values (?,?,?,?,?,?,?,?,?,?,?);";
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertEmpleado);
             ps.setInt(1, e.getId());
@@ -59,6 +60,7 @@ public class EmpleadoDB {
             ps.setString(8, e.getColonia());
             ps.setString(9, e.getMunicipio());
             ps.setString(10, e.getEstado());
+            ps.setString(11,e.getNumTel());
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado Actualizado");
             return true;
@@ -110,6 +112,7 @@ public class EmpleadoDB {
                 e.setColonia(rs.getString("colonia"));
                 e.setMunicipio(rs.getString("municipio"));
                 e.setEstado(rs.getString("estado"));
+                e.setNumTel(rs.getString("telefono"));
 
                 empleado.add(e);
 
@@ -124,4 +127,8 @@ public class EmpleadoDB {
     }
     
 }
+
+
+
+
 

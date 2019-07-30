@@ -143,7 +143,9 @@ public class vistaDatosVehiculoActualiza extends javax.swing.JInternalFrame {
         }else{
             vehiculo = new Vehiculo(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(),
                 Integer.parseInt(jTextField4.getText()), Integer.parseInt(jTextField5.getText()));
-            v.insertVehiculo(vehiculo);
+            //v.insertVehiculo(vehiculo);
+            System.out.println(vehiculo.toString());
+            v.updateVehiculo(vehiculo);
             vaciarCampos();
 
             try {

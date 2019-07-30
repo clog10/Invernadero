@@ -102,17 +102,20 @@ public class Venta {
 
     @Override
     public String toString() {
-        String datos = "Cliente: " + cliente.toString();
-        datos+="Fecha de Entrega: "+fecha;
-        datos+="Vendió: "+user.getEmpleado().getNombre()+" "+user.getEmpleado().getaPaterno()+" "+user.getEmpleado().getaMaterno();
+        String datos = "Cliente: " + cliente.toString()+"\n";
+        datos+="Fecha de Entrega: "+fecha+"\n";
+        //datos+="Vendió: "+user.getEmpleado().getNombre()+" "+user.getEmpleado().getaPaterno()+" "+user.getEmpleado().getaMaterno();
+        datos+="Vendió: "+user.getUser()+"\n";
         for(Producto p:productos){
-            datos +=""+p;
+            datos +=""+p+"\n";
         }
        datos+=" subtotal:" + subtotal + " total: " + total + "\n";
         
         return datos;
     }
 }
+
+
 
 
 

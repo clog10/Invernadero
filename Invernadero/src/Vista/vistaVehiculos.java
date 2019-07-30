@@ -250,8 +250,8 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
             vehiculoActualiza.setNumSerie(numSerie);
             vehiculoActualiza.setAnio(anio);
             
-            v.deleteVehiculo(vehiculoActualiza);
-            
+           // v.deleteVehiculo(vehiculoActualiza);
+            System.out.println(vehiculoActualiza.toString());
             vistaDatosVehiculoActualiza datosVehiculo = new vistaDatosVehiculoActualiza(vehiculoActualiza);
             datosVehiculo.setClosable(true);
             interfaceMenu.vistaPrincipal.add(datosVehiculo);

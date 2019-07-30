@@ -101,30 +101,27 @@ public class ClienteDB {
     public boolean updateCliente(Cliente c) {
 
         PreparedStatement ps;
-        String sqlUpdateCliente = "update invernadero_gran_valle.cliente set id_cliente=?, nombre=?, a_paterno=?,"
-                              + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
-                              + "telefono=?, celular=?, e_mail=?, rfc=?  where id_cliente=?";
         try {
             ps =  interfaceLogin.conectiondb.getConexion().prepareStatement( "update invernadero_gran_valle.cliente set nombre=?, a_paterno=?,"
                               + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
                               + "telefono=?, celular=?, e_mail=?, rfc=?  where id_cliente=?");
 
-            ps.setInt(1, c.getId());
-            ps.setString(2, c.getNombre());
-            ps.setString(3, c.getaPaterno());
-            ps.setString(4, c.getaMaterno());
-            ps.setString(5, c.getCalle());
-            ps.setInt(6, c.getNumero());
-            ps.setString(7, c.getColonia());
-            ps.setString(8, c.getMunicipio());
-            ps.setString(9, c.getEstado());
-            ps.setString(10, c.getTelefono());
-            ps.setString(11, c.getCelular());
-            ps.setString(12, c.getEmail());
-            ps.setString(13, c.getRFC());
+            //ps.setInt(1, c.getId());
+            ps.setString(1, c.getNombre());
+            ps.setString(2, c.getaPaterno());
+            ps.setString(3, c.getaMaterno());
+            ps.setString(4, c.getCalle());
+            ps.setInt(5, c.getNumero());
+            ps.setString(6, c.getColonia());
+            ps.setString(7, c.getMunicipio());
+            ps.setString(8, c.getEstado());
+            ps.setString(9, c.getTelefono());
+            ps.setString(10, c.getCelular());
+            ps.setString(11, c.getEmail());
+            ps.setString(12, c.getRFC());
+            ps.setInt(13, c.getId());
             
             ps.executeUpdate();
-             System.out.println("Actualizdo");
             return true;
         } catch (SQLException exception) {
             System.err.println("Error al Actualizar (Cliente " + exception);
@@ -199,6 +196,10 @@ public class ClienteDB {
         return clientes;
     }
 }
+
+
+
+
 
 
 

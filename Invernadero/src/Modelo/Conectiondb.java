@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class Conectiondb {
     
     private String usuario = "postgres";
-    private String clave = "Carlos100598";
+    private String clave = "123456";
     private String servidor = "";
     private String baseDatos;
     private static Connection conexion = null;
@@ -62,6 +62,7 @@ public class Conectiondb {
     }
     
 }
+
 
 
 

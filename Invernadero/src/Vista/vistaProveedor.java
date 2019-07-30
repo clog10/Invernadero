@@ -13,6 +13,7 @@ import java.awt.Dimension;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +26,7 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
      */
       private ProveedorDB c;
    // private DBTabla tabla;
-    private  Proveedor proveedor;
+    private  Proveedor proveedor,proveedorActualiza;
     private JDesktopPane iM;
     public vistaProveedor() {
         initComponents();
@@ -135,6 +136,11 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/editar.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eliminar.png"))); // NOI18N
         jButton3.setBorder(null);
@@ -183,6 +189,53 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
         datosProveedor.toFront();
         datosProveedor.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        int filaPulsada = jTable2.getSelectedRow();
+        if (filaPulsada >= 0) {
+            proveedorActualiza = new Proveedor();
+            int id = (int) jTable2.getValueAt(filaPulsada, 0);
+            String rsocial = (String) jTable2.getValueAt(filaPulsada, 1);
+            String rfc = (String) jTable2.getValueAt(filaPulsada, 2);
+            String calle = (String) jTable2.getValueAt(filaPulsada, 3);
+            int numero = (int) jTable2.getValueAt(filaPulsada, 4);
+            String colonia = (String) jTable2.getValueAt(filaPulsada, 5);
+            String municipio = (String) jTable2.getValueAt(filaPulsada, 6);
+            String estado = (String) jTable2.getValueAt(filaPulsada, 7);
+            String telefono = (String) jTable2.getValueAt(filaPulsada, 8);
+            String celular = (String) jTable2.getValueAt(filaPulsada, 9);
+            String email = (String) jTable2.getValueAt(filaPulsada, 10);
+            
+            proveedorActualiza.setId(id);
+            proveedorActualiza.setRazonSocial(rsocial);
+            proveedorActualiza.setRfc(rfc);
+            proveedorActualiza.setCalle(calle);
+            proveedorActualiza.setNumero(numero);
+            proveedorActualiza.setColonia(colonia);
+            proveedorActualiza.setMunicipio(municipio);
+            proveedorActualiza.setEstado(estado);
+            proveedorActualiza.setTelefono(telefono);
+            proveedorActualiza.setCelular(celular);
+            proveedorActualiza.setEmail(email);
+
+            //System.out.println(proveedorActualiza.regresaDatos());
+            //c.deleteCliente(proveedorActualiza);
+
+            vistaDatosProveedorActualiza datosProveedor = new vistaDatosProveedorActualiza(proveedorActualiza);
+            datosProveedor.setClosable(true);
+            interfaceMenu.vistaPrincipal.add(datosProveedor);
+            Dimension dim = interfaceMenu.vistaPrincipal.getSize();
+            Dimension dimForm = datosProveedor.getSize();
+            datosProveedor.setLocation((dim.width - dimForm.width) / 2, (dim.height - dimForm.height) / 2);
+            datosProveedor.toFront();
+            datosProveedor.setVisible(true);
+        }else{
+                    JOptionPane.showMessageDialog(null, "Seleccione un elemento de la tabla para continuar...");
+
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {                                         
             // TODO add your handling code here:

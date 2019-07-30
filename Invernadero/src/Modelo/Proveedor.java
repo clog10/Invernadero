@@ -5,7 +5,7 @@ package Modelo;
  * El gran valle, Invernadero
  * @author Clog_10
  */
-public class Proveedor {
+public class Proveedor implements Comparable<Proveedor>{
     
     private int id;
     private String razonSocial,rfc;
@@ -127,9 +127,11 @@ public class Proveedor {
                 datos+="Telefono: "+telefono+" Celular: "+celular+" Email: " + email;
         return datos;
     }
-    
-    
-    
+
+    @Override
+    public int compareTo(Proveedor o) {
+        return this.getId() > o.getId() ? 1 : this.getId() < o.getId() ? -1 : 0;
+    }
     
 }
 

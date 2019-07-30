@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -43,7 +44,9 @@ public class puntoVentaDB {
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Producto) " + exception);
+            pro = Collections.emptyList();
         }
+        Collections.sort(pro);
         return pro;
     }
     
@@ -78,7 +81,9 @@ public class puntoVentaDB {
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Cliente) " + exception);
+            clientes = Collections.emptyList();
         }
+        Collections.sort(clientes);
         return clientes;
     }
     

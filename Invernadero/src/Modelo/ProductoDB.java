@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -90,7 +91,9 @@ public class ProductoDB {
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Producto) " + exception);
+            pro = Collections.emptyList();
         }
+        Collections.sort(pro);
         return pro;
     }
     //Metodo para regresar valores a una tabla de producto.

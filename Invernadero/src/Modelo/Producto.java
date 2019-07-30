@@ -5,7 +5,7 @@ package Modelo;
  * El gran valle, Invernadero
  * @author Clog_10
  */
-public class Producto {
+public class Producto implements Comparable<Producto> {
     //Variables para la clase producto que se utilizaran.
     public int id;
     public String nombre;
@@ -67,6 +67,11 @@ public class Producto {
         String datos= "Producto " + "id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", unidad=" + unidad +"cantidad=" +cantidad;
         return datos;
     }    
+
+    @Override
+    public int compareTo(Producto o) {
+        return this.getId() > o.getId() ? 1 : this.getId() < o.getId() ? -1 : 0;
+    }
 }
 
 

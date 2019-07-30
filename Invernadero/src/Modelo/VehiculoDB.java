@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -106,7 +107,9 @@ public class VehiculoDB {
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Vehiculos) " + exception);
+            vehiculos = Collections.emptyList();
         }
+        Collections.sort(vehiculos);
         return vehiculos;
     }
     

@@ -5,7 +5,7 @@ package Modelo;
  *
  * @author Clog_10
  */
-public class Vehiculo {
+public class Vehiculo implements Comparable<Vehiculo> {
     
     private String matricula,marca,modelo;
     private int numSerie,anio;
@@ -68,6 +68,11 @@ public class Vehiculo {
                datos+=" Marca: " + marca + " Modelo: " + modelo + " Numero de Serie: " + numSerie + " Año: " + anio;
                
         return datos;
+    }
+
+    @Override
+    public int compareTo(Vehiculo o) {
+        return this.getNumSerie() > o.getNumSerie() ? 1 : this.getNumSerie() < o.getNumSerie() ? -1 : 0;
     }
     
     

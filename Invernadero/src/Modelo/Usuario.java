@@ -5,7 +5,7 @@ package Modelo;
  *
  * @author Clog_10
  */
-public class Usuario {
+public class Usuario implements Comparable<Usuario>{
 
     //private Empleado empleado;
     private int id_empleado;
@@ -48,6 +48,11 @@ public class Usuario {
         String datos = "Usuario: " + user + " Contraseña: " + password;
 
         return datos;
+    }
+
+    @Override
+    public int compareTo(Usuario o) {
+        return this.getId_empleado() > o.getId_empleado() ? 1 : this.getId_empleado() < o.getId_empleado() ? -1 : 0;
     }
 }
 

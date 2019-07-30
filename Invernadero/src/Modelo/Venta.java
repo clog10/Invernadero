@@ -1,11 +1,13 @@
 package Modelo;
 
+import java.util.Date;
+
 /**
  * El gran valle, Invernadero
  * @author Clog_10
  */
 
-public class Venta {
+public class Venta implements Comparable<Venta> {
 
     private int id;
     private int cantidad;
@@ -14,9 +16,9 @@ public class Venta {
     private Producto[] productos;
     private String cliente;
     private String user;
-    private String fecha;
+    private Date fecha;
 
-    public Venta(int id, int cantidad, int subtotal,int total, String cliente,String user,String fecha, Producto... productos) {
+    public Venta(int id, int cantidad, int subtotal,int total, String cliente,String user,Date fecha, Producto... productos) {
         this.id = id;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
@@ -83,11 +85,11 @@ public class Venta {
         this.user = user;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -112,6 +114,13 @@ public class Venta {
         
         return datos;
     }
+
+    @Override
+    public int compareTo(Venta o) {
+        return this.getFecha().compareTo(o.getFecha());
+    }
+    
+    //Cuando llames a este metodo dale "reverseOrder" para que en la tabla se muestren las ultimas ventas primero
 }
 
 

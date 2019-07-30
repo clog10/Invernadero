@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -122,7 +123,9 @@ public class EmpleadoDB {
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Empleado) " + exception);
+            empleado = Collections.emptyList();
         }
+        Collections.sort(empleado);
         return empleado;
     }
     

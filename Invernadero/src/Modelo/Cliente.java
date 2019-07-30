@@ -6,7 +6,7 @@ package Modelo;
  * @author Clog_10
  */
 
-public class Cliente {
+public class Cliente implements Comparable<Cliente>{
     private int id;
     private String nombre,aPaterno,aMaterno;
     private String calle,colonia,municipio,estado;
@@ -159,10 +159,10 @@ public class Cliente {
         datos+="RFC: "+RFC;
         return datos;
     }
+
+    @Override
+    public int compareTo(Cliente o) {
+        return this.getId() > o.getId() ? 1 : this.getId() < o.getId() ? -1 : 0;
+    }
     
 }
-
-
-
-
-

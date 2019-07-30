@@ -56,7 +56,7 @@ public boolean insertProveedor(Proveedor c) {
 public boolean updateProveedor(Proveedor c) {
     PreparedStatement ps;
     try {
-        ps = interfaceLogin.conectiondb.getConexion().prepareStatement("update ingernadero_gran_valle.proveedor set rfc_prov=?,"
+        ps = interfaceLogin.conectiondb.getConexion().prepareStatement("update invernadero_gran_valle.proveedor set rfc_prov=?,"
                 + " razon_social=?,calle=?, numero=?, colonia=?, municipio=?, estado=?,telefono=?, celular=?, e_mail=? "
                 + "where id_prov=?");
         
@@ -73,7 +73,7 @@ public boolean updateProveedor(Proveedor c) {
         ps.setInt(11, c.getId());
 
         ps.executeUpdate();
-        JOptionPane.showMessageDialog(null, "Proveedor añadido");
+        JOptionPane.showMessageDialog(null, "Proveedor actualizado");
         return true;
     } catch (SQLException exception) {
         System.err.println("Error en al añadir (Proveedor) " + exception);
@@ -134,6 +134,8 @@ public List<Proveedor> listProveedor() {
         System.err.println("Error al CARGAR DATOS (Proveedor) " + exception);
         proveedores =  Collections.emptyList();
     }
+    
+    Collections.sort(proveedores);
     return proveedores;
 }
        

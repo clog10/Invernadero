@@ -5,7 +5,7 @@ package Modelo;
  * El gran valle, Invernadero
  * @author Clog_10
  */
-public class Empleado {
+public class Empleado implements Comparable <Empleado>{
     private int id;
     private String nombre,aPaterno,aMaterno;
     private String numTel;
@@ -122,6 +122,11 @@ public class Empleado {
                datos+=" "+calle+" "+numero+" "+colonia+" "+municipio+" "+estado+"\n";
                datos+="Numero de Celular: "+numTel;
         return datos;
+    }
+
+    @Override
+    public int compareTo(Empleado o) {
+        return this.getId() > o.getId() ? 1 : this.getId() < o.getId() ? -1 : 0;
     }
     
     

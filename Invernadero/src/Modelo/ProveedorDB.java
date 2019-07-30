@@ -29,7 +29,7 @@ public ProveedorDB() {
 
 public boolean insertProveedor(Proveedor c) {
     PreparedStatement ps;
-    String sqlInsertProveedor = "insert into invernadero_gran_valle.proveedor values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    String sqlInsertProveedor = "insert into invernadero_gran_valle.proveedor values (?,?,?,?,?,?,?,?,?,?,?);";
     try {
         ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertProveedor);
         ps.setInt(1, c.getId());

@@ -48,13 +48,13 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
             jTable2.setValueAt(prov.getRazonSocial(), i, 1);
             jTable2.setValueAt(prov.getRfc(),i,2);
             jTable2.setValueAt(prov.getCalle(), i,3);
-            jTable2.setValueAt(prov.getColonia(), i, 4);
-            jTable2.setValueAt(prov.getEstado(),i,5);
-            jTable2.setValueAt(prov.getNumero(),i,6);
-            jTable2.setValueAt(prov.getMunicipio(),i,7);
-            jTable2.setValueAt(prov.getEmail(),i,8);
-            jTable2.setValueAt(prov.getTelefono(),i,9);
-            jTable2.setValueAt(prov.getCelular(), i, 10);
+            jTable2.setValueAt(prov.getNumero(),i,4);
+            jTable2.setValueAt(prov.getColonia(), i, 5);
+            jTable2.setValueAt(prov.getMunicipio(),i,6);
+            jTable2.setValueAt(prov.getEstado(),i,7);
+            jTable2.setValueAt(prov.getTelefono(),i,8);
+            jTable2.setValueAt(prov.getCelular(), i, 9);
+            jTable2.setValueAt(prov.getEmail(),i,10);
 
             i++;
         }

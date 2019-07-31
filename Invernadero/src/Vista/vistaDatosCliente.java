@@ -13,6 +13,8 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 /**
  * Invernadero Gran Valle
  * @author clog10
+ * 
+ * Obtiene datos de los TextField y crea clientes en la base de datos
  */
 
 public class vistaDatosCliente extends javax.swing.JInternalFrame {
@@ -251,6 +253,7 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    //Deja los TextField limpios
         public void vaciarCampos(){
         jTextField1.setText(" ");
         jTextField2.setText(" ");
@@ -267,7 +270,7 @@ public class vistaDatosCliente extends javax.swing.JInternalFrame {
         jTextField13.setText(" ");
     }
      
-        
+        //Evento que obtiene datos y crea eventos
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if(jTextField1.getText().isEmpty() || jTextField2.getText().toString().isEmpty() || jTextField3.getText().toString().isEmpty()

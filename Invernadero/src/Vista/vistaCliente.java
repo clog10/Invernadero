@@ -14,13 +14,14 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  * Invernadero Gran Valle
- *
  * @author Clog_10
+ * 
+ * Vista pra poder agregar, editar y eliminar clientes 
+ * 
  */
 public class vistaCliente extends javax.swing.JInternalFrame {
 
     private ClienteDB c;
-    // private DBTabla tabla;
     private Cliente cliente;
     private JDesktopPane iM;
     private DefaultTableModel modelo;
@@ -197,23 +198,22 @@ public class vistaCliente extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    //Para eliminar cliente
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
 
-        //int filaPulsada = vistaLibro.getTabla().tabla.getSelectedRow();
         int filaPulsada = jTable2.getSelectedRow();
-        //System.out.println(filaPulsada);
         if (filaPulsada >= 0) {
             cliente = new Cliente();
 
             int id = (int) jTable2.getValueAt(filaPulsada, 0);
-            //System.out.println(id);
             cliente.setId(id);
             c.deleteCliente(cliente);
         }
         cargarTabla();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //Para editar clientes
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         int filaPulsada = jTable2.getSelectedRow();
@@ -247,9 +247,6 @@ public class vistaCliente extends javax.swing.JInternalFrame {
             clienteActualiza.setEmail(email);
             clienteActualiza.setRFC(rfc);
 
-            //System.out.println(clienteActualiza.regresaDatos());
-            //c.deleteCliente(clienteActualiza);
-
             vistaDatosClienteActualiza datosCliente = new vistaDatosClienteActualiza(clienteActualiza);
             datosCliente.setClosable(true);
             interfaceMenu.vistaPrincipal.add(datosCliente);
@@ -269,7 +266,7 @@ public class vistaCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formInternalFrameClosed
 
 
-    
+    //Metodo para llenar la tabla con datos correspondientes
     public void cargarTabla() {
         List<Cliente> clientes = c.listCliente();
 

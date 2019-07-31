@@ -102,14 +102,8 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Total de Compra: ");
 
-        jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -238,16 +232,21 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
  
         // TODO add your handling code here:
-        
         //String fecha= jDateChooser1.getDateFormatString();
         SimpleDateFormat formato=new SimpleDateFormat("dd-MM-yyyy");
         String fecha=formato.format(jDateChooser1.getDate());
-        System.out.println(fecha);
+        //System.out.println(fecha);
         
         String cliente=(String )jComboBox1.getSelectedItem();
         //Crear numero aleatorio para id venta
         
+        //for(int i=0;i<jTable1.getRowCount();i++){
+          //  productos[i]=(String)jTable1.getValueAt(i, 2);
+       // }
+        System.out.println(jTable1.getValueAt(0, 2));
         venta=new Venta(5,subtotal,total,cliente,iii.getUsuario(),fecha,productos);
+        
+        pv.insertVenta(venta);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -260,20 +259,17 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_jTextField4KeyTyped
 
-    
     //Boton para agregar productos a nuestra venta
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        
-        
         String producto=(String)jComboBox2.getSelectedItem();
-        System.out.println(producto);
+        //System.out.println(producto);
         
         cantidad=Integer.parseInt(jTextField4.getText());
-        System.out.println(cantidad);
+        //System.out.println(cantidad);
         
         cargarTabla(producto);
-                
+                        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

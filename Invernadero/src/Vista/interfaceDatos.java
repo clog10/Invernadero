@@ -33,6 +33,7 @@ import javax.swing.Timer;
 public class interfaceDatos extends javax.swing.JFrame {
 
     private UsuarioDB user;
+    private String usuario;
     
     /**
      * Creates new form interfaceDatos
@@ -243,7 +244,7 @@ public class interfaceDatos extends javax.swing.JFrame {
     public void verificarAutenticacion(){
         
         List<Usuario> u=user.listUsuario();
-        String usuario = jTextField1.getText();
+        usuario = jTextField1.getText();
         String paswd = jPasswordField1.getText();
 
         if(usuario.isEmpty() || paswd.isEmpty()){
@@ -276,6 +277,10 @@ public class interfaceDatos extends javax.swing.JFrame {
             }
         }
         }
+    }
+
+    public String getUsuario() {
+        return usuario;
     }
     
     /**

@@ -10,6 +10,9 @@ import javax.swing.JDesktopPane;
  * Invernadero Gran Valle
  *
  * @author Clog_10
+ * 
+ * Clase para llevar un control sobre las compras que se realizan
+ * dentro del invernadero
  */
 public class vistaCompraHerramienta extends javax.swing.JInternalFrame {
 

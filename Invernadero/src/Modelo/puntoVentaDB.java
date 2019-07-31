@@ -25,6 +25,7 @@ public class puntoVentaDB {
 
     public puntoVentaDB() {
         this.vp=vp;
+        this.connection=connection;
     }
     
     public List<Producto> listProducto() {
@@ -98,23 +99,23 @@ public class puntoVentaDB {
      */
     public boolean insertVenta(Venta c) {
         PreparedStatement ps; 
-        String sqlInsertCliente = "insert into invernadero_gran_valle.venta values (?,?,?,?,?,?,?);";
+        String sqlInsertCliente = "insert into invernadero_gran_valle.venta values (?,?,?,?,?,?);";
         try {
+            
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
             ps.setInt(1, c.getId());
             ps.setDouble(2, c.getSubtotal());
             ps.setDouble(3, c.getTotal());
             ps.setString(4, c.getCliente());
-            ps.setString(5, c.getUser());
-            ps.setString(6, c.getFecha());
+            ps.setString(5, c.getFecha());
             Array p=connection.createArrayOf("Character Vayring", c.getProductos());
-            ps.setArray(7, p);
+            ps.setArray(6, p);
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Cliente añadido");
+            JOptionPane.showMessageDialog(null, "Venta añadido");
             return true;
         } catch (SQLException exception) {
-            System.err.println("Error en al añadir (Cliente) " + exception);
+            System.err.println("Error en al añadir (Venta) " + exception);
             return false;
         }
     }
@@ -126,8 +127,7 @@ public class puntoVentaDB {
     public List<Venta> listVentas() {
         PreparedStatement ps;
         ResultSet rs;
-        String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
-                              + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
+        String consultaSQL = "Select id_venta,subtotal,total,cliente,fecha from invernadero_gran_valle.venta;";
 
         List<Venta> ventas = new ArrayList<Venta>();
         try {
@@ -139,18 +139,23 @@ public class puntoVentaDB {
                 c.setSubtotal(rs.getDouble("subtotal"));
                 c.setTotal(rs.getDouble("total"));
                 c.setCliente(rs.getString("cliente"));
-                c.setUser(rs.getString("usuario"));
                 c.setFecha(rs.getString("fecha"));
                 //c.setProductos(rs.get("productos"));
 
                 ventas.add(c);
             }
         } catch (SQLException exception) {
-            System.err.println("Error al CARGAR DATOS (Cliente) " + exception);
+            System.err.println("Error al CARGAR DATOS (Venta) " + exception);
         }
         return ventas;
     }
 }
+
+
+
+
+
+
 
 
 

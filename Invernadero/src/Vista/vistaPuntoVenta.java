@@ -233,19 +233,26 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
  
         // TODO add your handling code here:
         //String fecha= jDateChooser1.getDateFormatString();
+        productos=new String[20];
         SimpleDateFormat formato=new SimpleDateFormat("dd-MM-yyyy");
         String fecha=formato.format(jDateChooser1.getDate());
-        //System.out.println(fecha);
+        System.out.println(fecha);
         
         String cliente=(String )jComboBox1.getSelectedItem();
-        //Crear numero aleatorio para id venta
+        System.out.println(cliente);
+        for(int i=0;i<jTable1.getRowCount();i++){
+           productos[i]=(String)jTable1.getValueAt(i, 2);
+       }
         
-        //for(int i=0;i<jTable1.getRowCount();i++){
-          //  productos[i]=(String)jTable1.getValueAt(i, 2);
-       // }
+        for(int i=0;i<productos.length;i++){
+            System.out.println(productos[i]);
+        }
         System.out.println(jTable1.getValueAt(0, 2));
-        venta=new Venta(5,subtotal,total,cliente,iii.getUsuario(),fecha,productos);
+         System.out.println(subtotal+" "+total);
         
+        venta=new Venta(5,subtotal,total,cliente,fecha,productos);
+       
+                
         pv.insertVenta(venta);
         
     }//GEN-LAST:event_jButton2ActionPerformed

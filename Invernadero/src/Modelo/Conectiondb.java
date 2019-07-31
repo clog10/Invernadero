@@ -6,9 +6,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
- * Invernadero Gran Valle
- * @author Clog_10
+ * Crea la conexion a la base de datos
  */
+
 public class Conectiondb {
     
     private String usuario = "postgres";
@@ -19,12 +19,17 @@ public class Conectiondb {
 
     //CONSTRUCTOR
     //Recibe el nombre de la base de datos
+    /**
+     * Recibe el nombre de la base de datos
+     */
     public Conectiondb(String baseDatos, String host) {
         this.baseDatos = baseDatos;
         this.servidor = "jdbc:postgresql://" + host + ":" + 5432 + "/" + baseDatos;
         ConexionBd();
     }
-
+/**
+ * Se encarga  Establecer la conexión con el servidor
+ */
     protected void ConexionBd() {
 
         //Registrar el driver

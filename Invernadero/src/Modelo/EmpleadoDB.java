@@ -19,7 +19,10 @@ public class EmpleadoDB {
     public EmpleadoDB() {
         this.vista = vista;
     }
-
+/**
+ * Inserta los datos del empleado 
+ * @param e se utiliza para agregar los datos al empleado 
+ */
     public boolean insertEmpleado(Empleado e) {
         PreparedStatement ps;
         String sqlInsertEmpleado = "insert into invernadero_gran_valle.empleado values (?,?,?,?,?,?,?,?,?,?);";
@@ -44,7 +47,9 @@ public class EmpleadoDB {
             return false;
         }
     }
-    
+    /**
+     * Actualiza los datos del empleado  
+     */
       public boolean updateEmpleado(Empleado e){
         PreparedStatement ps;
         try {
@@ -70,7 +75,9 @@ public class EmpleadoDB {
             return false;
         }
     }
-
+/**
+ *Elimina un empleado   
+ */
     public boolean deleteEmpleado(Empleado e) {
         PreparedStatement ps;
         String sqlDeleteEmpleado = "delete from invernadero_gran_valle.empleado where id_empleado  = ?;";

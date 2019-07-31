@@ -15,6 +15,12 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author saint
+ * Clase actualizar datos del proveedor.
+ * @param proveedor,actualiza: Instancia de la clase Proveedor.
+ * @param c: Instancia de la clase ProveedorDB.
+ * @param llenarCampos: Metodo que rellena los datos a editar.
+ * @param vaciarCampos: Metodo que limpia los campos de datos cuando se registra.
+ * @param jButton1ActionPerformed: Metodo del boton que registra lo editado del proveedor.
  */
 public class vistaDatosProveedorActualiza extends javax.swing.JInternalFrame {
 

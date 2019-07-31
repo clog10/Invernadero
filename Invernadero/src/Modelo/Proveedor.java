@@ -4,6 +4,13 @@ package Modelo;
 /**
  * El gran valle, Invernadero
  * @author Clog_10
+ * @param id: Identificador unico del proveedor.
+ * @param razonSocial: Razon Social de la empresa.
+ * @param rfc: RFC del proveedor.
+ * @param calle,colonia,municipio,estado,numero: Datos fundamentales de la direccion del proveedor.
+ * @param telefono,celualr: Numeros telefonicos del proveedor, local y movil.
+ * @param email: Direccion de correo electronico del proveedor.
+ * @param toString: Metodo que nos regresa los datos del proveedor.
  */
 public class Proveedor implements Comparable<Proveedor>{
     
@@ -31,7 +38,7 @@ public class Proveedor implements Comparable<Proveedor>{
     public Proveedor(){
     
     }
-
+    //Setters y Getters de las varibales del proveedor.      
     public int getId() {
         return id;
     }

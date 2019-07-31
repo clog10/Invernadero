@@ -18,8 +18,13 @@ import org.postgresql.util.PSQLException;
 /**
  * Invernadero Gran Valle
  * @author Clog_10
+ * Metodos los cuales contienen las consultas realizadas para la funcionalidad del proyecto.
+ * @param insertProducto: Metodo que inserta productos en la base de datos.
+ * @param deleteProducto: Metodo que nos permite eliminar un producto.
+ * @param listProducto2: Metodo que regresa valores de la BD a un JTable.
+ * @param  actualizardatos: Metodo que actualiza los datos de la tabla.
  */
- //Aqui hay metodos los cuales contiene las consultar realizadas para la funcionalidad del proyecto.
+ 
 public class ProductoDB {
      private Vista.productos vista;
      //public Conectiondb conectiondb;
@@ -46,7 +51,7 @@ public class ProductoDB {
             return false;
         }
     }
-        //Metodo para el borrado de productos del proyecto.
+        //Metodo para el borrado de productos.
         public boolean deleteProducto(int id) {
         PreparedStatement ps;
         String sqlDeleteProducto = "delete from invernadero_gran_valle.cosecha where id_cosecha = ?;";

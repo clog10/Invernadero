@@ -14,6 +14,10 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author lenovo
+ * @param Producto: Instancia del modelo producto.
+ * @param productodb: Instancia que nos permite acceder a las consultas.
+ * @param pro: Instancia de la vista productos.
+ * @param menu:Instancia de la vista principal.
  */
 public class vistaDatosProductos extends javax.swing.JInternalFrame {
     //Instancia del modelo producto.
@@ -191,7 +195,7 @@ public class vistaDatosProductos extends javax.swing.JInternalFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
-    //Metodo para registrar los productos.
+    //Metodo para registrar los productos, rifica si estan vacios para no cometer ningun error si no lo estan los agrega.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if(jTextField1.getText().isEmpty() || jTextField2.getText().toString().isEmpty() || jTextField3.getText().toString().isEmpty()

@@ -15,6 +15,13 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author saint
+ * Clase vista datos proveedor
+ * @param proveedor: Intancia de la clase proveedor.
+ * @param  c: Instancia de la clase Proveedor
+ * @param vaciarCampos: Metodo que vacia los campos despues de aver agregado un proveedor.
+ * @param jButton1ActionPerformed: Metodo del boton agregar prooveedor.
+ * 
+ * 
  */
 public class vistaDatosProveedor extends javax.swing.JInternalFrame {
 
@@ -261,7 +268,7 @@ public class vistaDatosProveedor extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         

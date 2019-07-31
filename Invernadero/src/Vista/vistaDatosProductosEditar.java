@@ -16,6 +16,10 @@ import javax.swing.JTextField;
 /**
  *
  * @author lenovo
+ * @param Producto: Instancia del modelo del producto.
+ * @param productodb: Instancia que nos permite acceder a las consultas.
+ * @param pro: Instancia de la vista principal de los productos.
+ * @param menu: Instancia de la vista pricipal.
  */
 public class vistaDatosProductosEditar extends javax.swing.JInternalFrame {
     //Instancia del modelo del producto.

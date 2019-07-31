@@ -18,6 +18,11 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author lenovo
+ * Vista de la clase productos.
+ * @param p: Instancia que nos permite acceder a las consultas.
+ * @param producto: Instancia que nos permite acceder al modelo del producto.
+ * @param modelo: Modelo para el uso del JTable.
+ * @param datitos: Arreglo de Strings para editar el producto.
  */
 public class productos extends javax.swing.JInternalFrame {
     //Se define una instancia de ProductoDB que contiene los metodos con las consultas.
@@ -33,10 +38,8 @@ public class productos extends javax.swing.JInternalFrame {
     public productos() {
         initComponents();
         this.getContentPane().setBackground(Color.decode("#F0EFE8"));
-        modelo=(DefaultTableModel)jTable2.getModel();
-        
+        modelo=(DefaultTableModel)jTable2.getModel();       
         p= new ProductoDB();
-       // producto= new Producto();
        //Se actulizan los datos con cargarTabla2
         cargarTabla2();
     }

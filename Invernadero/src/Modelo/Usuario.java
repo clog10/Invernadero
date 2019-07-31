@@ -4,24 +4,35 @@ package Modelo;
  * El gran valle, Invernadero
  *
  * @author Clog_10
+ * 
+ * @param id_empleado: para identificar el empleado dentro del sistema
+ * @param user: un nombre de usuario
+ * @param password: contraseña para el usuario
  */
 public class Usuario implements Comparable<Usuario>{
 
-    //private Empleado empleado;
     private int id_empleado;
     private String user, password;
 
+    
+    //Constructor con parametros
     public Usuario(int id_empleado, String user, String password) {
-        //this.empleado = empleado;
+
         this.id_empleado=id_empleado;
         this.user = user;
         this.password = password;
     }
     
+    //Constructor Vacio
     public Usuario(){
         
     }
 
+    /**
+     * Setter y Getter de todos los atributpos
+     * @return los datos que se vayan a requerir despues
+     */
+    
     public String getUser() {
         return user;
     }
@@ -45,10 +56,10 @@ public class Usuario implements Comparable<Usuario>{
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    //MEtodo para imprimir los datos del usuario
 
     public String regresaDatos() {
-      //  String datos = "Id: " + empleado.getId() + " " + empleado.getNombre() + " "
-        //        + empleado.getaPaterno() + " " + empleado.getaMaterno() + "\n";
         String datos = "Usuario: " + user + " Contraseña: " + password;
 
         return datos;
@@ -59,6 +70,8 @@ public class Usuario implements Comparable<Usuario>{
         return this.getId_empleado() > o.getId_empleado() ? 1 : this.getId_empleado() < o.getId_empleado() ? -1 : 0;
     }
 }
+
+
 
 
 

@@ -7,6 +7,7 @@ import Modelo.UsuarioDB;
 import java.awt.Color;
 import java.beans.PropertyVetoException;
 import java.util.List;
+import javax.swing.JDesktopPane;
 
 /**
  * Invernadero Gran Valle
@@ -17,6 +18,7 @@ public class vistaUsuario extends javax.swing.JInternalFrame {
     private Usuario u;
     private UsuarioDB user;
     int id_empleado;
+    private JDesktopPane iM;
     
     /**
      * Creates new form vistaUsuario

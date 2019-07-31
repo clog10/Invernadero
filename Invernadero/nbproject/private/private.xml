@@ -7,6 +7,10 @@
             <file>file:/C:/Users/AMAURY/Documents/NetBeansProjects/Invernadero/Invernadero/src/Vista/vistaEmpleado.java</file>
             <file>file:/C:/Users/AMAURY/Documents/NetBeansProjects/Invernadero/Invernadero/src/Modelo/EmpleadoDB.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Modelo/Venta.java</file>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Vista/interfaceDatos.java</file>
+            <file>file:/C:/Users/Clog_10/Videos/Invernadero/Invernadero/src/Modelo/UsuarioDB.java</file>
+        </group>
     </open-files>
 </project-private>

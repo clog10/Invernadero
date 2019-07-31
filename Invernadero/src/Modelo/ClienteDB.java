@@ -13,20 +13,26 @@ import javax.swing.JOptionPane;
 /**
  * Invernadero Gran Valle
  * @author Clog_10
+ * 
+ * Clase Cliente DB para crear consultas con nuestra base de datos
+ * @param vista: para conectar con nuestra vistaCliente porque ahi 
+ *              mandaremos a llamar los metodos contenidos aqui
+ *  
  */
 public class ClienteDB {
 
-    // private Conectiondb conectiondb;
-    //private String db = "Invernadero";
     private Vista.vistaCliente vista;
-    //public List<Cliente> clientes;
-
-    // private static ClienteDB c;
+    
+    //Constructor
     public ClienteDB() { 
-        // conectiondb = new Conectiondb(db, "127.0.0.1");
         this.vista = vista; 
     } 
 
+    
+    /**
+     * metodo insert para insertar clientes en nuestra base de datos
+     * @return   un boleano para indicar que el cliente fue agregado
+     */
     public boolean insertCliente(Cliente c) {
         PreparedStatement ps;
         String sqlInsertCliente = "insert into invernadero_gran_valle.cliente values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
@@ -55,34 +61,11 @@ public class ClienteDB {
         }
     }
     
-    public boolean insertClienteActualiza(Cliente c) {
-        PreparedStatement ps;
-        String sqlInsertCliente = "insert into invernadero_gran_valle.cliente values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
-        try {
-            ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
-            ps.setInt(1, c.getId());
-            ps.setString(2, c.getNombre());
-            ps.setString(3, c.getaPaterno());
-            ps.setString(4, c.getaMaterno());
-            ps.setString(5, c.getCalle());
-            ps.setInt(6, c.getNumero());
-            ps.setString(7, c.getColonia());
-            ps.setString(8, c.getMunicipio());
-            ps.setString(9, c.getEstado());
-            ps.setString(10, c.getTelefono());
-            ps.setString(11, c.getCelular());
-            ps.setString(12, c.getEmail());
-            ps.setString(13, c.getRFC());
-
-            ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Cliente Actualizado");
-            return true;
-        } catch (SQLException exception) {
-            System.err.println("Error en al Actualizar (Cliente) " + exception);
-            return false;
-        }
-    }
-
+    /**
+     * 
+     * metodo delete para eliminar un cliente de la base de datos
+     * @return  un boleano para indicar cuando se elimina el cliente
+     */
     public boolean deleteCliente(Cliente c) {
         PreparedStatement ps;
         String sqlDeleteCliente = "delete from invernadero_gran_valle.cliente where id_cliente  = ?;";
@@ -99,6 +82,12 @@ public class ClienteDB {
         }
     }
     
+    /**
+     * 
+     * metodo update para actualizar clientes
+     * @return  un boleano para indicar que fue actualizado
+     */
+    
     public boolean updateCliente(Cliente c) {
 
         PreparedStatement ps;
@@ -107,7 +96,6 @@ public class ClienteDB {
                               + "a_materno=?, calle=?, numero=?, colonia=?, municipio=?, estado=?,"
                               + "telefono=?, celular=?, e_mail=?, rfc=?  where id_cliente=?");
 
-            //ps.setInt(1, c.getId());
             ps.setString(1, c.getNombre());
             ps.setString(2, c.getaPaterno());
             ps.setString(3, c.getaMaterno());
@@ -147,9 +135,6 @@ public class ClienteDB {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-         /*       clienteEncontrado = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-                                    rs.getString(5), rs.getString(6),rs.getString(7),rs.getString(8),rs.getInt(9),
-                                      rs.getString(10), rs.getString(11),rs.getString(12));*/
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR cliente");
@@ -157,13 +142,15 @@ public class ClienteDB {
         return clienteEncontrado;
     }
     
+    /**
+     * metodo list que obtendra los clientes contenidos en la base de datos
+     * @return una lista con los clientes obtenidos de la base de dstos
+     */
     public List<Cliente> listCliente() {
         PreparedStatement ps;
         ResultSet rs;
         String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
                               + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
-
-        //String consultaSQL = "select * from invernadero_gran_valle.cliente;";
 
         List<Cliente> clientes = new ArrayList<Cliente>();
         try {
@@ -186,10 +173,6 @@ public class ClienteDB {
                 c.setRFC(rs.getString("rfc"));
 
                 clientes.add(c);
-
-              /*  for (Cliente q : clientes) {
-                    System.out.println(q.regresaDatos());
-                }*/
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Cliente) " + exception);
@@ -199,6 +182,14 @@ public class ClienteDB {
         return clientes;
     }
 }
+
+
+
+
+
+
+
+
 
 
 

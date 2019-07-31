@@ -14,6 +14,10 @@ import javax.swing.JOptionPane;
 /**
  * Invernadero Gran Valle
  * @author Clog_10
+ * 
+ * Clase UsuarioDB que contiene metodos para conectar con nuestra base de datos
+ * @param vista que conecta con nuestra vistaUsuario porque ahi ejecutaremos 
+ *              los metodos que contiene
  */
 public class UsuarioDB {
     
@@ -24,6 +28,10 @@ public class UsuarioDB {
         
     }
     
+    /**
+     * metodo insert para insertar Usuarios en nuestra base de datos
+     * @return   un boleano para indicar que el usuario fue agregado
+     */
      public boolean insertUsuario(Usuario c) {
         PreparedStatement ps;
         String sqlInsertVehiculo = "insert into invernadero_gran_valle.usuario values (?,?,?);";
@@ -41,7 +49,12 @@ public class UsuarioDB {
             return false;
         }
     }
-    
+     
+        /**
+     * 
+     * metodo delete para eliminar un usuario de la base de datos
+     * @return  un boleano para indicar cuando se elimina el usuario
+     */
      public boolean deleteUsuario(Usuario c) {
         PreparedStatement ps;
         String sqlDeleteUsuario = "delete from invernadero_gran_valle.usuario where usuario = ?;";
@@ -57,7 +70,11 @@ public class UsuarioDB {
             return false;
         }
     }
-    
+     
+        /**
+     * metodo list que obtendra los empleados contenidos en la base de datos
+     * @return una lista con los empleados obtenidos de la base de dstos
+     */
      public List<Empleado> listEmpleado() {
         PreparedStatement ps;
         ResultSet rs;
@@ -93,6 +110,10 @@ public class UsuarioDB {
         return empleado;
     }
      
+         /**
+     * metodo list que obtendra los usuarios contenidos en la base de datos
+     * @return una lista con los usuarios obtenidos de la base de dstos
+     */
       public List<Usuario> listUsuario() {
         PreparedStatement ps;
         ResultSet rs;
@@ -120,6 +141,8 @@ public class UsuarioDB {
       
       
 }
+
+
 
 
 

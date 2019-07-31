@@ -2,14 +2,21 @@
 package Modelo;
 
 /**
- *
+ * Invernadero Gran Valle
  * @author Clog_10
+ * 
+ * @param matricula: para añadir matricula de los vehiculos
+ * @param marca: para añadir la marca del vehiculo
+ * @param modelo: para agregar modelo del vehiculo
+ * @param numSerie: para añadir numero de serie al vehiculo
+ * @param anio: para añadir el año del vehiculo
  */
 public class Vehiculo implements Comparable<Vehiculo> {
     
     private String matricula,marca,modelo;
     private int numSerie,anio;
 
+    //Constructor con parametros
     public Vehiculo(String matricula, String marca, String modelo, int numSerie, int anio) {
         this.matricula = matricula;
         this.marca = marca;
@@ -18,10 +25,13 @@ public class Vehiculo implements Comparable<Vehiculo> {
         this.anio = anio;
     }
     
+    //Constructor Vacio
     public Vehiculo(){
          
     }
 
+    
+    //Getter y Setter de los parametros
     public String getMatricula() {
         return matricula;
     }
@@ -62,6 +72,8 @@ public class Vehiculo implements Comparable<Vehiculo> {
         this.anio = anio;
     }
 
+    
+    //metodo toString para imprimir los datos del vehiculo
     @Override
     public String toString() {
         String datos=" Vehiculo " + "\tMatricula: "+matricula+"\n";
@@ -78,6 +90,11 @@ public class Vehiculo implements Comparable<Vehiculo> {
     
     
 }
+
+
+
+
+
 
 
 

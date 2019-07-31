@@ -14,6 +14,10 @@ import javax.swing.JOptionPane;
 /**
  * Invernadero Gran Valle
  * @author Clog_10
+ * 
+ * Clase para conectr con nuestra base de datos
+ * @param vista que es una referencia a la clase vistaVehiculos porque ahi llamaremos 
+ *              los metodos contenidos aqui
  */
 public class VehiculoDB {
     
@@ -23,6 +27,11 @@ public class VehiculoDB {
             this.vista = vista;
     }
     
+    
+    /**
+     * metodo insert para insertar vehiculos en nuestra base de datos
+     * @return   un boleano para indicar que el vehiculo fue agregado
+     */
      public boolean insertVehiculo(Vehiculo c) {
         PreparedStatement ps;
         String sqlInsertVehiculo = "insert into invernadero_gran_valle.vehiculo values (?,?,?,?,?);";
@@ -44,6 +53,11 @@ public class VehiculoDB {
         }
     }
      
+     /**
+     * 
+     * metodo update para actualizar vehiculos
+     * @return  un boleano para indicar que fue actualizado
+     */
       public boolean updateVehiculo(Vehiculo c) {
         PreparedStatement ps;
         try {
@@ -64,7 +78,12 @@ public class VehiculoDB {
             return false;
         }
     }
-     
+      
+     /**
+     * 
+     * metodo delete para eliminar un vehiculo de la base de datos
+     * @return  un boleano para indicar cuando se elimina el vehiculo
+     */
      public boolean deleteVehiculo(Vehiculo c) {
         PreparedStatement ps;
         String sqlDeleteVehiculo = "delete from invernadero_gran_valle.vehiculo where matricula  = ?;";
@@ -81,6 +100,10 @@ public class VehiculoDB {
         }
     }
      
+     /**
+     * metodo list que obtendra los vehiculos contenidos en la base de datos
+     * @return una lista con los vehiculos obtenidos de la base de dstos
+     */
      public List<Vehiculo> listVehiculo() {
         PreparedStatement ps;
         ResultSet rs;
@@ -97,13 +120,8 @@ public class VehiculoDB {
                 c.setModelo(rs.getString("modelo"));
                 c.setNumSerie(rs.getInt("numero_serie"));
                 c.setAnio(rs.getInt("anio"));
-
-
+                
                 vehiculos.add(c); 
-
-             // for (Vehiculo q : vehiculos) {
-               //     System.out.println(q.toString());
-               // }
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Vehiculos) " + exception);

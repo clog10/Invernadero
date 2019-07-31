@@ -4,6 +4,14 @@ package Modelo;
 /**
  * El gran valle, Invernadero
  * @author Clog_10
+ * 
+ * Clase cliente
+ * @parametros
+ *  id: identificador de cliente dentro del sistema
+ *  nombre, aPaterno, aMaterno: para indicar su nombre completo
+ *  calle,numero,colonia,municipio,estado: para indicar su direccion fisica
+ *  celular,telefono,email: para poder contactar con el en cualquier caso
+ *  RFC: identificador fiscal
  */
 
 public class Cliente implements Comparable<Cliente>{
@@ -13,6 +21,10 @@ public class Cliente implements Comparable<Cliente>{
     private int numero;
     private String celular,telefono,email,RFC;
 
+    
+    /**
+     * Constructor con parametros
+     */
     public Cliente(int id, String RFC,String nombre, String aPaterno, String aMaterno, String calle, String colonia, String municipio, 
                                 String estado, int numero, String celular, String telefono, String email) {
         this.id=id;
@@ -30,10 +42,19 @@ public class Cliente implements Comparable<Cliente>{
         this.RFC = RFC;
     }
     
+    /**
+     * Constructor vacio
+     */
+    
     public Cliente(){
         
     }
 
+    /**
+     * Setter y Getter de todos los parametros
+    */
+
+    
     public String getNombre() {
         return nombre;
     }
@@ -138,20 +159,9 @@ public class Cliente implements Comparable<Cliente>{
         this.id = id;
     }
     
-        public Object clone()
-{
-    Object clone = null;
-    try
-    {
-        clone = super.clone();
-    } 
-    catch(CloneNotSupportedException e)
-    {
-        // No deberia suceder
-    }
-    return clone;
-}
     
+    
+    //Metodo para imprimir los datos de nuestro cliente
     public String regresaDatos(){
         String datos="Id: "+id+" "+nombre+" "+aPaterno+ " "+aMaterno+"\n";
         datos+=" "+calle+" "+numero+" "+colonia+" "+municipio+" "+estado+"\n";
@@ -166,3 +176,5 @@ public class Cliente implements Comparable<Cliente>{
     }
     
 }
+
+

@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
  * @param updateProveedor: Metodo que actualiza los datos del proveedor en la Base de Datos.
  * @param deleteProveedor: Metodo que elimina un proveedor de la Base de Datos.
  * @param listProveedor: Metodo que regresa los datos del proveedor. 
- * @
  */
 public class ProveedorDB {
     
@@ -32,7 +31,10 @@ public ProveedorDB() {
     // conectiondb = new Conectiondb(db, "127.0.0.1");
     this.vista = vista;
 }
+/**
+ * Agrega los datos a provedor 
 
+ */
 public boolean insertProveedor(Proveedor c) {
     PreparedStatement ps;
     String sqlInsertProveedor = "insert into invernadero_gran_valle.proveedor values (?,?,?,?,?,?,?,?,?,?,?);";
@@ -58,7 +60,9 @@ public boolean insertProveedor(Proveedor c) {
         return false;
     }
 }
-
+ /**
+     * Actualiza los datos del proveedor  
+     */
 public boolean updateProveedor(Proveedor c) {
     PreparedStatement ps;
     try {
@@ -86,7 +90,9 @@ public boolean updateProveedor(Proveedor c) {
         return false;
     }
 }
-
+/**
+ *Elimina un proveedor  
+ */
 public boolean deleteProveedor(Proveedor c) {
     PreparedStatement ps;
     String sqlDeleteProveedor = "delete from invernadero_gran_valle.proveedor where id_cliente  = ?;";

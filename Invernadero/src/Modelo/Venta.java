@@ -3,10 +3,9 @@ package Modelo;
 import java.util.Date;
 
 /**
- * El gran valle, Invernadero
- * @author Clog_10
+ * 
+ * @author AMAURY
  */
-
 public class Venta implements Comparable<Venta> {
 
     private int id;
@@ -16,7 +15,16 @@ public class Venta implements Comparable<Venta> {
     private String cliente;
     private String user;
     private String fecha;
-
+/**
+ * Crea una venta 
+ * @param id: identificador
+ * @param subtotal: sub total del pago 
+ * @param total: total del pago
+ * @param cliente: cliente al que se le vende 
+ * @param user: usuario
+ * @param fecha: contiene la fecha en la que es emitida la venta 
+ * @param productos : que productos se venden 
+ */
     public Venta(int id,double subtotal,double total, String cliente,String user,String fecha, String... productos) {
         this.id = id;
         this.subtotal = subtotal;
@@ -26,7 +34,9 @@ public class Venta implements Comparable<Venta> {
         this.total=total;
         this.fecha=fecha;
     }
-    
+    /**
+     * constructor vacio
+     */
     public Venta(){
         
     }
@@ -86,7 +96,10 @@ public class Venta implements Comparable<Venta> {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-
+/**
+ * Regresa los datos de la venta 
+ * @return datos de la venta 
+ */
     @Override
     public String toString() {
         String datos = "Cliente: " + cliente+"\n";

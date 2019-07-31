@@ -16,6 +16,12 @@ public class Usuario implements Comparable<Usuario>{
 
     
     //Constructor con parametros
+    /**
+     * Constructor con parametros
+     * @param id_empleado: para identificar el empleado dentro del sistema
+ * @param user: un nombre de usuario
+ * @param password: contraseña para el usuario
+     */
     public Usuario(int id_empleado, String user, String password) {
 
         this.id_empleado=id_empleado;
@@ -24,14 +30,17 @@ public class Usuario implements Comparable<Usuario>{
     }
     
     //Constructor Vacio
+    /**
+     * Constructor Vacio
+     */
     public Usuario(){
         
     }
 
-    /**
-     * Setter y Getter de todos los atributpos
-     * @return los datos que se vayan a requerir despues
-     */
+    ////**
+    // * Setter y Getter de todos los atributpos
+    // * @return los datos que se vayan a requerir despues
+     //*/
     
     public String getUser() {
         return user;
@@ -58,7 +67,10 @@ public class Usuario implements Comparable<Usuario>{
     }
     
     //MEtodo para imprimir los datos del usuario
-
+/**
+ * Metodo para imprimir los datos del usuario
+ * @return imprime datos del usuario
+ */
     public String regresaDatos() {
         String datos = "Usuario: " + user + " Contraseña: " + password;
 

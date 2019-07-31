@@ -16,6 +16,7 @@ import org.postgresql.util.PSQLException;
  * Invernadero Gran Valle
  * @author Clog_10
  */
+
 public class VentaDB {
      private Vista.productos vista;
     public VentaDB(){
@@ -33,6 +34,10 @@ public class VentaDB {
              return false;
          }
          }
+     /**
+      * 
+       
+      */
      public String[] mostrarListaProductoNombre(){
             try{
                 String[] nombresProductos;

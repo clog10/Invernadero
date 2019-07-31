@@ -58,19 +58,19 @@ public class Estadisticas extends javax.swing.JInternalFrame {
  
     public void graph() {
         
-        List<Venta> ventas= punto.listVentas();
-         double total=0;
-        for(Venta c:ventas){
-            total+=c.getTotal();
-        }
+//        List<Venta> ventas= punto.listVentas();
+  //       double total=0;
+    //    for(Venta c:ventas){
+      //      total+=c.getTotal();
+        //}
         
         
         
         DefaultPieDataset data = new DefaultPieDataset();
-        //data.setValue("carlos ", 90.0);
-        //data.setValue(" loaeza", 20.0);
-        //data.setValue("Ramos ", 30.0);
-        //data.setValue("Lo´pez ",10.0);
+        data.setValue("carlos ", 90.0);
+        data.setValue(" loaeza", 20.0);
+        data.setValue("Ramos ", 30.0);
+        data.setValue("Lo´pez ",10.0);
         
 
 

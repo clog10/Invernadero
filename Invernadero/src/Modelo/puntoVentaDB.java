@@ -97,7 +97,7 @@ public class puntoVentaDB {
      * @return   un boleano para indicar que el cliente fue agregado
      */
     public boolean insertVenta(Venta c) {
-        PreparedStatement ps;
+        PreparedStatement ps; 
         String sqlInsertCliente = "insert into invernadero_gran_valle.venta values (?,?,?,?,?,?,?);";
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(sqlInsertCliente);
@@ -159,6 +159,7 @@ public class puntoVentaDB {
         return clientes;
     }
 }
+
 
 
 

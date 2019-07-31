@@ -5,6 +5,7 @@ import Modelo.Cliente;
 import Modelo.Producto;
 import Modelo.ProductoDB;
 import Modelo.Vehiculo;
+import Modelo.Venta;
 import Modelo.VentaDB;
 import Modelo.puntoVentaDB;
 import static Vista.interfaceMenu.vistaPrincipal;
@@ -24,10 +25,11 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
     private puntoVentaDB pv;
     private Producto producto;
     private ProductoDB p;
-
+    private Venta venta;
+    private interfaceDatos iii;
     int cantidad;
     double subtotal, total,totalCompra;
-    
+    private String [] productos;
     /**
      * Creates new form vistaPuntoVenta
      */
@@ -38,6 +40,7 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         pv = new puntoVentaDB();
         llenaProducto();
         llenaCliente();
+        this.iii=iii;
     }
 
     private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
@@ -238,6 +241,8 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         
         String cliente=(String )jComboBox1.getSelectedItem();
         //Crear numero aleatorio para id venta
+        
+        venta=new Venta(5,subtotal,total,cliente,iii.getUsuario(),fecha,productos);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

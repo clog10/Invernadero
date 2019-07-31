@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  * @param p: Instancia que nos permite acceder a las consultas.
  * @param producto: Instancia que nos permite acceder al modelo del producto.
  * @param modelo: Modelo para el uso del JTable.
- * @param datitos: Arreglo de Strings para editar el producto.
+ * @param datitos: Arreglo de Strings(cadenas) para editar el producto.
  */
 public class productos extends javax.swing.JInternalFrame {
     //Se define una instancia de ProductoDB que contiene los metodos con las consultas.

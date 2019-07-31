@@ -145,7 +145,7 @@ public List<Proveedor> listProveedor() {
     return proveedores;
 }
        
-}
+}//fin de la clase
 
 
 

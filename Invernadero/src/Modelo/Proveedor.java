@@ -10,7 +10,7 @@ package Modelo;
  * @param calle,colonia,municipio,estado,numero: Datos fundamentales de la direccion del proveedor.
  * @param telefono,celualr: Numeros telefonicos del proveedor, local y movil.
  * @param email: Direccion de correo electronico del proveedor.
- * @param toString: Metodo que nos regresa los datos del proveedor.
+ * @param toString: Metodo que nos regresa los datos registrados del proveedor.
  */
 public class Proveedor implements Comparable<Proveedor>{
     

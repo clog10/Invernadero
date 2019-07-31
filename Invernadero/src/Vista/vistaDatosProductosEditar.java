@@ -241,7 +241,7 @@ public class vistaDatosProductosEditar extends javax.swing.JInternalFrame {
             System.out.println("Error: " + e);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+      //Validacion de los JTextField que sean de tipo numerico o cadena
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed

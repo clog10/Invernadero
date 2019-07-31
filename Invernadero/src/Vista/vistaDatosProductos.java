@@ -229,7 +229,7 @@ public class vistaDatosProductos extends javax.swing.JInternalFrame {
             System.out.println("Error: " + e);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+  //Validacion de los JTextField que sean de tipo numerico o cadena
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         // TODO add your handling code here:
         char car = evt.getKeyChar();

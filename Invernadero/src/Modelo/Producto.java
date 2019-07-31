@@ -9,7 +9,7 @@ package Modelo;
  * @param nombre: Nombre del producto.
  * @param precio: Precio de venta del producto.
  * @param unidad: Tipo de unidad de medida del producto(kg,g,caja).
- * @param cantidad: Cantidad existente del producto.
+ * @param cantidad: Cantidad existente del producto registrado.
  * 
  */
 //Clase Producto.

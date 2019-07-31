@@ -123,42 +123,38 @@ public class puntoVentaDB {
      * metodo list que obtendra los clientes contenidos en la base de datos
      * @return una lista con los clientes obtenidos de la base de dstos
      */
-    public List<Cliente> listCliente2() {
+    public List<Venta> listVentas() {
         PreparedStatement ps;
         ResultSet rs;
         String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"
                               + "estado,telefono,celular,e_mail,rfc from invernadero_gran_valle.cliente;";
 
-        List<Cliente> clientes = new ArrayList<Cliente>();
+        List<Venta> ventas = new ArrayList<Venta>();
         try {
             ps = interfaceLogin.conectiondb.getConexion().prepareStatement(consultaSQL);
             rs = ps.executeQuery();
-            while (rs.next()) {
-                Cliente c = new Cliente();
-                c.setId(rs.getInt("id_cliente"));
-                c.setNombre(rs.getString("nombre"));
-                c.setaPaterno(rs.getString("a_paterno"));
-                c.setaMaterno(rs.getString("a_materno"));
-                c.setCalle(rs.getString("calle"));
-                c.setNumero(rs.getInt("numero"));
-                c.setColonia(rs.getString("colonia"));
-                c.setMunicipio(rs.getString("municipio"));
-                c.setEstado(rs.getString("estado"));
-                c.setTelefono(rs.getString("telefono"));
-                c.setCelular(rs.getString("celular"));
-                c.setEmail(rs.getString("e_mail"));
-                c.setRFC(rs.getString("rfc"));
+            while (rs.next()) { 
+                Venta c = new Venta();
+                c.setId(rs.getInt("id_venta"));
+                c.setSubtotal(rs.getDouble("subtotal"));
+                c.setTotal(rs.getDouble("total"));
+                c.setCliente(rs.getString("cliente"));
+                c.setUser(rs.getString("usuario"));
+                c.setFecha(rs.getString("fecha"));
+                //c.setProductos(rs.get("productos"));
 
-                clientes.add(c);
+                ventas.add(c);
             }
         } catch (SQLException exception) {
             System.err.println("Error al CARGAR DATOS (Cliente) " + exception);
-            clientes = Collections.emptyList();
         }
-        Collections.sort(clientes);
-        return clientes;
+        return ventas;
     }
 }
+
+
+
+
 
 
 

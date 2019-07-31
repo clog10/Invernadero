@@ -1,6 +1,9 @@
 package Vista;
 
+import Modelo.Venta;
+import Modelo.puntoVentaDB;
 import java.awt.Color;
+import java.util.List;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -12,6 +15,8 @@ import org.jfree.data.general.DefaultPieDataset;
  * @author Clog_10
  */
 public class Estadisticas extends javax.swing.JInternalFrame {
+    
+    private puntoVentaDB punto;
 
     /**
      * Creates new form Estadisticas
@@ -20,6 +25,7 @@ public class Estadisticas extends javax.swing.JInternalFrame {
         initComponents();
         this.getContentPane().setBackground(Color.decode("#F0EFE8"));
         graph();
+       punto=new puntoVentaDB();
     }
  
     /**
@@ -49,11 +55,22 @@ public class Estadisticas extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void graph() {
+        
+        List<Venta> ventas= punto.listVentas();
+         double total=0;
+        for(Venta c:ventas){
+            total+=c.getTotal();
+        }
+        
+        
+        
         DefaultPieDataset data = new DefaultPieDataset();
-        data.setValue(" ", 40.0);
-        data.setValue(" ", 20.0);
-        data.setValue(" ", 30.0);
-        data.setValue(" ",10.0);
+        //data.setValue("carlos ", 90.0);
+        //data.setValue(" loaeza", 20.0);
+        //data.setValue("Ramos ", 30.0);
+        //data.setValue("Lo´pez ",10.0);
+        
+
 
         JFreeChart chart = ChartFactory.createPieChart(
                 "Los Mejores Clientes",

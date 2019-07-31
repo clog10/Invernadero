@@ -5,7 +5,7 @@ package Modelo;
  * El gran valle, Invernadero
  * @author Clog_10
  * Modelo de datos de los productos.
- * @param id: Identificador de cada producto-.
+ * @param id: Identificador de cada producto.
  * @param nombre: Nombre del producto.
  * @param precio: Precio de venta del producto.
  * @param unidad: Tipo de unidad de medida del producto(kg,g,caja).

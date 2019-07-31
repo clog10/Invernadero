@@ -123,7 +123,7 @@ public class puntoVentaDB {
      * metodo list que obtendra los clientes contenidos en la base de datos
      * @return una lista con los clientes obtenidos de la base de dstos
      */
-    public List<Cliente> listCliente() {
+    public List<Cliente> listCliente2() {
         PreparedStatement ps;
         ResultSet rs;
         String consultaSQL = "Select id_cliente, nombre,a_paterno,a_materno,calle,numero,colonia,municipio,"

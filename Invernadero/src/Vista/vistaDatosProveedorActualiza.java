@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author saint
- * Clase actualizar datos del proveedor--.
+ * Clase actualizar datos del proveedor.
  * @param proveedor,actualiza: Instancia de la clase Proveedor.
  * @param c: Instancia de la clase ProveedorDB.
  * @param llenarCampos: Metodo que rellena los datos a editar.

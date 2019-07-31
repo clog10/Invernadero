@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 /**
  *
  * @author lenovo
- * Clase tipo vista para editar los productos--
+ * Clase tipo vista para editar los productos.
  * @param Producto: Instancia del modelo del producto.
  * @param productodb: Instancia que nos permite acceder a las consultas.
  * @param pro: Instancia de la vista principal de los productos.

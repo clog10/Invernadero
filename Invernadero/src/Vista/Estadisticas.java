@@ -10,17 +10,17 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
 /**
- * Invernadero Gran Valle
- *
- * @author Clog_10
+ * 
+ * @author AMAURY
  */
 public class Estadisticas extends javax.swing.JInternalFrame {
-    
+   
     private puntoVentaDB punto;
 
     /**
      * Creates new form Estadisticas
      */
+   
     public Estadisticas() {
         initComponents();
         this.getContentPane().setBackground(Color.decode("#F0EFE8"));
@@ -54,6 +54,8 @@ public class Estadisticas extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+ 
     public void graph() {
         
         List<Venta> ventas= punto.listVentas();

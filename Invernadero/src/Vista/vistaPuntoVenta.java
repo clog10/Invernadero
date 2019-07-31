@@ -147,6 +147,11 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         jLabel1.setText("Subtotal: ");
 
         jTextField1.setEditable(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setEditable(false);
 
@@ -270,6 +275,10 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         cargarTabla(producto);
                 
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     
      

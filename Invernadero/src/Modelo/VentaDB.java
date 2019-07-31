@@ -13,8 +13,13 @@ import javax.swing.table.DefaultTableModel;
 import org.postgresql.util.PSQLException;
 
 /**
+
  * Invernadero Gran Valle
  * @author Clog_10
+ * 
+ * Clase VentaDB que contiene metodos para conectar con nuestra base de datos
+ * @param vista:  conecta con nuestra vista Venta porque ahi ejecutaremos 
+ *              los metodos que contiene
  */
 
 public class VentaDB {
@@ -22,22 +27,32 @@ public class VentaDB {
     public VentaDB(){
         this.vista = vista;
     }
-     public boolean buscarid(int id){
-             try{
-             PreparedStatement pstmid=interfaceLogin.conectiondb.getConexion().prepareStatement("select id_cosecha from invernadero_gran_valle.cosecha where id_cosecha = ? ");
-             return true;
-             }catch(PSQLException ex){
-                 System.out.println(ex);
-             return false;
-             }catch (SQLException ex) {
-             Logger.getLogger(ProductoDB.class.getName()).log(Level.SEVERE, null, ex);
-             return false;
-         }
-         }
-     /**
-      * 
-       
-      */
+//    
+//    /**
+//     * 
+//     * @param id
+//     * @return 
+//     */
+//     
+//     public boolean buscarid(int id){
+//             try{
+//             PreparedStatement pstmid=interfaceLogin.conectiondb.getConexion().prepareStatement("select id_cosecha from invernadero_gran_valle.cosecha where id_cosecha = ? ");
+//             return true;
+//             }catch(PSQLException ex){
+//                 System.out.println(ex);
+//             return false;
+//             }catch (SQLException ex) {
+//             Logger.getLogger(ProductoDB.class.getName()).log(Level.SEVERE, null, ex);
+//             return false;
+//         }
+//         }
+//     /**
+//      * 
+//       
+//      */
+    /**
+     * Muestra una lista de los nombres de los productos
+     */
      public String[] mostrarListaProductoNombre(){
             try{
                 String[] nombresProductos;
@@ -66,7 +81,9 @@ public class VentaDB {
              return null;
             }
      }
-     
+     /**
+      * Muestra una lista de los nombres de los clientes 
+      */
      public String[] mostrarListaClienteNombre(){
             try{
                 String[] nombresCliente;
@@ -95,7 +112,10 @@ public class VentaDB {
              return null;
             }
      }
-     
+     /**
+      * Muestra los datos del producto 
+      * @param dato arreglo de los datos 
+      */
      public String[] DatosProducto(String dato){
             try{
                 String[] datos;
@@ -120,6 +140,12 @@ public class VentaDB {
              return null;
             }
      }
+     /**
+      * Regresa solo el nombre del cliente
+      * @param dato
+      * @return 
+      */
+      
      public String[] DatosCliente(String dato){
             try{
                 String[] datos;
@@ -142,7 +168,8 @@ public class VentaDB {
              return null;
             }
      }
-     
+     /**Metodo que regresa los datos de la venta
+      */
       public DefaultTableModel listVenta2() {
          String[] titulos={"Cantidad","Unidad","Nombre Producto","Precio Unitario","Total","Nombre Cliente"};
           DefaultTableModel mode= new DefaultTableModel(null,titulos);

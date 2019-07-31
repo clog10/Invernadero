@@ -5,14 +5,24 @@ package Modelo;
  * El gran valle, Invernadero
  * @author Clog_10
  * 
- * Clase cliente
- * @parametros
- *  id: identificador de cliente dentro del sistema
- *  nombre, aPaterno, aMaterno: para indicar su nombre completo
- *  calle,numero,colonia,municipio,estado: para indicar su direccion fisica
- *  celular,telefono,email: para poder contactar con el en cualquier caso
- *  RFC: identificador fiscal
+ * Clase cliente 
+ * 
+ *  @param  id:identificador de cliente dentro del sistema
+ *  @param nombre:  guarda el nombre del cliente 
+ *  @param aPaterno:  guarda el apellido paterno del cliente 
+ *  @param aMaterno:  guarda el nombre del cliente 
+ *  @param calle: guarda la calle 
+ *  @param numero: guarda el numero de casa
+ *  @param colonia: guarda la colonia 
+ *  @param municipio: guarda el municipio 
+ *  @param estado: guarda el estado del cliente 
+ *  @param celular: numero de telefono de casa
+ *  @param telefono: numero de telefono movil 
+ *  @param  email:guarda el correo electronico para contacto 
+ *  @param RFC: identificador fiscal
  */
+
+ 
 
 public class Cliente implements Comparable<Cliente>{
     private int id;
@@ -50,9 +60,7 @@ public class Cliente implements Comparable<Cliente>{
         
     }
 
-    /**
-     * Setter y Getter de todos los parametros
-    */
+    
 
     
     public String getNombre() {
@@ -161,7 +169,10 @@ public class Cliente implements Comparable<Cliente>{
     
     
     
-    //Metodo para imprimir los datos de nuestro cliente
+     /**
+     * Metodo para imprimir los datos de nuestro cliente
+     * @return regresa los datos del cliente 
+     */
     public String regresaDatos(){
         String datos="Id: "+id+" "+nombre+" "+aPaterno+ " "+aMaterno+"\n";
         datos+=" "+calle+" "+numero+" "+colonia+" "+municipio+" "+estado+"\n";

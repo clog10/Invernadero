@@ -15,8 +15,7 @@ import javax.swing.JOptionPane;
  * @author Clog_10
  * 
  * Clase Cliente DB para crear consultas con nuestra base de datos
- * @param vista: para conectar con nuestra vistaCliente porque ahi 
- *              mandaremos a llamar los metodos contenidos aqui
+ * @param vista: para conectar con nuestra vistaCliente porque ahi mandaremos a llamar los metodos contenidos aqui
  *  
  */
 public class ClienteDB {

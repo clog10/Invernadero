@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 /**
  * Invernadero Gran Valle
  * @author Clog_10
- * Clase ProveedorDB que contiene las consultas
+ * Clase ProveedorDB que contiene las consultas--.
  * @param insertProveedor: Metodo que agrega o inserta un proveedor en la Base de Datos.
  * @param updateProveedor: Metodo que actualiza los datos del proveedor en la Base de Datos.
  * @param deleteProveedor: Metodo que elimina un proveedor de la Base de Datos.

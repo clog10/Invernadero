@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author lenovo
- * Clase tipo vista de productos.
+ * Clase tipo vista de productos-.
  * @param p: Instancia que nos permite acceder a las consultas.
  * @param producto: Instancia que nos permite acceder al modelo del producto.
  * @param modelo: Modelo para el uso del JTable.

@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author lenovo
- * @param Producto: Instancia del modelo producto.
+ * @param Producto: Instancia del modelo producto-.
  * @param productodb: Instancia que nos permite acceder a las consultas.
  * @param pro: Instancia de la vista productos.
  * @param menu:Instancia de la vista principal.

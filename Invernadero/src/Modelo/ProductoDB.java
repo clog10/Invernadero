@@ -18,7 +18,7 @@ import org.postgresql.util.PSQLException;
 /**
  * Invernadero Gran Valle
  * @author Clog_10
- * Metodos los cuales contienen las consultas realizadas para la funcionalidad del proyecto.
+ * Metodos los cuales contienen las consultas realizadas para la funcionalidad del proyecto--.
  * @param insertProducto: Metodo que inserta productos en la base de datos.
  * @param deleteProducto: Metodo que nos permite eliminar un producto.
  * @param listProducto2: Metodo que regresa valores de la BD a un JTable.

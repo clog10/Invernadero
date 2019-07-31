@@ -4,6 +4,7 @@ package Modelo;
 /**
  * El gran valle, Invernadero
  * @author Clog_10
+ * Clase Proveedor que contiene sus datos generales.
  * @param id: Identificador unico del proveedor.
  * @param razonSocial: Razon Social de la empresa.
  * @param rfc: RFC del proveedor.

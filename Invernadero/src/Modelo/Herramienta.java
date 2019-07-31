@@ -6,15 +6,21 @@
 package Modelo;
 
 /**
- *
- * @author lenovo
+ * 
+ * @author AMAURY
  */
 public class Herramienta {
     public int id_herramienta;
     public String nombre;
     private int precio;
     private int cantidad;
-   
+   /**
+    * Constructor de herramienta 
+    * @param id_herramienta: identificador de herramienta 
+    * @param nomrbe: nombre de la herramienta
+    * @param precio: precio de la herramienta 
+    * @param cantidad : cantidad de elementos
+    */
     public Herramienta(int id_herramienta,String nomrbe,int precio,int cantidad){
         this.id_herramienta=id_herramienta;
         this.nombre=nomrbe;
@@ -53,6 +59,10 @@ public class Herramienta {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+    /**
+     * Regresa los datos de la herramienta 
+     * @return : regresa los datos de la herramienta 
+     */
     public String toString(){
         String datos= "Herramienta"+"id_herramienta= "+id_herramienta+"Nombre= "+nombre+"Precio= "+precio+"Cantidad= "+cantidad;
         return datos;

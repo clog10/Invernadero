@@ -32,6 +32,9 @@ public class ProductoDB {
          this.vista = vista;
      }
      //Metodo para agregar prodcutos a la base de datos.
+     /**
+      * Metodo para agregar prodcutos a la base de datos.
+      */
      public boolean insertProducto(Producto p) {
         PreparedStatement ps;
         String sqlInsertCliente = "insert into invernadero_gran_valle.cosecha values (?,?,?,?,?);";
@@ -52,6 +55,9 @@ public class ProductoDB {
         }
     }
         //Metodo para el borrado de productos.
+     /**
+      * Metodo para el borrado de productos.
+      */
         public boolean deleteProducto(int id) {
         PreparedStatement ps;
         String sqlDeleteProducto = "delete from invernadero_gran_valle.cosecha where id_cosecha = ?;";
@@ -68,6 +74,9 @@ public class ProductoDB {
         }
     }
     //Metodo para regresar valores a una tabla de producto.
+        /**
+         * Metodo para regresar valores a una tabla de producto.
+         */
     public List<Producto> listProducto() {
         PreparedStatement ps;
         ResultSet rs;
@@ -98,6 +107,9 @@ public class ProductoDB {
     }
     
     //Metodo para regresar valores a una tabla de producto.
+    /**
+     * Metodo para regresar valores a una tabla de producto.
+     */
      public DefaultTableModel listProducto2() {
          String[] titulos={"ID","Nombre","Unidad de Medida","Precio Unitario","Cantidad"};
           DefaultTableModel mode= new DefaultTableModel(null,titulos);
@@ -126,6 +138,10 @@ public class ProductoDB {
         return mode;
     }
      //Metodo que actualiza los datos de los productos.
+     /**
+      * Metodo que actualiza los datos de los productos.
+      */
+      
      public boolean actualizardatos(Producto p){
          try{
              //Consulta para actulizar los datos

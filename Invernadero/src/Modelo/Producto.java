@@ -13,6 +13,7 @@ package Modelo;
  * 
  */
 //Clase Producto.
+
 public class Producto implements Comparable<Producto> {
     //Variables para la clase producto que se utilizaran.
     public int id;
@@ -21,6 +22,10 @@ public class Producto implements Comparable<Producto> {
     private String unidad;
     private int cantidad;
     //Constructor de la clase Producto.
+    /**
+ *Constructor de la clase producto  
+ */
+
     public Producto(int id,String nombre,double precio,String unidad,int cantidad) {
         this.id = id;
         this.nombre = nombre;
@@ -28,6 +33,9 @@ public class Producto implements Comparable<Producto> {
         this.precio=precio;
         this.cantidad=cantidad;
     }
+/**
+ *Constructor vacio
+ */
 
     public Producto() {
         
@@ -71,6 +79,11 @@ public class Producto implements Comparable<Producto> {
         return cantidad;
     }
     //Metodo que regresa una cadena de string, que son los datos del producto.
+    /**
+     * Regresa los datos del producto
+     * @return datos del producto
+     */
+
     @Override
     public String toString() {
         String datos= "Producto " + "id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", unidad=" + unidad +"cantidad=" +cantidad;

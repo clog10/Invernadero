@@ -20,7 +20,9 @@ public class Proveedor implements Comparable<Proveedor>{
     private String calle,colonia,municipio,estado;
     private String numero;
     private String telefono,celular,email;
-
+/**
+ *Constructor de provedor  
+*/
     public Proveedor(int id,String razonSocial, String rfc, String calle, String colonia, String municipio, String estado, 
                                String numero, String telefono, String celular, String email) {
         this.id=id;
@@ -35,7 +37,9 @@ public class Proveedor implements Comparable<Proveedor>{
         this.celular = celular;
         this.email = email;
     }
-    
+    /**
+     * Constructor vacio
+     */
     public Proveedor(){
     
     }
@@ -127,7 +131,10 @@ public class Proveedor implements Comparable<Proveedor>{
     public void setEmail(String email) {
         this.email = email;
     }
-
+/**
+ * Regreda ls datos del provedor
+ * @return datos del provedor
+ */
     @Override
     public String toString() {
         String datos= "Proveedor" + "razonSocial=" + razonSocial + ", rfc=" + rfc+"\n";

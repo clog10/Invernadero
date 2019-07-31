@@ -17,6 +17,14 @@ public class Vehiculo implements Comparable<Vehiculo> {
     private int numSerie,anio;
 
     //Constructor con parametros
+    /**
+     * Constructor con parametros
+     * @param matricula: para añadir matricula de los vehiculos
+ * @param marca: para añadir la marca del vehiculo
+ * @param modelo: para agregar modelo del vehiculo
+ * @param numSerie: para añadir numero de serie al vehiculo
+ * @param anio: para añadir el año del vehiculo
+     */
     public Vehiculo(String matricula, String marca, String modelo, int numSerie, int anio) {
         this.matricula = matricula;
         this.marca = marca;
@@ -26,6 +34,9 @@ public class Vehiculo implements Comparable<Vehiculo> {
     }
     
     //Constructor Vacio
+    /**
+     * Constructor Vacio
+     */
     public Vehiculo(){
          
     }
@@ -74,6 +85,10 @@ public class Vehiculo implements Comparable<Vehiculo> {
 
     
     //metodo toString para imprimir los datos del vehiculo
+    /**
+     * metodo toString para imprimir los datos del vehiculo
+     * @return mprimir los datos del vehiculo
+     */
     @Override
     public String toString() {
         String datos=" Vehiculo " + "\tMatricula: "+matricula+"\n";

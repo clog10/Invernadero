@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Clog_10
  * 
  * Clase UsuarioDB que contiene metodos para conectar con nuestra base de datos
- * @param vista que conecta con nuestra vistaUsuario porque ahi ejecutaremos 
+ * @param vista:  conecta con nuestra vistaUsuario porque ahi ejecutaremos 
  *              los metodos que contiene
  */
 public class UsuarioDB {

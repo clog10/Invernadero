@@ -24,8 +24,10 @@ import org.postgresql.util.PSQLException;
 public class ClienteDB {
 
     private Vista.vistaCliente vista;
+    /***
+     * Constructor 
+     */
     
-    //Constructor
     public ClienteDB() { 
         this.vista = vista; 
     } 
@@ -33,6 +35,7 @@ public class ClienteDB {
     
     /**
      * metodo insert para insertar clientes en nuestra base de datos
+     * @param Cliente: contiene los datos del cliente 
      * @return   un boleano para indicar que el cliente fue agregado
      */
     public boolean insertCliente(Cliente c) {

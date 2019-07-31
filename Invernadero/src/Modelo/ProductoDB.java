@@ -147,7 +147,7 @@ public class ProductoDB {
 
      }
             
-}//fin de la clase
+}//fin de la clase.
 
 
 

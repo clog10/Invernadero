@@ -70,6 +70,7 @@ public class Producto implements Comparable<Producto> {
     public int getCantidad(){
         return cantidad;
     }
+    //Metodo que regresa una cadena de string, que son los datos del producto.
     @Override
     public String toString() {
         String datos= "Producto " + "id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", unidad=" + unidad +"cantidad=" +cantidad;

@@ -315,7 +315,7 @@ public class vistaDatosProveedorActualiza extends javax.swing.JInternalFrame {
         }
         //        v.cargarTabla ();}
     }//GEN-LAST:event_jButton1ActionPerformed
-    //Validacion de los JTextField que sean de tipo numerico o cadena
+    //Validacion de los JTextField que sean de tipo numerico o cadena.
     private void jTextField8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyTyped
         // TODO add your handling code here:
         char car = evt.getKeyChar();

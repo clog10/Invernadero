@@ -140,7 +140,7 @@ public class Proveedor implements Comparable<Proveedor>{
         return this.getId() > o.getId() ? 1 : this.getId() < o.getId() ? -1 : 0;
     }
     
-}
+}//Fin de la clase.
 
 
 

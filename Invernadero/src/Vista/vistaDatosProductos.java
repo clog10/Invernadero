@@ -204,7 +204,7 @@ public class vistaDatosProductos extends javax.swing.JInternalFrame {
                         JOptionPane.showMessageDialog(null, "Verifica los campos vacios...");
         }else{
             String dato= (String) jComboBox1.getSelectedItem();
-            producto= new Producto(Integer.parseInt(jTextField1.getText()),jTextField2.getText(),Integer.parseInt( jTextField3.getText()),
+            producto= new Producto(Integer.parseInt(jTextField1.getText()),jTextField2.getText(),Double.parseDouble( jTextField3.getText()),
                              dato, Integer.parseInt(jTextField4.getText()));
             productodb.insertProducto(producto);
             vaciarCampos();

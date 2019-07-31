@@ -267,15 +267,16 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         
         cargarTabla(producto);
         
-        
+      //  Costos();
                 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     
-    
+    double precio;
     public void cargarTabla(String nombre){
-        List<Producto> productos= p.listProducto();
+        List<Producto> productos= pv.listProducto();
        int i = 0;
+       
        jTable1.setValueAt(cantidad, i, 0);
         for (Producto pp:productos) {
             if(nombre.equalsIgnoreCase(pp.getNombre())){
@@ -286,18 +287,25 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
             break;
             }
             i++;
-            //total=cantidad*pp.getPrecio();
+            precio+=total;
         }
-        
         jTable1.setValueAt(total, i, 4);
         
+        subtotal=precio;
+        totalCompra=subtotal;
+               jTextField1.setText(" "+subtotal);
+        jTextField2.setText(" "+totalCompra);
     }
     
     public void Costos(){ 
         
-        for(int i=0;i<jTable1.getRowCount();i++){
+     /*   for(int i=0;i<jTable1.getRowCount();i++){
+            if(jTable1.getValueAt(i, 4).equals("")){
+            System.out.println(jTable1.getRowCount());
             subtotal+=(Double)jTable1.getValueAt(i, 4);
         }
+        }*/
+     subtotal=precio;
         totalCompra=subtotal;
                jTextField1.setText(" "+subtotal);
         jTextField2.setText(" "+totalCompra);

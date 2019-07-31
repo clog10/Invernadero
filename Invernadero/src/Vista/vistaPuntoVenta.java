@@ -244,9 +244,10 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
     private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
         // TODO add your handling code here:
         char car = evt.getKeyChar();
-        if ((car < '0' || car > '9') && (car < ',' || car > '.')) {
+        if ((car < '1' || car > '9') && (car < ',' || car > '.')) {
             evt.consume();
         }
+        
     }//GEN-LAST:event_jTextField4KeyTyped
 
     
@@ -261,56 +262,35 @@ public class vistaPuntoVenta extends javax.swing.JInternalFrame {
         cantidad=Integer.parseInt(jTextField4.getText());
         System.out.println(cantidad);
         
-        
-        
-        //actualizar subtotal y total de venta
-        
         cargarTabla(producto);
-        
-      //  Costos();
                 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     
-    double precio;
+     
     public void cargarTabla(String nombre){
         List<Producto> productos= pv.listProducto();
-       int i = 0;
-       
-       jTable1.setValueAt(cantidad, i, 0);
+     int i=0;
+      // jTable1.setValueAt(cantidad, i, 0);
         for (Producto pp:productos) {
+            jTable1.setValueAt(cantidad, i, 0);
             if(nombre.equalsIgnoreCase(pp.getNombre())){
             jTable1.setValueAt(pp.getUnidad(), i, 1);
             jTable1.setValueAt(pp.getNombre(), i, 2);
             jTable1.setValueAt(pp.getPrecio(), i, 3);
             total=cantidad*pp.getPrecio();
+            jTable1.setValueAt(total, i, 4);
             break;
             }
             i++;
-            precio+=total;
+        //    subtotal+=total;
         }
-        jTable1.setValueAt(total, i, 4);
-        
-        subtotal=precio;
+        //jTable1.setValueAt(total, i, 4);
+        subtotal+=total;
         totalCompra=subtotal;
                jTextField1.setText(" "+subtotal);
         jTextField2.setText(" "+totalCompra);
     }
-    
-    public void Costos(){ 
-        
-     /*   for(int i=0;i<jTable1.getRowCount();i++){
-            if(jTable1.getValueAt(i, 4).equals("")){
-            System.out.println(jTable1.getRowCount());
-            subtotal+=(Double)jTable1.getValueAt(i, 4);
-        }
-        }*/
-     subtotal=precio;
-        totalCompra=subtotal;
-               jTextField1.setText(" "+subtotal);
-        jTextField2.setText(" "+totalCompra);
-    }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

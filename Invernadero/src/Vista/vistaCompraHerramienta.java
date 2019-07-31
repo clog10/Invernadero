@@ -1,13 +1,14 @@
-
 package Vista;
 
 import Modelo.Compras;
 import Modelo.ComprasDB;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import javax.swing.JDesktopPane;
 
 /**
  * Invernadero Gran Valle
+ *
  * @author Clog_10
  */
 public class vistaCompraHerramienta extends javax.swing.JInternalFrame {
@@ -15,14 +16,14 @@ public class vistaCompraHerramienta extends javax.swing.JInternalFrame {
     private JDesktopPane iM;
     private ComprasDB compras;
     private Compras c;
-    
+
     /**
      * Creates new form vistaCompraHerramienta
      */
     public vistaCompraHerramienta() {
         initComponents();
-        
-        compras=new ComprasDB();
+
+        compras = new ComprasDB();
     }
 
     @SuppressWarnings("unchecked")
@@ -174,32 +175,55 @@ public class vistaCompraHerramienta extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        int id=(int)Math.random()*99+1;
-         int id2=(int)Math.random()*99+1;
-        System.out.println(id+" "+id2);
-        String productos=jTextField2.getText();
-        int cantidad=Integer.parseInt(jTextField1.getText());
-         SimpleDateFormat formato=new SimpleDateFormat("dd-MM-yyyy");
-        String fecha=formato.format(jDateChooser1.getDate());
-        double total=Double.parseDouble(jTextField3.getText());
-        
-        
+        c = new Compras();
+        String productos = jTextField2.getText();
+        int cantidad = Integer.parseInt(jTextField1.getText());
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        String fecha = formato.format(jDateChooser1.getDate());
+        double total = Double.parseDouble(jTextField3.getText());
+
+        c.setFecha(fecha);
+        c.setProductos(productos);
+        c.setTotal(total);
+
+        compras.insertCompra(c);
+
+        try {
+            interfaceMenu.compras.cargarTabla();
+
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
         // TODO add your handling code here:
         char car = evt.getKeyChar();
-        if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
+        if ((car < '0' || car > '9') && (car < ',' || car > '.')) {
+            evt.consume();
+        }
     }//GEN-LAST:event_jTextField3KeyTyped
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         // TODO add your handling code here:
         char car = evt.getKeyChar();
-        if((car<'0' || car>'9') && (car<',' || car>'.')) evt.consume();
+        if ((car < '0' || car > '9') && (car < ',' || car > '.')) {
+            evt.consume();
+        }
     }//GEN-LAST:event_jTextField1KeyTyped
 
-    
+    public void cargarTabla() {
+        List<Compras> cc = compras.listCompras();
+        int i = 0;
+        for (Compras ccc : cc) {
+            jTable1.setValueAt(ccc.getFecha(), i, 0);
+            jTable1.setValueAt(ccc.getProductos(), i, 1);
+            jTable1.setValueAt(ccc.getTotal(), i, 2);
+
+            i++;
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;

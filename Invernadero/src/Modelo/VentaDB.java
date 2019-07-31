@@ -17,7 +17,7 @@ import org.postgresql.util.PSQLException;
  * @author Clog_10
  */
 public class VentaDB {
-     private Vista.productos vista;
+     private Vista.vistaProductos vista;
     public VentaDB(){
         this.vista = vista;
     }

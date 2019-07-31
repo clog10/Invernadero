@@ -28,7 +28,7 @@ public class vistaDatosProductosEditar extends javax.swing.JInternalFrame {
     //Instancia del modelo ProductoDB que contiene las consultas.
     private ProductoDB productodb;
     //Instancia de la vista principal de los productos.
-    private productos pro;
+    private vistaProductos pro;
     //Instancia de la vista principal.
      private interfaceMenu menu;
     /**

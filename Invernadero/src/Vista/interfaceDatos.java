@@ -8,6 +8,8 @@ package Vista;
 import Modelo.Conectiondb;
 import Modelo.Usuario;
 import Modelo.UsuarioDB;
+import com.jtattoo.plaf.aero.AeroLookAndFeel;
+import com.jtattoo.plaf.fast.FastLookAndFeel;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -15,16 +17,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import javax.swing.UIManager;
 
 /**
  *
@@ -248,15 +254,33 @@ public class interfaceDatos extends javax.swing.JFrame {
         String paswd = jPasswordField1.getText();
 
         if(usuario.isEmpty() || paswd.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Algún campo esta vacio");
-
+            JOptionPane pane = new JOptionPane("Algún campo esta vacio, verifique...", JOptionPane.WARNING_MESSAGE);
+            JDialog dialog = pane.createDialog("¡Error!");
+            mostrarMensaje(dialog);
         }else{
            for(Usuario uu:u){
             if(uu.getUser().equals(usuario) && uu.getPassword().equals(paswd)){
-                ///THREAD                
-           JOptionPane pane = new JOptionPane("¡Bienvenido!", JOptionPane.INFORMATION_MESSAGE);
-                 JDialog dialog = pane.createDialog("INVERNADERO 'EL GRAN VALLLE'");
-                    dialog.addWindowListener(null);
+                ///THREAD 
+                JOptionPane pane = new JOptionPane("¡Bienvenido!", JOptionPane.INFORMATION_MESSAGE);
+                JDialog dialog = pane.createDialog("INVERNADERO 'EL GRAN VALLLE'");
+                mostrarMensaje(dialog);
+                //fin THREAD
+                interfaceMenu iM= new interfaceMenu();
+                iM.setVisible(true);
+                this.dispose();
+                break;
+            }else{
+                JOptionPane pane = new JOptionPane("Usuario o Contraseña incorrectos, verifique...", JOptionPane.WARNING_MESSAGE);
+                JDialog dialog = pane.createDialog("¡Error!");
+                mostrarMensaje(dialog);
+                //JOptionPane.showMessageDialog(this,"Su usuario o contraseña es incorrecto","Error",JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        }
+    }
+    
+    public void mostrarMensaje(JDialog dialog){
+          dialog.addWindowListener(null);
                     dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
                 ScheduledExecutorService sch = Executors.newSingleThreadScheduledExecutor();     
@@ -268,15 +292,6 @@ public class interfaceDatos extends javax.swing.JFrame {
                 }, 1, TimeUnit.SECONDS);
 
                 dialog.setVisible(true);
-                interfaceMenu iM= new interfaceMenu();
-                iM.setVisible(true);
-                this.dispose();
-                break;
-            }else{
-                JOptionPane.showConfirmDialog(null,"Su usuario o contraseña es incorrecto");
-            }
-        }
-        }
     }
 
     public String getUsuario() {
@@ -293,20 +308,18 @@ public class interfaceDatos extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(interfaceDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(interfaceDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(interfaceDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Properties props = new Properties();
+            props.put("logoString","GRAN VALLE");
+            FastLookAndFeel.setCurrentTheme(props);
+            UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(interfaceDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(interfaceDatos.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(interfaceDatos.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(interfaceDatos.class.getName()).log(Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

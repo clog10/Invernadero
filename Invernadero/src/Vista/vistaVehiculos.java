@@ -50,7 +50,6 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(240, 239, 232));
         setBorder(null);
@@ -167,22 +166,6 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         gridBagConstraints.insets = new java.awt.Insets(84, 32, 35, 0);
         getContentPane().add(jButton3, gridBagConstraints);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/salir.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 22;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(84, 44, 35, 0);
-        getContentPane().add(jButton4, gridBagConstraints);
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -198,15 +181,6 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
         datosCliente.setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        try{
-            this.setClosed(true);
-        }catch(Exception e){
-            System.out.println("Error: " + e);
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
 
    
     private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {                                         
@@ -281,7 +255,6 @@ public class vistaVehiculos extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

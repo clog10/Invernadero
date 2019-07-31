@@ -185,8 +185,8 @@ public class vistaProveedor extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         vistaDatosProveedor datosProveedor = new vistaDatosProveedor();
-        interfaceMenu.vistaPrincipal.add(datosProveedor);
         datosProveedor.setClosable(true);
+        interfaceMenu.vistaPrincipal.add(datosProveedor);
         Dimension dim = interfaceMenu.vistaPrincipal.getSize();
         Dimension dimForm = datosProveedor.getSize();
         datosProveedor.setLocation((dim.width - dimForm.width) / 2, (dim.height - dimForm.height) / 2);

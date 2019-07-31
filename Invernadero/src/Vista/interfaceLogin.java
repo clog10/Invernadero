@@ -6,11 +6,16 @@
 package Vista;
 
 import Modelo.Conectiondb;
+import com.jtattoo.plaf.fast.FastLookAndFeel;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 
 /**
  *
@@ -137,21 +142,19 @@ public class interfaceLogin extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
                try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(interfaceLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(interfaceLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(interfaceLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Properties props = new Properties();
+            props.put("logoString","GRAN VALLE");
+            FastLookAndFeel.setCurrentTheme(props);
+            UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(interfaceLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        }    catch (ClassNotFoundException ex) {
+                 Logger.getLogger(interfaceLogin.class.getName()).log(Level.SEVERE, null, ex);
+             } catch (InstantiationException ex) {
+                 Logger.getLogger(interfaceLogin.class.getName()).log(Level.SEVERE, null, ex);
+             } catch (IllegalAccessException ex) {
+                 Logger.getLogger(interfaceLogin.class.getName()).log(Level.SEVERE, null, ex);
+             }
         //</editor-fold>
 
         /* Create and display the form */

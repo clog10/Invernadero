@@ -26,7 +26,7 @@ import org.postgresql.util.PSQLException;
  */
  
 public class ProductoDB {
-     private Vista.productos vista;
+     private Vista.vistaProductos vista;
      //public Conectiondb conectiondb;
      public ProductoDB(){
          this.vista = vista;

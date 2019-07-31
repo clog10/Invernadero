@@ -1,6 +1,7 @@
 
 package Vista;
 
+import com.jtattoo.plaf.fast.FastLookAndFeel;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -12,7 +13,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import java.awt.Graphics;
+import java.util.Properties;
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 /**
  * Invernadero Gran Valle
@@ -31,7 +34,7 @@ public class interfaceMenu extends javax.swing.JFrame {
     public static vistaProveedor proveedor;
     public static  vistaEmpleado empleado;
     public static vistaVenta ventas;
-    public static productos pro;
+    public static vistaProductos pro;
     public static vistaPuntoVenta puntoventa;
     public static Estadisticas estadisticas;
     public static vistaUsuario user;
@@ -364,7 +367,7 @@ public class interfaceMenu extends javax.swing.JFrame {
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
-        pro= new productos();
+        pro= new vistaProductos();
         centrarVista(pro);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
@@ -401,21 +404,27 @@ public class interfaceMenu extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            /*for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(interfaceMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(interfaceMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(interfaceMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            }*/
+            Properties props = new Properties();
+            props.put("logoString","GRAN VALLE");
+            FastLookAndFeel.setCurrentTheme(props);
+            UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");            
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(interfaceMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(interfaceMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(interfaceMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(interfaceMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
